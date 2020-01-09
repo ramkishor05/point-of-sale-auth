@@ -12,7 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 
 @EnableWebSecurity
-public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     @Autowired
@@ -49,7 +49,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         		"/api/swagger-ui.html",
         		"/api/configuration/security",
         		"/v2/api-docs",
-        		"/api/v2/api-docs","oauth/authorize").permitAll()
+        		"/api/v2/api-docs","oauth/authorize","/api/authentication").permitAll()
 	    .anyRequest().authenticated()
 	    .and()
 	    .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
