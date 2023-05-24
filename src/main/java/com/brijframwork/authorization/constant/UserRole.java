@@ -2,7 +2,7 @@ package com.brijframwork.authorization.constant;
 
 public enum UserRole {
 
-	OWNER("OWNER",1), MANAGER("MANAGER",2), SUPERVISOR("SUPERVISOR",3), CREW("CREW",4);
+	ADMIN("ADMIN",0), OWNER("OWNER",1), MANAGER("MANAGER",2), SUPERVISOR("SUPERVISOR",3), CREW("CREW",4);
 	 
 	String role;
 	int position;

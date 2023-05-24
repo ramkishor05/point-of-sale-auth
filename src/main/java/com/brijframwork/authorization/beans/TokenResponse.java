@@ -1,6 +1,6 @@
 package com.brijframwork.authorization.beans;
 
-public class TokenDTO {
+public class TokenResponse {
 
 	String token;
 

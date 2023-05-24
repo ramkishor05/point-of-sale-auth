@@ -1,6 +1,6 @@
 package com.brijframwork.authorization.beans;
 
-public class LoginRequest {
+public class TokenRequest {
 
 	private String username;
 

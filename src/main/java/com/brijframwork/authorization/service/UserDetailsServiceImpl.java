@@ -13,7 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.brijframwork.authorization.model.EOUserAccount;
-import com.brijframwork.authorization.repository.UserLoginRepository;
+import com.brijframwork.authorization.repository.UserAccountRepository;
 
 
 @Service
@@ -23,7 +23,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 	private BCryptPasswordEncoder bcryptEncoder;
 
 	@Autowired
-	private UserLoginRepository userLoginRepository;
+	private UserAccountRepository userLoginRepository;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

@@ -2,7 +2,7 @@ package com.brijframwork.authorization.constant;
 
 public enum UserType {
 
-	CUSTOMER("CUSTOMER"), VENDOR("VENDOR"), SUPPLIER("SUPPLIER");
+	ADMIN("ADMIN"),CUSTOMER("CUSTOMER"), VENDOR("VENDOR"), SUPPLIER("SUPPLIER");
 	
 	private String type;
 

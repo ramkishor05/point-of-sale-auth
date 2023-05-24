@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.brijframwork.authorization.adptor.TokenProvider;
-import com.brijframwork.authorization.beans.LoginRequest;
-import com.brijframwork.authorization.beans.TokenDTO;
+import com.brijframwork.authorization.beans.TokenRequest;
+import com.brijframwork.authorization.beans.TokenResponse;
+import com.brijframwork.authorization.constant.Constants;
 
 @RestController
 @RequestMapping("/api/authentication")
@@ -27,22 +28,23 @@ public class AuthenticationController {
     private TokenProvider jwtTokenUtil;
 
     @RequestMapping(value = "/token/generate", method = RequestMethod.POST)
-    public ResponseEntity<?> generateToken(@RequestBody LoginRequest loginUser) throws AuthenticationException {
+    public ResponseEntity<?> generateToken(@RequestBody TokenRequest loginUser) throws AuthenticationException {
     	 Authentication authentication= authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginUser.getUsername(), loginUser.getPassword()) 
         );
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        final String token = jwtTokenUtil.generateToken(authentication);
+        final String token = Constants.TOKEN_PREFIX +jwtTokenUtil.generateToken(authentication);
+        
         return ResponseEntity.ok(token);
     }
 
     @RequestMapping(value = "/token/validate", method = RequestMethod.POST)
-    public ResponseEntity<?> validateToken(@RequestBody TokenDTO tokenDTO) throws AuthenticationException {
+    public ResponseEntity<?> validateToken(@RequestBody TokenResponse tokenDTO) throws AuthenticationException {
     	return ResponseEntity.ok(jwtTokenUtil.validateToken(tokenDTO.getToken()));
     }
     
     @RequestMapping(value = "/token/expired", method = RequestMethod.POST)
-    public ResponseEntity<?> expiredToken(@RequestBody TokenDTO tokenDTO) throws AuthenticationException {
+    public ResponseEntity<?> expiredToken(@RequestBody TokenResponse tokenDTO) throws AuthenticationException {
     	return ResponseEntity.ok(jwtTokenUtil.getTokenExpired(tokenDTO.getToken()));
     }
 }

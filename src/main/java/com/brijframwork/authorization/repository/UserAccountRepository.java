@@ -12,7 +12,7 @@ import com.brijframwork.authorization.model.EOUserAccount;
 
 @Repository
 @Transactional
-public interface UserLoginRepository  extends JpaRepository<EOUserAccount, Long>{
+public interface UserAccountRepository  extends JpaRepository<EOUserAccount, Long>{
 
 	@Query("select u from EOUserAccount u where u.username = :username")
 	Optional<EOUserAccount> findUserName(@Param("username")String username);
