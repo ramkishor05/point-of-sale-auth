@@ -11,9 +11,9 @@ spring:
      name: project-brijframework-authorization
    datasource:
      driverClassName: com.mysql.cj.jdbc.Driver
-     url: jdbc:mysql://localhost:3306/brijframework-authorization
-     username: root
-     password: root
+     url: jdbc:mysql://sql6.freemysqlhosting.net:3306/sql6635826
+     username: sql6635826
+     password: FcUj7wYfQN
      show-sql: true
    jpa: 
      hibernate: 

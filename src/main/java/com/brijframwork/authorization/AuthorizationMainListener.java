@@ -32,26 +32,27 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
     public void onApplicationEvent(final ContextRefreshedEvent event) {
     	for(UserRole userRole : UserRole.values()) {
     		if(userRoleRepository.findByPosition(userRole.getPosition()) ==null) {
-    			userRoleRepository.saveAndFlush(new EOUserRole(userRole.getPosition(),userRole.getRole(),userRole.getRole()));
+    			EOUserRole eoUserRole = new EOUserRole(userRole.getPosition(),userRole.getRole(),userRole.getRole());
+    			eoUserRole=userRoleRepository.saveAndFlush(eoUserRole);
+    			Optional<EOUserAccount> findUserAccount = userAccountRepository.findUserName(eoUserRole.getRoleName());
+    	    	if(!findUserAccount.isPresent()) {
+    	    		EOUserAccount eoUserAccount=new EOUserAccount();
+    	    		eoUserAccount.setAccountName(eoUserRole.getRoleName());
+    	    		eoUserAccount.setUsername(eoUserRole.getRoleName());
+    	    		eoUserAccount.setType(eoUserRole.getRoleName());
+    	    		eoUserAccount.setPassword((eoUserRole.getRoleName()));
+    	    		eoUserAccount.setUserRole(eoUserRole);
+    	    		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);
+    	    		EOUserProfile eoUserProfile=new EOUserProfile();
+    	    		eoUserProfile.setFirstName(eoUserRole.getRoleName());
+    	    		eoUserProfile.setUserAccount(eoUserAccount);
+    	    		userProfileRepository.saveAndFlush(eoUserProfile);
+    	    	}
     		}
     	}
     
+    	
     	EOUserRole userRole=userRoleRepository.findByPosition(UserRole.ADMIN.getPosition());
-    	Optional<EOUserAccount> findUserAccount = userAccountRepository.findUserName(UserRole.ADMIN.getRole());
-    	if(!findUserAccount.isPresent()) {
-    		
-    		EOUserAccount eoUserAccount=new EOUserAccount();
-    		eoUserAccount.setAccountName(UserRole.ADMIN.getRole());
-    		eoUserAccount.setUsername(UserRole.ADMIN.getRole());
-    		eoUserAccount.setType(UserType.ADMIN.name());
-    		eoUserAccount.setPassword((UserRole.ADMIN.getRole()));
-    		eoUserAccount.setUserRole(userRole);
-    		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);
-    		
-    		EOUserProfile eoUserProfile=new EOUserProfile();
-    		eoUserProfile.setFirstName(UserType.ADMIN.name());
-    		eoUserProfile.setUserAccount(eoUserAccount);
-    		userProfileRepository.saveAndFlush(eoUserProfile);
-    	}
+    	
     }
 }
