@@ -40,11 +40,13 @@ public class AuthenticationController {
 
     @RequestMapping(value = "/token/validate", method = RequestMethod.POST)
     public ResponseEntity<?> validateToken(@RequestBody TokenResponse tokenDTO) throws AuthenticationException {
-    	return ResponseEntity.ok(jwtTokenUtil.validateToken(tokenDTO.getToken()));
+    	String token = tokenDTO.getToken().replaceFirst(Constants.TOKEN_PREFIX, "");
+    	return ResponseEntity.ok(jwtTokenUtil.validateToken(token));
     }
     
     @RequestMapping(value = "/token/expired", method = RequestMethod.POST)
     public ResponseEntity<?> expiredToken(@RequestBody TokenResponse tokenDTO) throws AuthenticationException {
-    	return ResponseEntity.ok(jwtTokenUtil.getTokenExpired(tokenDTO.getToken()));
+    	String token = tokenDTO.getToken().replaceFirst(Constants.TOKEN_PREFIX, "");
+    	return ResponseEntity.ok(jwtTokenUtil.getTokenExpired(token));
     }
 }

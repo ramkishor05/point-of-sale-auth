@@ -43,7 +43,7 @@ public class TokenProvider implements Serializable {
     }
 
     public <T> T getClaimFromToken(String token, Function<Claims, T> claimsResolver) {
-    	if(token==null) {
+    	if(token==null || claimsResolver==null) {
     		return null;
     	}
         final Claims claims = getAllClaimsFromToken(token);

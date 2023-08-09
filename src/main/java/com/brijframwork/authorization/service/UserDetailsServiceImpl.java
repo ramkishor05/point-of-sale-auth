@@ -45,4 +45,5 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 		authorities.add(new SimpleGrantedAuthority(user.getUserRole().getRoleId()));
 		return authorities;
 	}
+	
 }
