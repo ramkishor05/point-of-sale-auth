@@ -8,10 +8,10 @@ error:
     enabled: false
 spring:
    application:
-     name: project-brijframework-authorization
+     name: point_of_sale_auth
    datasource:
      driverClassName: com.mysql.cj.jdbc.Driver
-     url: jdbc:mysql://localhost:3306/brijframework-authorization
+     url: jdbc:mysql://localhost:3306/point_of_sale_auth
      username: root
      password: root
      show-sql: true
