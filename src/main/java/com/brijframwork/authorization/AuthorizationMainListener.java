@@ -8,7 +8,6 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 import com.brijframwork.authorization.constant.UserRole;
-import com.brijframwork.authorization.constant.UserType;
 import com.brijframwork.authorization.model.EOUserAccount;
 import com.brijframwork.authorization.model.EOUserProfile;
 import com.brijframwork.authorization.model.EOUserRole;
@@ -50,9 +49,5 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
     	    	}
     		}
     	}
-    
-    	
-    	EOUserRole userRole=userRoleRepository.findByPosition(UserRole.ADMIN.getPosition());
-    	
     }
 }
