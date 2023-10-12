@@ -50,7 +50,6 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
     	    	}
     		}
     	}
-    
     	
     	EOUserRole userRole=userRoleRepository.findByPosition(UserRole.ADMIN.getPosition());
     	
