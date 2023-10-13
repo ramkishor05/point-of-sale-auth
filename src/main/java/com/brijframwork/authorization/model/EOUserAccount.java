@@ -37,6 +37,9 @@ public class EOUserAccount implements Serializable {
 
 	@Column(name = "TYPE")
 	private String type;
+	
+	@Column(name = "OWNER_ID", nullable = true)
+	private Long ownerId;
 
 	@OneToOne
 	@JoinColumn(name = "ROLE_ID")
