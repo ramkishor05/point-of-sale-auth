@@ -3,12 +3,14 @@ package com.brijframwork.authorization.beans;
 public class UserDetailResponse {
 
 	private long id;
-	
-	private String username; 
-	
+
+	private String username;
+
 	private String accountName;
-	
+
 	private String type;
+
+	private Long ownerId;
 
 	private UserRoleResponse userRole;
 
@@ -20,6 +22,14 @@ public class UserDetailResponse {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public Long getOwnerId() {
+		return ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
 	}
 
 	public String getUsername() {
