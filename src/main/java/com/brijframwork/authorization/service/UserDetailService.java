@@ -1,9 +1,11 @@
 package com.brijframwork.authorization.service;
 
-import com.brijframwork.authorization.beans.UserDetailResponse;
+import com.brijframwork.authorization.beans.UserDetailRequest;
 
 public interface UserDetailService {
 
-	UserDetailResponse getUserDetailFromToken(String token);
+	boolean register(UserDetailRequest userDetailRequest);
+
+	boolean isAlreadyExists(String username);
 
 }

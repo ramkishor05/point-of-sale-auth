@@ -8,10 +8,12 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -20,6 +22,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
+import com.brijframwork.authorization.beans.UserDetailResponse;
+import com.brijframwork.authorization.mapper.UserDetailMapper;
+import com.brijframwork.authorization.model.EOUserAccount;
+import com.brijframwork.authorization.repository.UserAccountRepository;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.JwtParser;
@@ -27,12 +34,21 @@ import io.jsonwebtoken.Jwts;
 
 @Component
 public class TokenProvider implements Serializable {
-	private Logger logger=Logger.getLogger(TokenProvider.class.getName());
 
     /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
+	
+	private Logger logger=Logger.getLogger(TokenProvider.class.getName());
+	
+
+	@Autowired
+	private UserDetailMapper userDetailMapper;
+
+	@Autowired
+	private UserAccountRepository userLoginRepository;
 
 	public String getUsernameFromToken(String token) {
         return getClaimFromToken(token, Claims::getSubject);
@@ -112,5 +128,12 @@ public class TokenProvider implements Serializable {
         final Collection<? extends GrantedAuthority> authorities = Arrays.stream(claims.get(AUTHORITIES_KEY).toString().split(",")).map(SimpleGrantedAuthority::new).collect(Collectors.toList());
         return new UsernamePasswordAuthenticationToken(userDetails, "", authorities);
     }
+
+	public UserDetailResponse getUserDetailFromToken(String token) {
+		String username = this.getUsernameFromToken(token);
+		Optional<EOUserAccount> findUserLogin = userLoginRepository.findUserName(username);
+		EOUserAccount eoUserAccount = findUserLogin.orElse(null);
+		return userDetailMapper.mapToDTO(eoUserAccount);
+	}
 
 }

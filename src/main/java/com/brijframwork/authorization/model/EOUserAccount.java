@@ -105,6 +105,14 @@ public class EOUserAccount implements Serializable {
 		this.userProfile = userProfile;
 	}
 
+	public Long getOwnerId() {
+		return ownerId;
+	}
+
+	public void setOwnerId(Long ownerId) {
+		this.ownerId = ownerId;
+	}
+
 	@Override
 	public String toString() {
 		return "EOUserLogin [id=" + id + ", username=" + username + ", password=" + password + ", accountName="

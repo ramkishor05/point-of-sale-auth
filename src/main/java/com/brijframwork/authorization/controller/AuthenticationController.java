@@ -7,7 +7,9 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +22,8 @@ import com.brijframwork.authorization.constant.Constants;
 @RestController
 @RequestMapping("/api/authentication")
 public class AuthenticationController {
+	
+	private static final String API_TOKEN = "api_token";
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -49,4 +53,11 @@ public class AuthenticationController {
     	String token = tokenDTO.getToken().replaceFirst(Constants.TOKEN_PREFIX, "");
     	return ResponseEntity.ok(jwtTokenUtil.getTokenExpired(token));
     }
+
+	@GetMapping("/userdetail")
+    public ResponseEntity<?> getUserDetailFromToken(@RequestHeader(API_TOKEN) String apiToken) throws AuthenticationException {
+    	String token = apiToken.replaceFirst(Constants.TOKEN_PREFIX, "");
+    	return ResponseEntity.ok(jwtTokenUtil.getUserDetailFromToken(token));
+    }
+	
 }
