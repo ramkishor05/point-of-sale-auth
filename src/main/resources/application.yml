@@ -1,14 +1,48 @@
+spring:
+   profiles: 
+     active:  local
+   application:
+     name: point_of_sale_auth
+   main:
+     allow-bean-definition-overriding: true
+   sql.init.mode: always
+   datasource:
+     driverClassName: com.mysql.cj.jdbc.Driver
+     url: jdbc:mysql://localhost:3306/point_of_sale_auth
+     username: root
+     password: root
+     show-sql: true
+   jpa: 
+     hibernate: 
+       dialect: org.hibernate.dialect.MySQLDialect
+       ddl-auto: update
+       format_sql: true
+       show_sql: true
+       naming: 
+         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+# Discovery Server Access
+#eureka:
+#    client:
+#      serviceUrl:
+#        defaultZone: http://localhost:1111/eureka/
 # HTTP Server (Tomcat) Port
 server: 
   port: 2222
-
+logging.level.org.hibernate.SQL: DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 # Disable Spring Boot's "Whitelabel" default error page, so we can use our own
 error:
   whitelabel:
-    enabled: false
+    enabled: true
+---
 spring:
+   profiles: dev
    application:
      name: point_of_sale_auth
+   main:
+     allow-bean-definition-overriding: true
+   sql.init.mode: always
    datasource:
      driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
      url: jdbc:sqlserver://pointofsale.database.windows.net:1433;database=point_of_sale_auth;user=ramkishor05@pointofsale;password=Ram@9450;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
@@ -19,18 +53,22 @@ spring:
      hibernate: 
        dialect: org.hibernate.dialect.MySQLDialect
        ddl-auto: update
+       format_sql: true
+       show_sql: true
        naming: 
          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
 # Discovery Server Access
-eureka:
-    client:
-      serviceUrl:
-        defaultZone: http://localhost:1111/eureka/
-security:
-    oauth2:
-       resource:
-         token-info-uri: http://localhost:8080/oauth/check_token
-       client:        
-         client-id: client
-         client-secret: password
+#eureka:
+#    client:
+#      serviceUrl:
+#        defaultZone: http://localhost:1111/eureka/
+# HTTP Server (Tomcat) Port
+server: 
+  port: 2222
+logging.level.org.hibernate.SQL: DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+# Disable Spring Boot's "Whitelabel" default error page, so we can use our own
+error:
+  whitelabel:
+    enabled: true
