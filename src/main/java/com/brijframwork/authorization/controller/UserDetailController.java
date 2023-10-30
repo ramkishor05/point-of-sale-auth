@@ -5,11 +5,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.brijframwork.authorization.beans.UserDetailRequest;
+import com.brijframwork.authorization.beans.UIUserProfile;
+import com.brijframwork.authorization.beans.UIUserAccount;
 import com.brijframwork.authorization.service.UserDetailService;
 
 @RestController
@@ -20,13 +22,24 @@ public class UserDetailController {
     private UserDetailService userDetailService;
 	
 	@PostMapping
-	public ResponseEntity<?> register(@RequestBody UserDetailRequest userDetailRequest){
-    	return ResponseEntity.ok(userDetailService.register(userDetailRequest));
+	public ResponseEntity<?> register(@RequestBody UIUserAccount uiUserAccount){
+    	return ResponseEntity.ok(userDetailService.register(uiUserAccount));
+	}
+
+	@PutMapping("/{id}")
+	public ResponseEntity<?> updateUserAccount(@PathVariable Long id, @RequestBody UIUserAccount uiUserAccount){
+    	return ResponseEntity.ok(userDetailService.updateUserAccount(uiUserAccount));
 	}
 	
 	@GetMapping("/exists/{username}")
 	public ResponseEntity<?> isAlreadyExists(@PathVariable String username){
     	return ResponseEntity.ok(userDetailService.isAlreadyExists(username));
+	}
+	
+	
+	@PutMapping("/profile")
+	public ResponseEntity<?> updateUserProfile(@RequestBody UIUserProfile uiUserProfile){
+    	return ResponseEntity.ok(userDetailService.updateUserProfile(uiUserProfile));
 	}
 	
 }

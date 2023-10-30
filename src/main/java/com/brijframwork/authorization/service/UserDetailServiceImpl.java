@@ -3,7 +3,8 @@ package com.brijframwork.authorization.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.brijframwork.authorization.beans.UserDetailRequest;
+import com.brijframwork.authorization.beans.UIUserProfile;
+import com.brijframwork.authorization.beans.UIUserAccount;
 import com.brijframwork.authorization.constant.UserRole;
 import com.brijframwork.authorization.model.EOUserAccount;
 import com.brijframwork.authorization.model.EOUserProfile;
@@ -15,10 +16,6 @@ import com.brijframwork.authorization.repository.UserRoleRepository;
 @Service
 public class UserDetailServiceImpl implements UserDetailService {
 	
-
-	@Autowired
-	private UserAccountRepository userLoginRepository;
-
 	@Autowired
 	private UserRoleRepository userRoleRepository;
 
@@ -29,7 +26,7 @@ public class UserDetailServiceImpl implements UserDetailService {
 	private UserAccountRepository userAccountRepository;
 
 	@Override
-	public boolean register(UserDetailRequest userDetailRequest) {
+	public boolean register(UIUserAccount userDetailRequest) {
 		if(isAlreadyExists(userDetailRequest.getUsername())) {
 			return false;
 		}
@@ -52,7 +49,28 @@ public class UserDetailServiceImpl implements UserDetailService {
 
 	@Override
 	public boolean isAlreadyExists(String username) {
-		return userLoginRepository.findUserName(username).isPresent();
+		return userAccountRepository.findUserName(username).isPresent();
+	}
+
+	@Override
+	public UIUserProfile updateUserProfile(UIUserProfile uiUserProfile) {
+		EOUserProfile eoUserProfile=userProfileRepository.getOne(uiUserProfile.getId());
+		eoUserProfile.setTitle(uiUserProfile.getTitle());
+		eoUserProfile.setFirstName(uiUserProfile.getFirstName());
+		eoUserProfile.setLastName(uiUserProfile.getLastName());
+		eoUserProfile.setPreferredName(uiUserProfile.getPreferredName());
+		eoUserProfile = userProfileRepository.saveAndFlush(eoUserProfile);
+		return uiUserProfile;
+	}
+
+	@Override
+	public UIUserAccount updateUserAccount(UIUserAccount uiUserAccount) {
+		EOUserAccount eoUserAccount=userAccountRepository.getOne(uiUserAccount.getId());
+		eoUserAccount.setUsername(uiUserAccount.getUsername());
+		eoUserAccount.setPassword(uiUserAccount.getPassword());
+		eoUserAccount.setOwnerId(uiUserAccount.getOwnerId());
+		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);
+		return uiUserAccount;
 	}
 
 

@@ -1,6 +1,43 @@
 spring:
    profiles: 
-     active:  local
+     active:  aws_rds
+   application:
+     name: point_of_sale_auth
+   main:
+     allow-bean-definition-overriding: true
+   sql.init.mode: always
+   datasource:
+     driverClassName: com.mysql.cj.jdbc.Driver
+     url: jdbc:mysql://pointofsale.cjajb4uwr0of.us-east-1.rds.amazonaws.com:3306/point_of_sale_auth
+     username: admin
+     password: admin123
+     show-sql: true
+   jpa: 
+     hibernate: 
+       dialect: org.hibernate.dialect.MySQLDialect
+       ddl-auto: update
+       format_sql: true
+       show_sql: true
+       naming: 
+         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+# HTTP Server (Tomcat) Port
+server: 
+  port: 2222
+logging.level.org.hibernate.SQL: DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+# Disable Spring Boot's "Whitelabel" default error page, so we can use our own
+error:
+  whitelabel:
+    enabled: true
+---    
+
+spring:
+   profiles: local
    application:
      name: point_of_sale_auth
    main:
@@ -23,9 +60,9 @@ spring:
 
 # Discovery Server Access
 eureka:
-    client:
-      serviceUrl:
-        defaultZone: http://localhost:1111/eureka/
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
 # HTTP Server (Tomcat) Port
 server: 
   port: 2222

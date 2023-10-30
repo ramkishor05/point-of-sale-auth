@@ -1,0 +1,6 @@
+version: "3"
+services:
+  project-brijframework-authorization:
+    build: .
+    ports:
+      - "2222:2222"

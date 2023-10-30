@@ -1,6 +1,6 @@
 package com.brijframwork.authorization.beans;
 
-public class UserProfileResponse {
+public class UIUserProfile {
 
 	private long id;
 

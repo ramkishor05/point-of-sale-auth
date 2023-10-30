@@ -1,10 +1,18 @@
 package com.brijframwork.authorization.beans;
 
-public class UserDetailRequest {
-	
+public class UIUserAccount {
+	private Long id;
 	private String password;
 	private String username;
 	private Long ownerId;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getPassword() {
 		return password;
@@ -29,5 +37,5 @@ public class UserDetailRequest {
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
 	}
-	
+
 }

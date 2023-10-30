@@ -14,7 +14,7 @@ public class UserDetailResponse {
 
 	private UserRoleResponse userRole;
 
-	private UserProfileResponse userProfile;
+	private UIUserProfile userProfile;
 
 	public long getId() {
 		return id;
@@ -64,11 +64,11 @@ public class UserDetailResponse {
 		this.userRole = userRole;
 	}
 
-	public UserProfileResponse getUserProfile() {
+	public UIUserProfile getUserProfile() {
 		return userProfile;
 	}
 
-	public void setUserProfile(UserProfileResponse userProfile) {
+	public void setUserProfile(UIUserProfile userProfile) {
 		this.userProfile = userProfile;
 	}
 
