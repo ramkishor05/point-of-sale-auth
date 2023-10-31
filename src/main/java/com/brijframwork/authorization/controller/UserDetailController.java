@@ -31,11 +31,15 @@ public class UserDetailController {
     	return ResponseEntity.ok(userDetailService.updateUserAccount(uiUserAccount));
 	}
 	
+	@GetMapping
+	public ResponseEntity<?> getUsers(){
+    	return ResponseEntity.ok(userDetailService.getUsers());
+	}
+	
 	@GetMapping("/exists/{username}")
 	public ResponseEntity<?> isAlreadyExists(@PathVariable String username){
     	return ResponseEntity.ok(userDetailService.isAlreadyExists(username));
 	}
-	
 	
 	@PutMapping("/profile")
 	public ResponseEntity<?> updateUserProfile(@RequestBody UIUserProfile uiUserProfile){

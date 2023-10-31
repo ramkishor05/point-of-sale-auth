@@ -1,6 +1,10 @@
 package com.brijframwork.authorization.service;
 
 import com.brijframwork.authorization.beans.UIUserProfile;
+import com.brijframwork.authorization.beans.UserDetailResponse;
+
+import java.util.List;
+
 import com.brijframwork.authorization.beans.UIUserAccount;
 
 public interface UserDetailService {
@@ -14,5 +18,7 @@ public interface UserDetailService {
 	UIUserAccount updateUserAccount(UIUserAccount uiUserAccount);
 
 	UIUserProfile getUserProfile(Long id);
+
+	List<UserDetailResponse> getUsers();
 
 }

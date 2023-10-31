@@ -1,11 +1,15 @@
 package com.brijframwork.authorization.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.brijframwork.authorization.beans.UIUserProfile;
+import com.brijframwork.authorization.beans.UserDetailResponse;
 import com.brijframwork.authorization.beans.UIUserAccount;
 import com.brijframwork.authorization.constant.UserRole;
+import com.brijframwork.authorization.mapper.UserDetailMapper;
 import com.brijframwork.authorization.model.EOUserAccount;
 import com.brijframwork.authorization.model.EOUserProfile;
 import com.brijframwork.authorization.model.EOUserRole;
@@ -24,6 +28,9 @@ public class UserDetailServiceImpl implements UserDetailService {
 
 	@Autowired
 	private UserAccountRepository userAccountRepository;
+	
+	@Autowired
+	UserDetailMapper userDetailMapper;
 
 	@Override
 	public boolean register(UIUserAccount userDetailRequest) {
@@ -92,6 +99,11 @@ public class UserDetailServiceImpl implements UserDetailService {
 		uiUserProfile.setPreferredName(eoUserProfile.getPreferredName());
 		uiUserProfile.setPictureURL(eoUserProfile.getPictureURL());
 		return uiUserProfile;
+	}
+
+	@Override
+	public List<UserDetailResponse> getUsers() {
+		return userDetailMapper.mapToDTO(userAccountRepository.findAll());
 	}
 
 
