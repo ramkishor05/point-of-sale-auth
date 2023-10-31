@@ -40,6 +40,10 @@ public class UserDetailServiceImpl implements UserDetailService {
 		EOUserAccount eoUserAccount=new EOUserAccount();
 		eoUserAccount.setUsername(userDetailRequest.getUsername());
 		eoUserAccount.setPassword(userDetailRequest.getPassword());
+		eoUserAccount.setType(eoUserRole.getRoleId());
+		eoUserAccount.setMobile(userDetailRequest.getMobile());
+		eoUserAccount.setEmail(userDetailRequest.getEmail());
+		eoUserAccount.setAccountName(userDetailRequest.getAccountName());
 		eoUserAccount.setOwnerId(userDetailRequest.getOwnerId());
 		eoUserAccount.setUserRole(eoUserRole);
 		eoUserAccount.setUserProfile(eoUserProfile);
@@ -59,6 +63,7 @@ public class UserDetailServiceImpl implements UserDetailService {
 		eoUserProfile.setFirstName(uiUserProfile.getFirstName());
 		eoUserProfile.setLastName(uiUserProfile.getLastName());
 		eoUserProfile.setPreferredName(uiUserProfile.getPreferredName());
+		eoUserProfile.setPictureURL(uiUserProfile.getPictureURL());
 		eoUserProfile = userProfileRepository.saveAndFlush(eoUserProfile);
 		return uiUserProfile;
 	}
@@ -68,9 +73,25 @@ public class UserDetailServiceImpl implements UserDetailService {
 		EOUserAccount eoUserAccount=userAccountRepository.getOne(uiUserAccount.getId());
 		eoUserAccount.setUsername(uiUserAccount.getUsername());
 		eoUserAccount.setPassword(uiUserAccount.getPassword());
+		eoUserAccount.setType(uiUserAccount.getType());
+		eoUserAccount.setAccountName(uiUserAccount.getAccountName());
+		eoUserAccount.setMobile(uiUserAccount.getMobile());
+		eoUserAccount.setEmail(uiUserAccount.getEmail());
 		eoUserAccount.setOwnerId(uiUserAccount.getOwnerId());
 		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);
 		return uiUserAccount;
+	}
+
+	@Override
+	public UIUserProfile getUserProfile(Long id) {
+		EOUserProfile eoUserProfile=userProfileRepository.getOne(id);
+		UIUserProfile uiUserProfile=new UIUserProfile();
+		uiUserProfile.setTitle(eoUserProfile.getTitle());
+		uiUserProfile.setFirstName(eoUserProfile.getFirstName());
+		uiUserProfile.setLastName(eoUserProfile.getLastName());
+		uiUserProfile.setPreferredName(eoUserProfile.getPreferredName());
+		uiUserProfile.setPictureURL(eoUserProfile.getPictureURL());
+		return uiUserProfile;
 	}
 
 

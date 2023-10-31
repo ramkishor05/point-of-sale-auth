@@ -42,4 +42,9 @@ public class UserDetailController {
     	return ResponseEntity.ok(userDetailService.updateUserProfile(uiUserProfile));
 	}
 	
+	@GetMapping("/profile/{id}")
+	public ResponseEntity<?> getUserProfile(@PathVariable Long id){
+    	return ResponseEntity.ok(userDetailService.getUserProfile(id));
+	}
+	
 }

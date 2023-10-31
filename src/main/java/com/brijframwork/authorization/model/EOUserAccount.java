@@ -34,6 +34,12 @@ public class EOUserAccount implements Serializable {
 
 	@Column(name = "ACCOUNT_NAME")
 	private String accountName;
+	
+	@Column(name = "ACCOUNT_MOBILE")
+	private String mobile;
+	
+	@Column(name = "ACCOUNT_EMAIL")
+	private String email;
 
 	@Column(name = "TYPE")
 	private String type;
@@ -87,6 +93,22 @@ public class EOUserAccount implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public EOUserRole getUserRole() {

@@ -61,6 +61,5 @@ public class UIUserProfile {
 	public void setPictureURL(String pictureURL) {
 		this.pictureURL = pictureURL;
 	}
-
 	
 }

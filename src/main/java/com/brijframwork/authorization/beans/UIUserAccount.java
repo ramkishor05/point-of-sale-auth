@@ -4,7 +4,11 @@ public class UIUserAccount {
 	private Long id;
 	private String password;
 	private String username;
+	private String mobile;
+	private String email;
 	private Long ownerId;
+	private String type;
+	private String accountName;
 
 	public Long getId() {
 		return id;
@@ -28,6 +32,38 @@ public class UIUserAccount {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	public String getAccountName() {
+		return accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
 	}
 
 	public Long getOwnerId() {

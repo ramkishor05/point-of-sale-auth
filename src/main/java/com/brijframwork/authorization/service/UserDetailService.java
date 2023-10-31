@@ -13,4 +13,6 @@ public interface UserDetailService {
 
 	UIUserAccount updateUserAccount(UIUserAccount uiUserAccount);
 
+	UIUserProfile getUserProfile(Long id);
+
 }
