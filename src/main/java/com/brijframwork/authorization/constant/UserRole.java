@@ -19,5 +19,14 @@ public enum UserRole {
 	public int getPosition() {
 		return position;
 	}
+
+	UserRole forRoleId(int userRoleId) {
+		for(UserRole userRole: values()) {
+			if(userRole.getPosition()==userRoleId) {
+				return userRole;
+			}
+		}
+		return null;
+	}
 	
 }

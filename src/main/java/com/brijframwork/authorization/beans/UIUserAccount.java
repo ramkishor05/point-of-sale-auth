@@ -9,7 +9,7 @@ public class UIUserAccount {
 	private Long ownerId;
 	private String type;
 	private String accountName;
-
+	private int userRoleId;
 	public Long getId() {
 		return id;
 	}
@@ -74,4 +74,11 @@ public class UIUserAccount {
 		this.ownerId = ownerId;
 	}
 
+	public int getUserRoleId() {
+		return userRoleId;
+	}
+
+	public void setUserRoleId(int userRoleId) {
+		this.userRoleId = userRoleId;
+	}
 }

@@ -2,6 +2,7 @@
 package com.brijframwork.authorization.model;
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -51,7 +52,7 @@ public class EOUserAccount implements Serializable {
 	@JoinColumn(name = "ROLE_ID")
 	private EOUserRole userRole;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "PROFILE_ID")
 	private EOUserProfile userProfile;
 

@@ -1,5 +1,6 @@
 package com.brijframwork.authorization.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,5 +17,7 @@ public interface UserAccountRepository  extends JpaRepository<EOUserAccount, Lon
 
 	@Query(nativeQuery = true,  value="select * from USER_ACCOUNT UA where UA.USERNAME = :username")
 	Optional<EOUserAccount> findUserName(@Param("username")String username);
+
+	List<EOUserAccount> findAllByOwnerId(Long ownerId);
 
 }

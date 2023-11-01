@@ -20,5 +20,4 @@ public interface UserDetailService {
 	UIUserProfile getUserProfile(Long id);
 
 	List<UserDetailResponse> getUsers();
-
 }
