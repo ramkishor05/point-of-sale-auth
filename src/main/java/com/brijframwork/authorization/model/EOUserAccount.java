@@ -37,10 +37,10 @@ public class EOUserAccount implements Serializable {
 	private String accountName;
 	
 	@Column(name = "ACCOUNT_MOBILE")
-	private String mobile;
+	private String registeredMobile;
 	
 	@Column(name = "ACCOUNT_EMAIL")
-	private String email;
+	private String registeredEmail;
 
 	@Column(name = "TYPE")
 	private String type;
@@ -96,20 +96,20 @@ public class EOUserAccount implements Serializable {
 		this.password = password;
 	}
 
-	public String getMobile() {
-		return mobile;
+	public String getRegisteredMobile() {
+		return registeredMobile;
 	}
 
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
+	public void setRegisteredMobile(String registeredMobile) {
+		this.registeredMobile = registeredMobile;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getRegisteredEmail() {
+		return registeredEmail;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setRegisteredEmail(String registeredEmail) {
+		this.registeredEmail = registeredEmail;
 	}
 
 	public EOUserRole getUserRole() {

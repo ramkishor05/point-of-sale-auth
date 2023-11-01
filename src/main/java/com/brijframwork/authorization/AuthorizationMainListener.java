@@ -32,6 +32,7 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
     	for(UserRole userRole : UserRole.values()) {
     		if(userRoleRepository.findByPosition(userRole.getPosition()) ==null) {
     			EOUserRole eoUserRole = new EOUserRole(userRole.getPosition(),userRole.getRole(),userRole.getRole());
+    			eoUserRole.setRoleType(userRole.getType());
     			eoUserRole=userRoleRepository.saveAndFlush(eoUserRole);
     			Optional<EOUserAccount> findUserAccount = userAccountRepository.findUserName(eoUserRole.getRoleName());
     	    	if(!findUserAccount.isPresent()) {

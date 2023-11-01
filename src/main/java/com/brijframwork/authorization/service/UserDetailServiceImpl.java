@@ -48,8 +48,8 @@ public class UserDetailServiceImpl implements UserDetailService {
 		eoUserAccount.setUsername(userDetailRequest.getUsername());
 		eoUserAccount.setPassword(userDetailRequest.getPassword());
 		eoUserAccount.setType(eoUserRole.getRoleId());
-		eoUserAccount.setMobile(userDetailRequest.getMobile());
-		eoUserAccount.setEmail(userDetailRequest.getEmail());
+		eoUserAccount.setRegisteredMobile(userDetailRequest.getMobile());
+		eoUserAccount.setRegisteredEmail(userDetailRequest.getEmail());
 		eoUserAccount.setAccountName(userDetailRequest.getAccountName());
 		eoUserAccount.setOwnerId(userDetailRequest.getOwnerId());
 		eoUserAccount.setUserRole(eoUserRole);
@@ -82,8 +82,8 @@ public class UserDetailServiceImpl implements UserDetailService {
 		eoUserAccount.setPassword(uiUserAccount.getPassword());
 		eoUserAccount.setType(uiUserAccount.getType());
 		eoUserAccount.setAccountName(uiUserAccount.getAccountName());
-		eoUserAccount.setMobile(uiUserAccount.getMobile());
-		eoUserAccount.setEmail(uiUserAccount.getEmail());
+		eoUserAccount.setRegisteredMobile(uiUserAccount.getMobile());
+		eoUserAccount.setRegisteredEmail(uiUserAccount.getEmail());
 		eoUserAccount.setOwnerId(uiUserAccount.getOwnerId());
 		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);
 		return uiUserAccount;

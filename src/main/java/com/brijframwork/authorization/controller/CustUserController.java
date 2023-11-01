@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.brijframwork.authorization.beans.UIUserAccount;
+import com.brijframwork.authorization.beans.UserDetailRequest;
 import com.brijframwork.authorization.service.CustUserDetailService;
 
 @RestController
@@ -24,12 +24,13 @@ public class CustUserController {
     private CustUserDetailService userDetailService;
 	
 	@PostMapping
-	public ResponseEntity<?> registerCust(@RequestHeader(OWNER_ID) long ownerId,@RequestBody UIUserAccount uiUserAccount){
+	public ResponseEntity<?> registerCust(@RequestHeader(OWNER_ID) long ownerId,@RequestBody UserDetailRequest uiUserAccount){
+		
     	return ResponseEntity.ok(userDetailService.registerAccount(ownerId,uiUserAccount));
 	}
 
-	@PutMapping
-	public ResponseEntity<?> updateUserAccount(@RequestHeader(OWNER_ID) long ownerId, @PathVariable Long id, @RequestBody UIUserAccount uiUserAccount){
+	@PutMapping("/{id}")
+	public ResponseEntity<?> updateUserAccount(@RequestHeader(OWNER_ID) long ownerId, @PathVariable Long id, @RequestBody UserDetailRequest uiUserAccount){
     	return ResponseEntity.ok(userDetailService.updateAccount(ownerId, uiUserAccount));
 	}
 	

@@ -2,14 +2,14 @@ package com.brijframwork.authorization.service;
 
 import java.util.List;
 
-import com.brijframwork.authorization.beans.UIUserAccount;
+import com.brijframwork.authorization.beans.UserDetailRequest;
 import com.brijframwork.authorization.beans.UserDetailResponse;
 
 public interface CustUserDetailService {
 
-	UserDetailResponse registerAccount(Long ownerId, UIUserAccount uiUserAccount);
+	UserDetailResponse registerAccount(Long ownerId, UserDetailRequest uiUserAccount);
 
-	UIUserAccount updateAccount(Long ownerId, UIUserAccount uiUserAccount);
+	UserDetailResponse updateAccount(Long ownerId, UserDetailRequest uiUserAccount);
 
 	List<UserDetailResponse> getCustUsers(Long ownerId);
 }

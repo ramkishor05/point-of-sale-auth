@@ -1,6 +1,6 @@
 package com.brijframwork.authorization.beans;
 
-public class UserDetailResponse {
+public class UserDetailRequest {
 
 	private long id;
 
@@ -18,7 +18,7 @@ public class UserDetailResponse {
 
 	private Long ownerId;
 
-	private UserRoleResponse userRole;
+	private Long userRoleId;
 
 	private UIUserProfile userProfile;
 
@@ -86,12 +86,12 @@ public class UserDetailResponse {
 		this.ownerId = ownerId;
 	}
 
-	public UserRoleResponse getUserRole() {
-		return userRole;
+	public Long getUserRoleId() {
+		return userRoleId;
 	}
 
-	public void setUserRole(UserRoleResponse userRole) {
-		this.userRole = userRole;
+	public void setUserRoleId(Long userRoleId) {
+		this.userRoleId = userRoleId;
 	}
 
 	public UIUserProfile getUserProfile() {

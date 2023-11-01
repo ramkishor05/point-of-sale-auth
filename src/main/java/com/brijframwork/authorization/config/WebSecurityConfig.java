@@ -50,7 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         		"/api/swagger-ui.html",
         		"/api/configuration/security",
         		"/v2/api-docs",
-        		"/api/v2/api-docs","oauth/authorize","/api/authentication/**","/api/user/**").permitAll()
+        		"/api/v2/api-docs","oauth/authorize","/api/authentication/**","/api/user/**","/api/cust/user/**").permitAll()
 	    .anyRequest().authenticated()
 	    .and()
 	    .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

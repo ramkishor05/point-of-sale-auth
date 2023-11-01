@@ -5,7 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.brijframwork.authorization.beans.UIUserAccount;
+import com.brijframwork.authorization.beans.UIUserProfile;
+import com.brijframwork.authorization.beans.UserDetailRequest;
 import com.brijframwork.authorization.beans.UserDetailResponse;
 import com.brijframwork.authorization.mapper.UserDetailMapper;
 import com.brijframwork.authorization.model.EOUserAccount;
@@ -31,26 +32,22 @@ public class CustUserDetailServiceImpl implements CustUserDetailService {
 	UserDetailMapper userDetailMapper;
 	
 	@Override
-	public UserDetailResponse registerAccount(Long ownerId,UIUserAccount userDetailRequest) {
+	public UserDetailResponse registerAccount(Long ownerId,UserDetailRequest userDetailRequest) {
 		if(isAlreadyExists(userDetailRequest.getUsername())) {
 			throw new RuntimeException("AlreadyExists");
 		}
-		EOUserRole eoUserRole = userRoleRepository.findByPosition(userDetailRequest.getUserRoleId());
-		
-		EOUserProfile eoUserProfile=new EOUserProfile();
-		eoUserProfile.setFirstName(eoUserRole.getRoleName());
-		eoUserProfile = userProfileRepository.saveAndFlush(eoUserProfile);
+		EOUserRole eoUserRole = userRoleRepository.findById(userDetailRequest.getUserRoleId()).orElseThrow(()-> new RuntimeException("Invalid role id"));
 		
 		EOUserAccount eoUserAccount=new EOUserAccount();
 		eoUserAccount.setUsername(userDetailRequest.getUsername());
 		eoUserAccount.setPassword(userDetailRequest.getPassword());
 		eoUserAccount.setType(eoUserRole.getRoleId());
-		eoUserAccount.setMobile(userDetailRequest.getMobile());
-		eoUserAccount.setEmail(userDetailRequest.getEmail());
+		eoUserAccount.setRegisteredMobile(userDetailRequest.getRegisteredMobile());
+		eoUserAccount.setRegisteredEmail(userDetailRequest.getRegisteredEmail());
 		eoUserAccount.setAccountName(userDetailRequest.getAccountName());
 		eoUserAccount.setOwnerId(userDetailRequest.getOwnerId());
 		eoUserAccount.setUserRole(eoUserRole);
-		eoUserAccount.setUserProfile(eoUserProfile);
+		eoUserAccount.setUserProfile(getUserProfile(userDetailRequest.getUserProfile()));
 		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);		
 		return userDetailMapper.mapToDTO(eoUserAccount);
 	}
@@ -60,17 +57,36 @@ public class CustUserDetailServiceImpl implements CustUserDetailService {
 	}
 
 	@Override
-	public UIUserAccount updateAccount(Long ownerId,UIUserAccount uiUserAccount) {
-		EOUserAccount eoUserAccount=userAccountRepository.getOne(uiUserAccount.getId());
-		eoUserAccount.setUsername(uiUserAccount.getUsername());
-		eoUserAccount.setPassword(uiUserAccount.getPassword());
-		eoUserAccount.setType(uiUserAccount.getType());
-		eoUserAccount.setAccountName(uiUserAccount.getAccountName());
-		eoUserAccount.setMobile(uiUserAccount.getMobile());
-		eoUserAccount.setEmail(uiUserAccount.getEmail());
-		eoUserAccount.setOwnerId(uiUserAccount.getOwnerId());
-		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);
-		return uiUserAccount;
+	public UserDetailResponse updateAccount(Long ownerId,UserDetailRequest userDetailRequest) {
+		if(!isAlreadyExists(userDetailRequest.getUsername())) {
+			throw new RuntimeException("User not exists in system.");
+		}
+		EOUserRole eoUserRole = userRoleRepository.findById(userDetailRequest.getUserRoleId()).orElseThrow(()-> new RuntimeException("Invalid role id"));
+		
+		EOUserAccount eoUserAccount=new EOUserAccount();
+		eoUserAccount.setId(userDetailRequest.getId());
+		eoUserAccount.setUsername(userDetailRequest.getUsername());
+		eoUserAccount.setPassword(userDetailRequest.getPassword());
+		eoUserAccount.setType(eoUserRole.getRoleId());
+		eoUserAccount.setRegisteredMobile(userDetailRequest.getRegisteredMobile());
+		eoUserAccount.setRegisteredEmail(userDetailRequest.getRegisteredEmail());
+		eoUserAccount.setAccountName(userDetailRequest.getAccountName());
+		eoUserAccount.setOwnerId(userDetailRequest.getOwnerId());
+		eoUserAccount.setUserRole(eoUserRole);
+		eoUserAccount.setUserProfile(getUserProfile(userDetailRequest.getUserProfile()));
+		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);		
+		return userDetailMapper.mapToDTO(eoUserAccount);
+	}
+
+	private EOUserProfile getUserProfile(UIUserProfile userProfile) {
+		EOUserProfile eoUserProfile=new EOUserProfile();
+		eoUserProfile.setId(userProfile.getId());
+		eoUserProfile.setTitle(userProfile.getTitle());
+		eoUserProfile.setFirstName(userProfile.getFirstName());
+		eoUserProfile.setLastName(userProfile.getLastName());
+		eoUserProfile.setPreferredName(userProfile.getPreferredName());
+		eoUserProfile.setPictureURL(userProfile.getPictureURL());
+		return userProfileRepository.saveAndFlush(eoUserProfile);
 	}
 
 	@Override

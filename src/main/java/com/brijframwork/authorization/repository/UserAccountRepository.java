@@ -18,6 +18,7 @@ public interface UserAccountRepository  extends JpaRepository<EOUserAccount, Lon
 	@Query(nativeQuery = true,  value="select * from USER_ACCOUNT UA where UA.USERNAME = :username")
 	Optional<EOUserAccount> findUserName(@Param("username")String username);
 
+	@Query(nativeQuery = true,  value="select * from USER_ACCOUNT UA where UA.OWNER_ID = :ownerId")
 	List<EOUserAccount> findAllByOwnerId(Long ownerId);
 
 }

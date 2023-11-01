@@ -30,6 +30,9 @@ public class EOUserRole implements Serializable {
 
 	@Column(name = "ROLE_ID")
 	private String roleId;
+	
+	@Column(name = "ROLE_TYPE")
+	private String roleType;
 
 	@OneToMany(mappedBy = "userRole")
 	private List<EOUserAccount> userAccounts;
@@ -74,6 +77,14 @@ public class EOUserRole implements Serializable {
 
 	public void setRoleId(String roleID) {
 		this.roleId = roleID;
+	}
+	
+	public String getRoleType() {
+		return roleType;
+	}
+
+	public void setRoleType(String roleType) {
+		this.roleType = roleType;
 	}
 
 	public List<EOUserAccount> getUserAccounts() {
