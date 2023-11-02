@@ -1,6 +1,7 @@
 package com.brijframwork.authorization.beans;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class UserRoleResponse implements Serializable {
 
@@ -13,6 +14,8 @@ public class UserRoleResponse implements Serializable {
 	private String roleName;
 	
 	private String roleId;
+	
+	private List<UIEndpoint> roleEndpoints;
 
 	public long getId() {
 		return id;
@@ -46,4 +49,11 @@ public class UserRoleResponse implements Serializable {
 		this.roleId = roleId;
 	}
 
+	public List<UIEndpoint> getRoleEndpoints() {
+		return roleEndpoints;
+	}
+
+	public void setRoleEndpoints(List<UIEndpoint> roleEndpoints) {
+		this.roleEndpoints = roleEndpoints;
+	}
 }
