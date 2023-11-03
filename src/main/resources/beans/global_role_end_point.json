@@ -1,0 +1,159 @@
+{
+  "id": "GlobalUserRoleEndpoint",
+  "order": 1,
+  "objects": [
+    {
+      "id": "UserRoleEndpoint_Dashboard",
+      "type": "com.brijframwork.authorization.model.EOUserRoleEndpoint",
+      "name": "GlobalUserRoleEndpoint",
+      "properties": {
+        "userRole": "LK@UserRole_OWNER",
+        "userEndpoint": "LK@UserEndpoint_Dashboard"
+      }
+    },
+    {
+      "id": "UserRoleEndpoint_Sales",
+      "type": "com.brijframwork.authorization.model.EOUserRoleEndpoint",
+      "name": "GlobalUserRoleEndpoint",
+      "properties": {
+         "userRole": "LK@UserRole_OWNER",
+         "userEndpoint": "LK@UserEndpoint_Sales"
+      }
+    },
+    {
+      "id": "UserRoleEndpoint_Purchase",
+      "type": "com.brijframwork.authorization.model.EOUserRoleEndpoint",
+      "name": "GlobalUserRoleEndpoint",
+      "properties": {
+        "userRole": "LK@UserRole_OWNER",
+         "userEndpoint": "LK@UserEndpoint_Purchase"
+      }
+    },
+    {
+      "id": "UserRoleEndpoint_Products",
+      "type": "com.brijframwork.authorization.model.EOUserRoleEndpoint",
+      "name": "GlobalUserRoleEndpoint",
+      "properties": {
+        "userRole": "LK@UserRole_OWNER",
+         "userEndpoint": "LK@UserEndpoint_Products"
+      }
+    },
+    {
+      "id": "UserRoleEndpoint_Business",
+      "type": "com.brijframwork.authorization.model.EOUserRoleEndpoint",
+      "name": "GlobalUserRoleEndpoint",
+      "properties": {
+        "userRole": "LK@UserRole_OWNER",
+         "userEndpoint": "LK@UserEndpoint_Business"
+      }
+    },
+    {
+      "id": "UserRoleEndpoint_Customer",
+      "type": "com.brijframwork.authorization.model.EOUserRoleEndpoint",
+      "name": "GlobalUserRoleEndpoint",
+      "properties": {
+        "userRole": "LK@UserRole_OWNER",
+         "userEndpoint": "LK@UserEndpoint_Customer"
+      }
+    },
+    {
+      "id": "UserRoleEndpoint_Supplier",
+      "type": "com.brijframwork.authorization.model.EOUserRoleEndpoint",
+      "name": "GlobalUserRoleEndpoint",
+      "properties": {
+        "userRole": "LK@UserRole_OWNER",
+         "userEndpoint": "LK@UserEndpoint_Supplier"
+      }
+    },
+    {
+      "id": "UserRoleEndpoint_Employee",
+      "type": "com.brijframwork.authorization.model.EOUserRoleEndpoint",
+      "name": "GlobalUserRoleEndpoint",
+      "properties": {
+         "userRole": "LK@UserRole_OWNER",
+         "userEndpoint": "LK@UserEndpoint_Employee"
+      }
+    },
+    {
+      "id": "UserRoleEndpoint_Users",
+      "type": "com.brijframwork.authorization.model.EOUserRoleEndpoint",
+      "name": "GlobalUserRoleEndpoint",
+      "properties": {
+        "userRole": "LK@UserRole_OWNER",
+         "userEndpoint": "LK@UserEndpoint_Users"
+      }
+    },
+    {
+      "id": "UserRoleEndpoint_Category_Group",
+      "type": "com.brijframwork.authorization.model.EOUserRoleEndpoint",
+      "name": "GlobalUserRoleEndpoint",
+      "properties": {
+        "userRole": "LK@UserRole_OWNER",
+         "userEndpoint": "LK@UserEndpoint_Category_Group"
+      }
+    },
+    {
+      "id": "UserRoleEndpoint_Category_List",
+      "type": "com.brijframwork.authorization.model.EOUserRoleEndpoint",
+      "name": "GlobalUserRoleEndpoint",
+      "properties": {
+       "userRole": "LK@UserRole_OWNER",
+         "userEndpoint": "LK@UserEndpoint_Category_List"
+      }
+    },
+    {
+      "id": "UserRoleEndpoint_Unit_Group",
+      "type": "com.brijframwork.authorization.model.EOUserRoleEndpoint",
+      "name": "GlobalUserRoleEndpoint",
+      "properties": {
+        "userRole": "LK@UserRole_OWNER",
+         "userEndpoint": "LK@UserEndpoint_Unit_Group"
+      }
+    },
+    {
+      "id": "UserRoleEndpoint_Unit_List",
+      "type": "com.brijframwork.authorization.model.EOUserRoleEndpoint",
+      "name": "GlobalUserRoleEndpoint",
+      "properties": {
+        "userRole": "LK@UserRole_OWNER",
+         "userEndpoint": "LK@UserEndpoint_Unit_List"
+      }
+    },
+    {
+      "id": "UserRoleEndpoint_Currency_Group",
+      "type": "com.brijframwork.authorization.model.EOUserRoleEndpoint",
+      "name": "GlobalUserRoleEndpoint",
+      "properties": {
+        "userRole": "LK@UserRole_OWNER",
+         "userEndpoint": "LK@UserEndpoint_Currency_Group"
+      }
+    },
+    {
+      "id": "UserRoleEndpoint_Currency_List",
+      "type": "com.brijframwork.authorization.model.EOUserRoleEndpoint",
+      "name": "GlobalUserRoleEndpoint",
+      "properties": {
+        "userRole": "LK@UserRole_OWNER",
+         "userEndpoint": "LK@UserEndpoint_Currency_List"
+      }
+    },
+    {
+      "id": "UserRoleEndpoint_Count_Freq",
+      "type": "com.brijframwork.authorization.model.EOUserRoleEndpoint",
+      "name": "GlobalUserRoleEndpoint",
+      "properties": {
+        "userRole": "LK@UserRole_OWNER",
+         "userEndpoint": "LK@UserEndpoint_Count_Freq"
+      }
+    },
+    {
+      "id": "UserRoleEndpoint_User_profile",
+      "type": "com.brijframwork.authorization.model.EOUserRoleEndpoint",
+      "name": "GlobalUserRoleEndpoint",
+      "properties": {
+        "userRole": "LK@UserRole_OWNER",
+         "userEndpoint": "LK@UserEndpoint_User_profile"
+      }
+    }
+  ]
+}

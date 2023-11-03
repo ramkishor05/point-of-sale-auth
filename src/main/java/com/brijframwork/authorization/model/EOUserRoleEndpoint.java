@@ -68,4 +68,12 @@ public class EOUserRoleEndpoint implements Serializable {
 	public void setId(long id) {
 		this.id = id;
 	}
+
+	@Override
+	public String toString() {
+		return "EOUserRoleEndpoint [id=" + id + ", ownerId=" + ownerId + ", userRole=" + userRole + ", userEndpoint="
+				+ userEndpoint + "]";
+	}
+	
+	
 }

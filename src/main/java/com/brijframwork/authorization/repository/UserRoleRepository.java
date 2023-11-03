@@ -1,6 +1,7 @@
 package com.brijframwork.authorization.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -14,7 +15,7 @@ public interface UserRoleRepository  extends JpaRepository<EOUserRole, Long>{
 
 	EOUserRole findByRoleName(String role);
 	
-	EOUserRole findByPosition(int position);
+	Optional<EOUserRole> findByPosition(int position);
 
 	List<EOUserRole> findAllByRoleType(String type);
 

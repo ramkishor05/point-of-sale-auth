@@ -38,7 +38,7 @@ public class UserDetailServiceImpl implements UserDetailService {
 			return false;
 		}
 		UserRole owner = UserRole.OWNER;
-		EOUserRole eoUserRole = userRoleRepository.findByPosition(owner.getPosition());
+		EOUserRole eoUserRole = userRoleRepository.findByPosition(owner.getPosition()).orElse(null);
 		
 		EOUserProfile eoUserProfile=new EOUserProfile();
 		eoUserProfile.setFirstName(eoUserRole.getRoleName());

@@ -1,0 +1,61 @@
+{
+  "id": "GlobalUserRole",
+  "order": 1,
+  "objects": [
+    {
+      "id": "UserRole_ADMIN",
+      "type": "com.brijframwork.authorization.model.EOUserRole",
+      "name": "GlobalUserRole",
+      "properties": {
+        "position": 0,
+        "roleName": "admin",
+        "roleId": "ADMIN",
+        "roleType":"APP"
+      }
+    },
+    {
+      "id": "UserRole_OWNER",
+      "type": "com.brijframwork.authorization.model.EOUserRole",
+      "name": "GlobalUserRole",
+      "properties": {
+        "position": 1,
+        "roleName": "Owner",
+        "roleId": "OWNER",
+        "roleType":"CUST"
+      }
+    },
+    {
+      "id": "UserRole_MANAGER",
+      "type": "com.brijframwork.authorization.model.EOUserRole",
+      "name": "GlobalUserRole",
+      "properties": {
+         "position": 2,
+        "roleName": "Manager",
+        "roleId": "MANAGER",
+        "roleType":"CUST"
+      }
+    },
+    {
+      "id": "UserRole_SUPERVISOR",
+      "type": "com.brijframwork.authorization.model.EOUserRole",
+      "name": "GlobalUserRole",
+      "properties": {
+        "position": 3,
+        "roleName": "SUPERVISOR",
+        "roleId": "SUPERVISOR",
+        "roleType":"CUST"
+      }
+    },
+    {
+      "id": "UserRole_CREW",
+      "type": "com.brijframwork.authorization.model.EOUserRole",
+      "name": "GlobalUserRole",
+      "properties": {
+        "position": 4,
+        "roleName": "Crew",
+        "roleId": "CREW",
+        "roleType":"CUST"
+      }
+    }
+  ]
+}
