@@ -6,13 +6,11 @@ public class UIUserProfile {
 
 	private String title;
 
-	private String firstName;
-
-	private String lastName;
-
 	private String preferredName;
 	
 	private String pictureURL;
+
+	private String fullName;
 
 	public long getId() {
 		return id;
@@ -30,20 +28,12 @@ public class UIUserProfile {
 		this.title = title;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getFullName() {
+		return fullName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 
 	public String getPreferredName() {

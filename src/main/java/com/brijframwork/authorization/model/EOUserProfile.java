@@ -28,12 +28,9 @@ public class EOUserProfile implements Serializable {
 	@Column(name = "TITLE")
 	private String title;
 
-	@Column(name = "FIRST_NAME")
-	private String firstName;
-
-	@Column(name = "LAST_NAME")
-	private String lastName;
-
+	@Column(name = "FULL_NAME")
+	private String fullName;
+	
 	@Column(name = "PREFERRED_NAME")
 	private String preferredName;
 	
@@ -61,20 +58,12 @@ public class EOUserProfile implements Serializable {
 		this.title = title;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getFullName() {
+		return fullName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 
 	public String getPreferredName() {

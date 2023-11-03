@@ -20,7 +20,9 @@ spring:
        show_sql: true
        naming: 
          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-
+   db:
+     datajson:
+       upload: false
 eureka:
   client:
     serviceUrl:

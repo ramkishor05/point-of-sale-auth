@@ -1,10 +1,14 @@
 package com.brijframwork.authorization;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -40,6 +44,9 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 	@Autowired
 	private UserRoleEndpointRepository userRoleEndpointRepository;
 	
+	@Value("${spring.db.datajson.upload}")
+	boolean upload;
+	
     @Override
     public void onApplicationEvent(final ContextRefreshedEvent event) {
     	
@@ -59,36 +66,48 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
     	    		eoUserAccount.setUserRole(eoUserRole);
     	    		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);
     	    		EOUserProfile eoUserProfile=new EOUserProfile();
-    	    		eoUserProfile.setFirstName(eoUserRole.getRoleName());
+    	    		eoUserProfile.setFullName(eoUserRole.getRoleName());
     	    		eoUserProfile.setUserAccount(eoUserAccount);
     	    		userProfileRepository.saveAndFlush(eoUserProfile);
     	    	}
     		}
     	}
-    	JsonSchemaDataFactory instance = JsonSchemaDataFactory.getInstance();
-    	List<EOUserRole> userRoleList = instance.getAll(EOUserRole.class);
-    	for (EOUserRole userRole : userRoleList) {
-    		EOUserRole eoUserRole = userRoleRepository.findByPosition(userRole.getPosition()).orElse(userRole);
-    		BeanUtils.copyProperties(userRole, eoUserRole, "id");
-    		EOUserRole saveUserRole=userRoleRepository.saveAndFlush(eoUserRole);
-    		userRole.setId(saveUserRole.getId());
+    	if(upload) {
+	    	JsonSchemaDataFactory instance = JsonSchemaDataFactory.getInstance();
+	    	List<EOUserRole> userRoleList = instance.getAll(EOUserRole.class);
+	    	List<Integer> postions=userRoleList.stream().map(userRole->userRole.getPosition()).collect(Collectors.toList());
+	    	Map<Integer, EOUserRole> userRoleMap = userRoleRepository.findByPositions(postions)
+	    			.stream().collect(Collectors.toMap(EOUserRole::getPosition, Function.identity()));
+	    	for (EOUserRole userRole : userRoleList) {
+	    		EOUserRole eoUserRole = userRoleMap.getOrDefault(userRole.getPosition(),userRole);
+	    		BeanUtils.copyProperties(userRole, eoUserRole, "id");
+	    		EOUserRole saveUserRole=userRoleRepository.saveAndFlush(eoUserRole);
+	    		userRole.setId(saveUserRole.getId());
+	    		userRoleMap.put(userRole.getPosition(), userRole);
+	    	}
+	    	List<EOUserEndpoint> userEndpointList = instance.getAll(EOUserEndpoint.class);
+	    	List<String> urls=userEndpointList.stream().map(userEndpoint->userEndpoint.getUrl()).collect(Collectors.toList());
+	    	Map<String, EOUserEndpoint> userEndpointMap = userEndpointRepository.findByUrls(urls)
+	    			.stream().collect(Collectors.toMap(EOUserEndpoint::getUrl, Function.identity()));
+	    	for (EOUserEndpoint userEndpoint : userEndpointList) {
+	    		EOUserEndpoint eoUserEndpoint = userEndpointMap.getOrDefault(userEndpoint.getUrl(),userEndpoint);
+	    		BeanUtils.copyProperties(userEndpoint, eoUserEndpoint, "id");
+	    		EOUserEndpoint saveUserEndpoint = userEndpointRepository.save(eoUserEndpoint);
+	    		userEndpoint.setId(saveUserEndpoint.getId());
+	    		userEndpointMap.put(userEndpoint.getUrl(), userEndpoint);
+			}
+	    	List<EOUserRoleEndpoint> userRoleEndpointList = instance.getAll(EOUserRoleEndpoint.class);
+	    	
+	    	for(EOUserRoleEndpoint userRoleEndpoint: userRoleEndpointList) {
+				EOUserRoleEndpoint eoUserRoleEndpoint = userRoleEndpointRepository.findByRoleIdAndEndpointId(userRoleEndpoint.getUserRole().getId(), userRoleEndpoint.getUserEndpoint().getId()).orElse(userRoleEndpoint);
+	    		BeanUtils.copyProperties(userRoleEndpoint, eoUserRoleEndpoint, "id");
+	    		EOUserRoleEndpoint saveUserRoleEndpoint = userRoleEndpointRepository.save(eoUserRoleEndpoint);
+	    		userRoleEndpoint.setId(saveUserRoleEndpoint.getId());
+			}
     	}
-    	List<EOUserEndpoint> userEndpointList = instance.getAll(EOUserEndpoint.class);
-    	for (EOUserEndpoint userEndpoint : userEndpointList) {
-    		EOUserEndpoint eoUserEndpoint = userEndpointRepository.findByUrl(userEndpoint.getUrl()).orElse(userEndpoint);
-    		BeanUtils.copyProperties(userEndpoint, eoUserEndpoint, "id");
-    		EOUserEndpoint saveUserEndpoint = userEndpointRepository.save(eoUserEndpoint);
-    		userEndpoint.setId(saveUserEndpoint.getId());
-		}
-    	List<EOUserRoleEndpoint> userRoleEndpointList = instance.getAll(EOUserRoleEndpoint.class);
-    	for(EOUserRoleEndpoint userRoleEndpoint: userRoleEndpointList) {
-    		if(userRoleEndpoint.getUserRole()==null || userRoleEndpoint.getUserEndpoint()==null) {
-    			continue;
-    		}
-			EOUserRoleEndpoint eoUserRoleEndpoint = userRoleEndpointRepository.findByRoleIdAndEndpointId(userRoleEndpoint.getUserRole().getId(), userRoleEndpoint.getUserEndpoint().getId()).orElse(userRoleEndpoint);
-    		BeanUtils.copyProperties(userRoleEndpoint, eoUserRoleEndpoint, "id");
-    		EOUserRoleEndpoint saveUserRoleEndpoint = userRoleEndpointRepository.save(eoUserRoleEndpoint);
-    		userRoleEndpoint.setId(saveUserRoleEndpoint.getId());
-		}
+    }
+    
+    public static String getKey(EOUserRoleEndpoint userRoleEndpoint) {
+    	return userRoleEndpoint.getUserRole().getId()+"_"+userRoleEndpoint.getUserEndpoint().getId();
     }
 }

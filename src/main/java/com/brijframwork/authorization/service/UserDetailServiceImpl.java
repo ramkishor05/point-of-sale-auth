@@ -41,7 +41,7 @@ public class UserDetailServiceImpl implements UserDetailService {
 		EOUserRole eoUserRole = userRoleRepository.findByPosition(owner.getPosition()).orElse(null);
 		
 		EOUserProfile eoUserProfile=new EOUserProfile();
-		eoUserProfile.setFirstName(eoUserRole.getRoleName());
+		eoUserProfile.setFullName(eoUserRole.getRoleName());
 		eoUserProfile = userProfileRepository.saveAndFlush(eoUserProfile);
 		
 		EOUserAccount eoUserAccount=new EOUserAccount();
@@ -67,8 +67,7 @@ public class UserDetailServiceImpl implements UserDetailService {
 	public UIUserProfile updateUserProfile(UIUserProfile uiUserProfile) {
 		EOUserProfile eoUserProfile=userProfileRepository.getOne(uiUserProfile.getId());
 		eoUserProfile.setTitle(uiUserProfile.getTitle());
-		eoUserProfile.setFirstName(uiUserProfile.getFirstName());
-		eoUserProfile.setLastName(uiUserProfile.getLastName());
+		eoUserProfile.setFullName(uiUserProfile.getFullName());
 		eoUserProfile.setPreferredName(uiUserProfile.getPreferredName());
 		eoUserProfile.setPictureURL(uiUserProfile.getPictureURL());
 		eoUserProfile = userProfileRepository.saveAndFlush(eoUserProfile);
@@ -94,8 +93,7 @@ public class UserDetailServiceImpl implements UserDetailService {
 		EOUserProfile eoUserProfile=userProfileRepository.getOne(id);
 		UIUserProfile uiUserProfile=new UIUserProfile();
 		uiUserProfile.setTitle(eoUserProfile.getTitle());
-		uiUserProfile.setFirstName(eoUserProfile.getFirstName());
-		uiUserProfile.setLastName(eoUserProfile.getLastName());
+		uiUserProfile.setFullName(eoUserProfile.getFullName());
 		uiUserProfile.setPreferredName(eoUserProfile.getPreferredName());
 		uiUserProfile.setPictureURL(eoUserProfile.getPictureURL());
 		return uiUserProfile;

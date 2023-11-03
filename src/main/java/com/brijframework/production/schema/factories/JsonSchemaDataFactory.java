@@ -80,6 +80,6 @@ public class JsonSchemaDataFactory {
 
 	public static void main(String[] args) {
 		JsonSchemaDataFactory instance = JsonSchemaDataFactory.getInstance();
-		instance.getAll(EOUserRoleEndpoint.class).forEach(System.out::println);;
+		instance.getAll(EOUserRoleEndpoint.class).stream().filter(enpoint->enpoint.getUserRole().getRoleId().equals("MANAGER")).forEach(System.out::println);;
 	}
 }

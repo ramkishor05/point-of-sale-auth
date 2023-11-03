@@ -1,6 +1,6 @@
 {
   "id": "GlobalUserEndpoint",
-  "order": 1,
+  "order": 2,
   "objects": [
     {
       "id": "UserEndpoint_Dashboard",

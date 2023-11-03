@@ -71,8 +71,8 @@ public class EOUserRoleEndpoint implements Serializable {
 
 	@Override
 	public String toString() {
-		return "EOUserRoleEndpoint [id=" + id + ", ownerId=" + ownerId + ", userRole=" + userRole + ", userEndpoint="
-				+ userEndpoint + "]";
+		return "EOUserRoleEndpoint [id=" + id + ", ownerId=" + ownerId + ", userRole=" + userRole.getRoleId() + ", userEndpoint="
+				+ userEndpoint.getUrl() + "]";
 	}
 	
 	

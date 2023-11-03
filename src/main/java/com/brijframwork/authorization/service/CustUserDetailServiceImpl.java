@@ -82,8 +82,7 @@ public class CustUserDetailServiceImpl implements CustUserDetailService {
 		EOUserProfile eoUserProfile=new EOUserProfile();
 		eoUserProfile.setId(userProfile.getId());
 		eoUserProfile.setTitle(userProfile.getTitle());
-		eoUserProfile.setFirstName(userProfile.getFirstName());
-		eoUserProfile.setLastName(userProfile.getLastName());
+		eoUserProfile.setFullName(userProfile.getFullName());
 		eoUserProfile.setPreferredName(userProfile.getPreferredName());
 		eoUserProfile.setPictureURL(userProfile.getPictureURL());
 		return userProfileRepository.saveAndFlush(eoUserProfile);
