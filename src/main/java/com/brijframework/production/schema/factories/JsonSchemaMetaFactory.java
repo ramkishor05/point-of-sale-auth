@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.brijframwork.authorization.model.EOUserEndpoint;
+import com.brijframwork.authorization.model.EOGlobalMenuItem;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JsonSchemaMetaFactory {
@@ -119,6 +119,6 @@ public class JsonSchemaMetaFactory {
 
 	public static void main(String[] args) {
 		JsonSchemaMetaFactory instance = JsonSchemaMetaFactory.getInstance();
-		System.out.println(instance.getAll(EOUserEndpoint.class));
+		System.out.println(instance.getAll(EOGlobalMenuItem.class));
 	}
 }

@@ -38,7 +38,7 @@ public class EOUserRole implements Serializable {
 	private List<EOUserAccount> userAccounts;
 	
 	@OneToMany(mappedBy = "userRole")
-	private List<EOUserRoleEndpoint> roleEndpoints;
+	private List<EOUserRoleMenuItem> roleEndpoints;
 	
 	public EOUserRole() {
 	}
@@ -98,11 +98,11 @@ public class EOUserRole implements Serializable {
 		this.userAccounts = userAccounts;
 	}
 
-	public List<EOUserRoleEndpoint> getRoleEndpoints() {
+	public List<EOUserRoleMenuItem> getRoleEndpoints() {
 		return roleEndpoints;
 	}
 
-	public void setRoleEndpoints(List<EOUserRoleEndpoint> roleEndpoints) {
+	public void setRoleEndpoints(List<EOUserRoleMenuItem> roleEndpoints) {
 		this.roleEndpoints = roleEndpoints;
 	}
 

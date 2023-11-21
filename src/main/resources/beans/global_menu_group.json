@@ -1,0 +1,66 @@
+{
+  "id": "GlobalMenuGroup",
+  "order": 2,
+  "objects": [
+    {
+      "id": "GlobalMenuGroup_Dashboard",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuGroup",
+      "name": "GlobalMenuGroup",
+      "properties": {
+        "title": "Dashboard",
+        "type": "group",
+        "url": "/cust/dashboard"
+      }
+    },
+    {
+      "id": "GlobalMenuGroup_Orders",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuGroup",
+      "name": "GlobalMenuGroup",
+      "properties": {
+        "title": "Orders",
+        "type": "group",
+        "url": "/cust/orders"
+      }
+    },
+    {
+      "id": "GlobalMenuGroup_Products",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuGroup",
+      "name": "GlobalMenuGroup",
+      "properties": {
+        "title": "Products",
+        "type": "group",
+        "url": "/cust/products"
+      }
+    },
+    {
+      "id": "GlobalMenuGroup_Vendor",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuGroup",
+      "name": "GlobalMenuGroup",
+      "properties": {
+        "title": "Vendor",
+        "type": "group",
+        "url": "/cust/vendor"
+      }
+    },
+    {
+      "id": "GlobalMenuGroup_Setups",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuGroup",
+      "name": "GlobalMenuGroup",
+      "properties": {
+        "title": "Setups",
+        "type": "group",
+        "url": "/cust/setups"
+      }
+    },
+    {
+      "id": "GlobalMenuGroup_UserProfile",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuGroup",
+      "name": "GlobalMenuGroup",
+      "properties": {
+        "title": "User profile",
+        "type": "group",
+        "url": "/cust/profile"
+      }
+    }
+  ]
+}

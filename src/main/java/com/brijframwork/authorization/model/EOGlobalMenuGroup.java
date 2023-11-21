@@ -1,17 +1,19 @@
 package com.brijframwork.authorization.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "USER_ENDPOINT")
-public class EOUserEndpoint implements Serializable {
+@Table(name = "GLOBAL_MENU_GROUP")
+public class EOGlobalMenuGroup implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -28,6 +30,9 @@ public class EOUserEndpoint implements Serializable {
 	
 	@Column(name = "TYPE")
 	private String type;
+	
+	@OneToMany(mappedBy = "globalMenuGroup")
+	private List<EOGlobalMenuItem>  menuItemList;
 
 	public long getId() {
 		return id;
@@ -59,6 +64,14 @@ public class EOUserEndpoint implements Serializable {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public List<EOGlobalMenuItem> getMenuItemList() {
+		return menuItemList;
+	}
+
+	public void setMenuItemList(List<EOGlobalMenuItem> menuItemList) {
+		this.menuItemList = menuItemList;
 	}
 	
 }

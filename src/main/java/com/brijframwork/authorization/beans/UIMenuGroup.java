@@ -1,11 +1,16 @@
 package com.brijframwork.authorization.beans;
 
-public class UIEndpoint {
+import java.util.ArrayList;
+import java.util.List;
+
+public class UIMenuGroup {
 
 	private long id;
 	private String title;
 	private String url;
 	private String type;
+	
+	private List<UIMenuItem> menuItems;
 
 	public long getId() {
 		return id;
@@ -37,5 +42,16 @@ public class UIEndpoint {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public List<UIMenuItem> getMenuItems() {
+		if(menuItems==null) {
+			menuItems=new ArrayList<UIMenuItem>();
+		}
+		return menuItems;
+	}
+
+	public void setMenuItems(List<UIMenuItem> menuItems) {
+		this.menuItems = menuItems;
 	}
 }

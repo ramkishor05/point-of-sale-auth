@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.brijframwork.authorization.model.EOUserRoleEndpoint;
+import com.brijframwork.authorization.model.EOUserRoleMenuItem;
 
 public class JsonSchemaDataFactory {
 
@@ -80,6 +80,6 @@ public class JsonSchemaDataFactory {
 
 	public static void main(String[] args) {
 		JsonSchemaDataFactory instance = JsonSchemaDataFactory.getInstance();
-		instance.getAll(EOUserRoleEndpoint.class).stream().filter(enpoint->enpoint.getUserRole().getRoleId().equals("MANAGER")).forEach(System.out::println);;
+		instance.getAll(EOUserRoleMenuItem.class).stream().filter(enpoint->enpoint.getUserRole().getRoleId().equals("MANAGER")).forEach(System.out::println);;
 	}
 }

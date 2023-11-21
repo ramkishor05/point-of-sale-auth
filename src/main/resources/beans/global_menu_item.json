@@ -1,0 +1,193 @@
+{
+  "id": "GlobalMenuItem",
+  "order": 2,
+  "objects": [
+    {
+      "id": "GlobalMenuItem_Dashboard",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
+      "name": "GlobalMenuItem",
+      "properties": {
+        "title": "Dashboard",
+        "type": "item",
+        "url": "/dashboard/default",
+        "globalMenuGroup": "LK@GlobalMenuGroup_Dashboard"
+      }
+    },
+    {
+      "id": "GlobalMenuItem_Sales",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
+      "name": "GlobalMenuItem",
+      "properties": {
+        "title": "Sales",
+        "type": "item",
+        "url": "/cust/sales",
+        "globalMenuGroup": "LK@GlobalMenuGroup_Orders"
+      }
+    },
+    {
+      "id": "GlobalMenuItem_Purchase",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
+      "name": "GlobalMenuItem",
+      "properties": {
+        "title": "Purchase",
+        "type": "item",
+        "url": "/cust/purchase",
+        "globalMenuGroup": "LK@GlobalMenuGroup_Orders"
+      }
+    },
+    {
+      "id": "GlobalMenuItem_Products",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
+      "name": "GlobalMenuItem",
+      "properties": {
+        "title": "Products",
+        "type": "item",
+        "url": "/cust/products",
+        "globalMenuGroup": "LK@GlobalMenuGroup_Products"
+      }
+    },
+    {
+      "id": "GlobalMenuItem_Business",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
+      "name": "GlobalMenuItem",
+      "properties": {
+        "title": "Business",
+        "type": "item",
+        "url": "/vendor/business",
+        "globalMenuGroup": "LK@GlobalMenuGroup_Vendor"
+      }
+    },
+    {
+      "id": "GlobalMenuItem_Customer",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
+      "name": "GlobalMenuItem",
+      "properties": {
+        "title": "Customer",
+        "type": "item",
+        "url": "/vendor/customer",
+        "globalMenuGroup": "LK@GlobalMenuGroup_Vendor"
+      }
+    },
+    {
+      "id": "GlobalMenuItem_Supplier",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
+      "name": "GlobalMenuItem",
+      "properties": {
+        "title": "Supplier",
+        "type": "item",
+        "url": "/vendor/supplier",
+        "globalMenuGroup": "LK@GlobalMenuGroup_Vendor"
+      }
+    },
+    {
+      "id": "GlobalMenuItem_Employee",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
+      "name": "GlobalMenuItem",
+      "properties": {
+        "title": "Employee",
+        "type": "item",
+        "url": "/vendor/employee",
+        "globalMenuGroup": "LK@GlobalMenuGroup_Vendor"
+      }
+    },
+    {
+      "id": "GlobalMenuItem_Users",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
+      "name": "GlobalMenuItem",
+      "properties": {
+        "title": "Users",
+        "type": "item",
+        "url": "/vendor/users",
+        "globalMenuGroup": "LK@GlobalMenuGroup_Vendor"
+      }
+    },
+    {
+      "id": "GlobalMenuItem_Category_Group",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
+      "name": "GlobalMenuItem",
+      "properties": {
+        "title": "Category Group",
+        "type": "item",
+        "url": "/category/group",
+        "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
+      }
+    },
+    {
+      "id": "GlobalMenuItem_Category_List",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
+      "name": "GlobalMenuItem",
+      "properties": {
+        "title": "Category List",
+        "type": "item",
+        "url": "/category/list",
+        "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
+      }
+    },
+    {
+      "id": "GlobalMenuItem_Unit_Group",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
+      "name": "GlobalMenuItem",
+      "properties": {
+        "title": "Unit Group",
+        "type": "item",
+        "url": "/unit/group",
+        "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
+      }
+    },
+    {
+      "id": "GlobalMenuItem_Unit_List",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
+      "name": "GlobalMenuItem",
+      "properties": {
+        "title": "Unit List",
+        "type": "item",
+        "url": "/unit/list",
+        "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
+      }
+    },
+    {
+      "id": "GlobalMenuItem_Currency_Group",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
+      "name": "GlobalMenuItem",
+      "properties": {
+        "title": "Currency Group",
+        "type": "item",
+        "url": "/currency/group",
+        "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
+      }
+    },
+    {
+      "id": "GlobalMenuItem_Currency_List",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
+      "name": "GlobalMenuItem",
+      "properties": {
+        "title": "Currency List",
+        "type": "item",
+        "url": "/currency/list",
+        "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
+      }
+    },
+    {
+      "id": "GlobalMenuItem_Count_Freq",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
+      "name": "GlobalMenuItem",
+      "properties": {
+        "title": "Count Freq",
+        "type": "item",
+        "url": "/count/freq",
+        "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
+      }
+    },
+    {
+      "id": "GlobalMenuItem_UserProfile",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
+      "name": "GlobalMenuItem",
+      "properties": {
+        "title": "User profile",
+        "type": "item",
+        "url": "/user/profile",
+        "globalMenuGroup": "LK@GlobalMenuGroup_UserProfile"
+      }
+    }
+  ]
+}
