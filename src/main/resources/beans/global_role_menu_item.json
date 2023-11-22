@@ -9,7 +9,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@GlobalMenuItem_Dashboard",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_OWNER_Dashboard"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_OWNER_Dashboard"
 			}
 		},
 		{
@@ -19,7 +19,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@GlobalMenuItem_Sales",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_OWNER_Orders"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_OWNER_Orders"
 			}
 		},
 		{
@@ -29,7 +29,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@GlobalMenuItem_Purchase",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_OWNER_Orders"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_OWNER_Orders"
 			}
 		},
 		{
@@ -39,7 +39,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@GlobalMenuItem_Products",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_OWNER_Products"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_OWNER_Products"
 			}
 		},
 		{
@@ -49,7 +49,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@GlobalMenuItem_Business",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_OWNER_Vendor"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_OWNER_Vendor"
 			}
 		},
 		{
@@ -59,7 +59,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@GlobalMenuItem_Customer",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_OWNER_Vendor"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_OWNER_Vendor"
 			}
 		},
 		{
@@ -69,7 +69,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@GlobalMenuItem_Supplier",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_OWNER_Vendor"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_OWNER_Vendor"
 			}
 		},
 		{
@@ -79,7 +79,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@GlobalMenuItem_Employee",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_OWNER_Vendor"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_OWNER_Vendor"
 			}
 		},
 		{
@@ -89,7 +89,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@GlobalMenuItem_Users",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_OWNER_Vendor"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_OWNER_Vendor"
 			}
 		},
 		{
@@ -99,7 +99,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@GlobalMenuItem_Category_Group",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_OWNER_Setups"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_OWNER_Setups"
 			}
 		},
 		{
@@ -109,7 +109,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@GlobalMenuItem_Category_List",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_OWNER_Setups"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_OWNER_Setups"
 			}
 		},
 		{
@@ -119,7 +119,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@GlobalMenuItem_Unit_Group",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_OWNER_Setups"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_OWNER_Setups"
 			}
 		},
 		{
@@ -129,7 +129,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@GlobalMenuItem_Unit_List",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_OWNER_Setups"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_OWNER_Setups"
 			}
 		},
 		{
@@ -139,7 +139,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@GlobalMenuItem_Currency_Group",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_OWNER_Setups"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_OWNER_Setups"
 			}
 		},
 		{
@@ -149,7 +149,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@GlobalMenuItem_Currency_List",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_OWNER_Setups"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_OWNER_Setups"
 			}
 		},
 		{
@@ -159,7 +159,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@GlobalMenuItem_Count_Freq",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_OWNER_Setups"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_OWNER_Setups"
 			}
 		},
 		{
@@ -169,7 +169,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@GlobalMenuItem_Userprofile",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_OWNER_Userprofile"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_OWNER_Userprofile"
 			}
 		},
 		{
@@ -179,7 +179,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuItem": "LK@GlobalMenuItem_Dashboard",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_MANAGER_Dashboard"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_MANAGER_Dashboard"
 			}
 		},
 		{
@@ -189,7 +189,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuItem": "LK@GlobalMenuItem_Sales",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_MANAGER_Orders"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_MANAGER_Orders"
 			}
 		},
 		{
@@ -199,7 +199,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuItem": "LK@GlobalMenuItem_Purchase",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_MANAGER_Orders"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_MANAGER_Orders"
 			}
 		},
 		{
@@ -209,7 +209,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuItem": "LK@GlobalMenuItem_Products",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_MANAGER_Products"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_MANAGER_Products"
 			}
 		},
 		{
@@ -219,7 +219,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuItem": "LK@GlobalMenuItem_Customer",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_MANAGER_Vendor"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_MANAGER_Vendor"
 			}
 		},
 		{
@@ -229,7 +229,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuItem": "LK@GlobalMenuItem_Supplier",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_MANAGER_Vendor"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_MANAGER_Vendor"
 			}
 		},
 		{
@@ -239,7 +239,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuItem": "LK@GlobalMenuItem_Employee",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_MANAGER_Vendor"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_MANAGER_Vendor"
 			}
 		},
 		{
@@ -249,7 +249,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuItem": "LK@GlobalMenuItem_Users",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_MANAGER_Vendor"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_MANAGER_Vendor"
 			}
 		},
 		{
@@ -259,7 +259,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuItem": "LK@GlobalMenuItem_Category_Group",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_MANAGER_Setups"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_MANAGER_Setups"
 			}
 		},
 		{
@@ -269,7 +269,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuItem": "LK@GlobalMenuItem_Category_List",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_MANAGER_Setups"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_MANAGER_Setups"
 			}
 		},
 		{
@@ -279,7 +279,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuItem": "LK@GlobalMenuItem_Unit_Group",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_MANAGER_Setups"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_MANAGER_Setups"
 			}
 		},
 		{
@@ -289,7 +289,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuItem": "LK@GlobalMenuItem_Unit_List",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_MANAGER_Setups"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_MANAGER_Setups"
 			}
 		},
 		{
@@ -299,7 +299,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuItem": "LK@GlobalMenuItem_Currency_Group",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_MANAGER_Setups"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_MANAGER_Setups"
 			}
 		},
 		{
@@ -309,7 +309,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuItem": "LK@GlobalMenuItem_Currency_List",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_MANAGER_Setups"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_MANAGER_Setups"
 			}
 		},
 		{
@@ -319,7 +319,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuItem": "LK@GlobalMenuItem_Count_Freq",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_MANAGER_Setups"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_MANAGER_Setups"
 			}
 		},
 		{
@@ -329,7 +329,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuItem": "LK@GlobalMenuItem_Userprofile",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_MANAGER_Userprofile"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_MANAGER_Userprofile"
 			}
 		},
 		{
@@ -339,7 +339,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_SUPERVISOR",
 				"menuItem": "LK@GlobalMenuItem_Dashboard",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_SUPERVISOR_Dashboard"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_SUPERVISOR_Dashboard"
 			}
 		},
 		{
@@ -349,7 +349,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_SUPERVISOR",
 				"menuItem": "LK@GlobalMenuItem_Sales",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_SUPERVISOR_Orders"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_SUPERVISOR_Orders"
 			}
 		},
 		{
@@ -359,7 +359,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_SUPERVISOR",
 				"menuItem": "LK@GlobalMenuItem_Purchase",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_SUPERVISOR_Orders"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_SUPERVISOR_Orders"
 			}
 		},
 		{
@@ -369,7 +369,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_SUPERVISOR",
 				"menuItem": "LK@GlobalMenuItem_Products",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_SUPERVISOR_Products"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_SUPERVISOR_Products"
 			}
 		},
 		{
@@ -379,7 +379,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_SUPERVISOR",
 				"menuItem": "LK@GlobalMenuItem_Customer",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_SUPERVISOR_Vendor"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_SUPERVISOR_Vendor"
 			}
 		},
 		{
@@ -389,7 +389,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_SUPERVISOR",
 				"menuItem": "LK@GlobalMenuItem_Supplier",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_SUPERVISOR_Vendor"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_SUPERVISOR_Vendor"
 			}
 		},
 		{
@@ -399,7 +399,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_SUPERVISOR",
 				"menuItem": "LK@GlobalMenuItem_Userprofile",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_SUPERVISOR_Userprofile"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_SUPERVISOR_Userprofile"
 			}
 		},
 		{
@@ -409,7 +409,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_CREW",
 				"menuItem": "LK@GlobalMenuItem_Dashboard",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_CREW_Dashboard"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_CREW_Dashboard"
 			}
 		},
 		{
@@ -419,7 +419,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_CREW",
 				"menuItem": "LK@GlobalMenuItem_Sales",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_CREW_Orders"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_CREW_Orders"
 			}
 		},
 		{
@@ -429,7 +429,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_CREW",
 				"menuItem": "LK@GlobalMenuItem_Products",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_CREW_Products"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_CREW_Products"
 			}
 		},
 		{
@@ -439,7 +439,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_CREW",
 				"menuItem": "LK@GlobalMenuItem_Customer",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_CREW_Vendor"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_CREW_Vendor"
 			}
 		},
 		{
@@ -449,7 +449,7 @@
 			"properties": {
 				"userRole": "LK@UserRole_CREW",
 				"menuItem": "LK@GlobalMenuItem_Userprofile",
-				"userRoleMenuGroup": "LK@GlobalMenuItem_CREW_Userprofile"
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_CREW_Userprofile"
 			}
 		}
 	]

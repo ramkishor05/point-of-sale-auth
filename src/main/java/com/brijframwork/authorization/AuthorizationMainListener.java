@@ -2,7 +2,6 @@ package com.brijframwork.authorization;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -15,16 +14,16 @@ import org.springframework.stereotype.Component;
 
 import com.brijframework.production.schema.factories.JsonSchemaDataFactory;
 import com.brijframwork.authorization.constant.UserRole;
-import com.brijframwork.authorization.model.EOUserAccount;
 import com.brijframwork.authorization.model.EOGlobalMenuGroup;
 import com.brijframwork.authorization.model.EOGlobalMenuItem;
+import com.brijframwork.authorization.model.EOUserAccount;
 import com.brijframwork.authorization.model.EOUserProfile;
 import com.brijframwork.authorization.model.EOUserRole;
 import com.brijframwork.authorization.model.EOUserRoleMenuGroup;
 import com.brijframwork.authorization.model.EOUserRoleMenuItem;
-import com.brijframwork.authorization.repository.UserAccountRepository;
 import com.brijframwork.authorization.repository.GlobalMenuGroupRepository;
 import com.brijframwork.authorization.repository.GlobalMenuItemRepository;
+import com.brijframwork.authorization.repository.UserAccountRepository;
 import com.brijframwork.authorization.repository.UserProfileRepository;
 import com.brijframwork.authorization.repository.UserRoleMenuGroupRepository;
 import com.brijframwork.authorization.repository.UserRoleMenuItemRepository;
@@ -59,15 +58,16 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 	
     @Override
     public void onApplicationEvent(final ContextRefreshedEvent event) {
-    	
+    	Map<Integer, EOUserRole> userRoleMap = userRoleRepository.findAll().parallelStream().collect(Collectors.toMap(EOUserRole::getPosition, Function.identity()));
+    	Map<String, EOUserAccount> userAccountMap = userAccountRepository.findAll().parallelStream().collect(Collectors.toMap(EOUserAccount::getUsername, Function.identity()));
     	for(UserRole userRole : UserRole.values()) {
-    		Optional<EOUserRole> findByPosition = userRoleRepository.findByPosition(userRole.getPosition());
-    		if( !findByPosition.isPresent()) {
+    		EOUserRole findByPosition = userRoleMap.get(userRole.getPosition());
+    		if(findByPosition==null) {
     			EOUserRole eoUserRole = new EOUserRole(userRole.getPosition(),userRole.getRole(),userRole.getRole());
     			eoUserRole.setRoleType(userRole.getType());
     			eoUserRole=userRoleRepository.saveAndFlush(eoUserRole);
-    			Optional<EOUserAccount> findUserAccount = userAccountRepository.findUserName(eoUserRole.getRoleName());
-    	    	if(!findUserAccount.isPresent()) {
+    			EOUserAccount findUserAccount = userAccountMap.get(eoUserRole.getRoleName());
+    	    	if(findUserAccount==null) {
     	    		EOUserAccount eoUserAccount=new EOUserAccount();
     	    		eoUserAccount.setAccountName(eoUserRole.getRoleName());
     	    		eoUserAccount.setUsername(eoUserRole.getRoleName());
@@ -85,9 +85,6 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
     	if(upload) {
 	    	JsonSchemaDataFactory instance = JsonSchemaDataFactory.getInstance();
 	    	List<EOUserRole> userRoleList = instance.getAll(EOUserRole.class);
-	    	List<Integer> postions=userRoleList.stream().map(userRole->userRole.getPosition()).collect(Collectors.toList());
-	    	Map<Integer, EOUserRole> userRoleMap = userRoleRepository.findByPositions(postions)
-	    			.stream().collect(Collectors.toMap(EOUserRole::getPosition, Function.identity()));
 	    	for (EOUserRole userRole : userRoleList) {
 	    		EOUserRole eoUserRole = userRoleMap.getOrDefault(userRole.getPosition(),userRole);
 	    		BeanUtils.copyProperties(userRole, eoUserRole, "id");
@@ -117,30 +114,41 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 	    		globalMenuItem.setId(saveGlobalMenuItem.getId());
 	    		globalMenuItemMap.put(globalMenuItem.getUrl(), globalMenuItem);
 			}
-	    	
+	    	Map<String, EOUserRoleMenuGroup> userRoleMenuGroupMap = userRoleMenuGroupRepository.findAll().parallelStream().collect(Collectors.toMap((userRoleMenuGroup)->groupKey(userRoleMenuGroup), Function.identity()));
 	    	List<EOUserRoleMenuGroup> userRoleMenuGroups = instance.getAll(EOUserRoleMenuGroup.class);
 	    	for(EOUserRoleMenuGroup userRoleMenuGroup: userRoleMenuGroups) {
-				EOUserRoleMenuGroup eoUserRoleMenuGroup = userRoleMenuGroupRepository.findByRoleIdAndGroupId(userRoleMenuGroup.getUserRole().getId(), userRoleMenuGroup.getMenuGroup().getId()).orElse(userRoleMenuGroup);
-				if(eoUserRoleMenuGroup!=null)
-				BeanUtils.copyProperties(userRoleMenuGroup, eoUserRoleMenuGroup, "id");
-	    		EOUserRoleMenuGroup saveUserRoleMenuGroup = userRoleMenuGroupRepository.save(eoUserRoleMenuGroup);
-	    		userRoleMenuGroup.setId(saveUserRoleMenuGroup.getId());
-			}
-	    	
-	    	List<EOUserRoleMenuItem> userRoleEndpointList = instance.getAll(EOUserRoleMenuItem.class);
-	    	for(EOUserRoleMenuItem userRoleEndpoint: userRoleEndpointList) {
 	    		try {
-					EOUserRoleMenuItem eoUserRoleEndpoint = userRoleMenuItemRepository.findByRoleIdAndEndpointId(userRoleEndpoint.getUserRole().getId(), userRoleEndpoint.getMenuItem().getId()).orElse(userRoleEndpoint);
-		    		if(eoUserRoleEndpoint!=null)
-					BeanUtils.copyProperties(userRoleEndpoint, eoUserRoleEndpoint, "id");
-		    		EOUserRoleMenuItem saveUserRoleEndpoint = userRoleMenuItemRepository.save(eoUserRoleEndpoint);
-		    		userRoleEndpoint.setId(saveUserRoleEndpoint.getId());
+					EOUserRoleMenuGroup eoUserRoleMenuGroup = userRoleMenuGroupMap.getOrDefault(groupKey(userRoleMenuGroup),userRoleMenuGroup);
+					BeanUtils.copyProperties(userRoleMenuGroup, eoUserRoleMenuGroup, "id");
+		    		EOUserRoleMenuGroup saveUserRoleMenuGroup = userRoleMenuGroupRepository.save(eoUserRoleMenuGroup);
+		    		userRoleMenuGroup.setId(saveUserRoleMenuGroup.getId());
 	    		}catch (Exception e) {
-					System.out.println("userRoleEndpoint="+userRoleEndpoint);
+					System.out.println("userRoleMenuGroup="+userRoleMenuGroup);
+				}
+			}
+	    	Map<String, EOUserRoleMenuItem> userRoleMenuItemMap = userRoleMenuItemRepository.findAll().parallelStream().collect(Collectors.toMap((userRoleMenuItem)->itemKey(userRoleMenuItem), Function.identity()));
+	    	List<EOUserRoleMenuItem> userRoleEndpointList = instance.getAll(EOUserRoleMenuItem.class);
+	    	for(EOUserRoleMenuItem userRoleMenuItem: userRoleEndpointList) {
+	    		try {
+					EOUserRoleMenuItem eoUserRoleEndpoint = userRoleMenuItemMap.getOrDefault(itemKey(userRoleMenuItem),userRoleMenuItem);
+		    		if(eoUserRoleEndpoint!=null)
+					BeanUtils.copyProperties(userRoleMenuItem, eoUserRoleEndpoint, "id");
+		    		EOUserRoleMenuItem saveUserRoleEndpoint = userRoleMenuItemRepository.save(eoUserRoleEndpoint);
+		    		userRoleMenuItem.setId(saveUserRoleEndpoint.getId());
+	    		}catch (Exception e) {
+					System.out.println("userRoleEndpoint="+userRoleMenuItem);
 				}
 			}
     	}
     }
+
+	private String itemKey(EOUserRoleMenuItem userRoleMenuItem) {
+		return userRoleMenuItem.getUserRole().getId()+"_"+ userRoleMenuItem.getMenuItem().getId();
+	}
+
+	private String groupKey(EOUserRoleMenuGroup userRoleMenuGroup) {
+		return userRoleMenuGroup.getUserRole().getId()+"_"+ userRoleMenuGroup.getMenuGroup().getId();
+	}
     
     public static String getKey(EOUserRoleMenuItem userRoleEndpoint) {
     	return userRoleEndpoint.getUserRole().getId()+"_"+userRoleEndpoint.getMenuItem().getId();

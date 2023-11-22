@@ -73,6 +73,8 @@ public class GlobalMenuServiceImpl implements GlobalMenuService {
 			uiMenuGroup.setTitle(eoUserRoleMenuGroup.getMenuGroup().getTitle());
 			uiMenuGroup.setType(eoUserRoleMenuGroup.getMenuGroup().getType());
 			uiMenuGroup.setUrl(eoUserRoleMenuGroup.getMenuGroup().getUrl());
+			uiMenuGroup.setIcon(eoUserRoleMenuGroup.getMenuGroup().getIcon());
+			uiMenuGroup.setOrder(eoUserRoleMenuGroup.getMenuGroup().getOrder());
 			List<EOUserRoleMenuItem> userRoleMenuItems = eoUserRoleMenuGroup.getUserRoleMenuItems();
 			for(EOUserRoleMenuItem userRoleMenuItem: userRoleMenuItems) {
 				UIMenuItem uiMenuItem=new UIMenuItem();
@@ -80,10 +82,14 @@ public class GlobalMenuServiceImpl implements GlobalMenuService {
 				uiMenuItem.setTitle(userRoleMenuItem.getMenuItem().getTitle());
 				uiMenuItem.setType(userRoleMenuItem.getMenuItem().getType());
 				uiMenuItem.setUrl(userRoleMenuItem.getMenuItem().getUrl());
+				uiMenuItem.setIcon(userRoleMenuItem.getMenuItem().getIcon());
+				uiMenuItem.setOrder(userRoleMenuItem.getMenuItem().getOrder());
 				uiMenuGroup.getMenuItems().add(uiMenuItem);
 			}
+			uiMenuGroup.getMenuItems().sort((o1,o2)->o1.getOrder().compareTo(o2.getOrder()));
 			uiMenuGroups.add(uiMenuGroup);
 		}
+		uiMenuGroups.sort((o1,o2)->o1.getOrder().compareTo(o2.getOrder()));
 		return uiMenuGroups;
 	}
 

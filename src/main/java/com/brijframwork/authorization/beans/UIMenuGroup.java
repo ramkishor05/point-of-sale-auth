@@ -8,9 +8,11 @@ public class UIMenuGroup {
 	private long id;
 	private String title;
 	private String url;
+	private String icon;
 	private String type;
 	
 	private List<UIMenuItem> menuItems;
+	private Integer order;
 
 	public long getId() {
 		return id;
@@ -43,7 +45,28 @@ public class UIMenuGroup {
 	public void setType(String type) {
 		this.type = type;
 	}
+	
+	
 
+	public String getIcon() {
+		return icon;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
+
+	public Integer getOrder() {
+		if(order==null) {
+			order=0;
+		}
+		return order;
+	}
+
+	public void setOrder(Integer order) {
+		this.order = order;
+	}
+	
 	public List<UIMenuItem> getMenuItems() {
 		if(menuItems==null) {
 			menuItems=new ArrayList<UIMenuItem>();

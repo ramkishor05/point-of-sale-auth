@@ -10,6 +10,7 @@
         "title": "Dashboard",
         "type": "item",
         "url": "/dashboard/default",
+        "icon": "Dashboard",
         "globalMenuGroup": "LK@GlobalMenuGroup_Dashboard"
       }
     },
@@ -21,6 +22,7 @@
         "title": "Sales",
         "type": "item",
         "url": "/cust/sales",
+        "icon": "Sales",
         "globalMenuGroup": "LK@GlobalMenuGroup_Orders"
       }
     },
@@ -32,6 +34,7 @@
         "title": "Purchase",
         "type": "item",
         "url": "/cust/purchase",
+        "icon": "Purchase",
         "globalMenuGroup": "LK@GlobalMenuGroup_Orders"
       }
     },
@@ -43,6 +46,7 @@
         "title": "Products",
         "type": "item",
         "url": "/cust/products",
+        "icon": "Products",
         "globalMenuGroup": "LK@GlobalMenuGroup_Products"
       }
     },
@@ -54,6 +58,7 @@
         "title": "Business",
         "type": "item",
         "url": "/vendor/business",
+        "icon": "Business",
         "globalMenuGroup": "LK@GlobalMenuGroup_Vendor"
       }
     },
@@ -65,6 +70,7 @@
         "title": "Customer",
         "type": "item",
         "url": "/vendor/customer",
+        "icon": "Customer",
         "globalMenuGroup": "LK@GlobalMenuGroup_Vendor"
       }
     },
@@ -76,6 +82,7 @@
         "title": "Supplier",
         "type": "item",
         "url": "/vendor/supplier",
+        "icon": "Supplier",
         "globalMenuGroup": "LK@GlobalMenuGroup_Vendor"
       }
     },
@@ -87,6 +94,7 @@
         "title": "Employee",
         "type": "item",
         "url": "/vendor/employee",
+        "icon": "Employee",
         "globalMenuGroup": "LK@GlobalMenuGroup_Vendor"
       }
     },
@@ -98,6 +106,7 @@
         "title": "Users",
         "type": "item",
         "url": "/vendor/users",
+        "icon": "Users",
         "globalMenuGroup": "LK@GlobalMenuGroup_Vendor"
       }
     },
@@ -109,6 +118,7 @@
         "title": "Category Group",
         "type": "item",
         "url": "/category/group",
+        "icon": "CategoryGroup",
         "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
       }
     },
@@ -120,6 +130,7 @@
         "title": "Category List",
         "type": "item",
         "url": "/category/list",
+        "icon": "CategoryList",
         "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
       }
     },
@@ -131,6 +142,7 @@
         "title": "Unit Group",
         "type": "item",
         "url": "/unit/group",
+        "icon": "UnitGroup",
         "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
       }
     },
@@ -142,6 +154,7 @@
         "title": "Unit List",
         "type": "item",
         "url": "/unit/list",
+        "icon": "UnitList",
         "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
       }
     },
@@ -153,6 +166,7 @@
         "title": "Currency Group",
         "type": "item",
         "url": "/currency/group",
+        "icon": "CurrencyGroup",
         "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
       }
     },
@@ -164,6 +178,7 @@
         "title": "Currency List",
         "type": "item",
         "url": "/currency/list",
+        "icon": "CurrencyList",
         "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
       }
     },
@@ -175,6 +190,7 @@
         "title": "Count Freq",
         "type": "item",
         "url": "/count/freq",
+        "icon": "CountFreq",
         "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
       }
     },
@@ -186,6 +202,7 @@
         "title": "User profile",
         "type": "item",
         "url": "/user/profile",
+        "icon": "UserProfile",
         "globalMenuGroup": "LK@GlobalMenuGroup_UserProfile"
       }
     }

@@ -22,7 +22,7 @@ spring:
          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
    db:
      datajson:
-       upload: false
+       upload: true
 eureka:
   client:
     serviceUrl:

@@ -31,6 +31,12 @@ public class EOGlobalMenuGroup implements Serializable {
 	@Column(name = "TYPE")
 	private String type;
 	
+	@Column(name = "ICON")
+	private String icon;
+	
+	@Column(name = "ORDER_SQN")
+	private Integer order;
+	
 	@OneToMany(mappedBy = "globalMenuGroup")
 	private List<EOGlobalMenuItem>  menuItemList;
 
@@ -64,6 +70,22 @@ public class EOGlobalMenuGroup implements Serializable {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public String getIcon() {
+		return icon;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
+
+	public Integer getOrder() {
+		return order;
+	}
+
+	public void setOrder(Integer order) {
+		this.order = order;
 	}
 
 	public List<EOGlobalMenuItem> getMenuItemList() {

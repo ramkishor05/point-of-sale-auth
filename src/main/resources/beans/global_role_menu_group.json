@@ -1,200 +1,200 @@
 {
-	"id": "UserRoleMenuItem",
+	"id": "UserRoleMenuGroup",
 	"order": 3,
 	"objects": [
 		{
-			"id": "UserRoleMenuItem_OWNER_Dashboard",
+			"id": "UserRoleMenuGroup_OWNER_Dashboard",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuGroup": "LK@GlobalMenuGroup_Dashboard"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_OWNER_Orders",
+			"id": "UserRoleMenuGroup_OWNER_Orders",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuGroup": "LK@GlobalMenuGroup_Orders"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_OWNER_Products",
+			"id": "UserRoleMenuGroup_OWNER_Products",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuGroup": "LK@GlobalMenuGroup_Products"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_OWNER_Vendor",
+			"id": "UserRoleMenuGroup_OWNER_Vendor",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuGroup": "LK@GlobalMenuGroup_Vendor"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_OWNER_Setups",
+			"id": "UserRoleMenuGroup_OWNER_Setups",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuGroup": "LK@GlobalMenuGroup_Setups"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_OWNER_Userprofile",
+			"id": "UserRoleMenuGroup_OWNER_Userprofile",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuGroup": "LK@GlobalMenuGroup_Userprofile"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_MANAGER_Dashboard",
+			"id": "UserRoleMenuGroup_MANAGER_Dashboard",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuGroup": "LK@GlobalMenuGroup_Dashboard"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_MANAGER_Orders",
+			"id": "UserRoleMenuGroup_MANAGER_Orders",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuGroup": "LK@GlobalMenuGroup_Orders"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_MANAGER_Products",
+			"id": "UserRoleMenuGroup_MANAGER_Products",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuGroup": "LK@GlobalMenuGroup_Products"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_MANAGER_Vendor",
+			"id": "UserRoleMenuGroup_MANAGER_Vendor",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuGroup": "LK@GlobalMenuGroup_Vendor"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_MANAGER_Setups",
+			"id": "UserRoleMenuGroup_MANAGER_Setups",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuGroup": "LK@GlobalMenuGroup_Setups"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_MANAGER_Userprofile",
+			"id": "UserRoleMenuGroup_MANAGER_Userprofile",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuGroup": "LK@GlobalMenuGroup_Userprofile"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_SUPERVISOR_Dashboard",
+			"id": "UserRoleMenuGroup_SUPERVISOR_Dashboard",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_SUPERVISOR",
 				"menuGroup": "LK@GlobalMenuGroup_Dashboard"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_SUPERVISOR_Orders",
+			"id": "UserRoleMenuGroup_SUPERVISOR_Orders",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_SUPERVISOR",
 				"menuGroup": "LK@GlobalMenuGroup_Orders"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_SUPERVISOR_Products",
+			"id": "UserRoleMenuGroup_SUPERVISOR_Products",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_SUPERVISOR",
 				"menuGroup": "LK@GlobalMenuGroup_Products"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_SUPERVISOR_Vendor",
+			"id": "UserRoleMenuGroup_SUPERVISOR_Vendor",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_SUPERVISOR",
 				"menuGroup": "LK@GlobalMenuGroup_Vendor"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_SUPERVISOR_Userprofile",
+			"id": "UserRoleMenuGroup_SUPERVISOR_Userprofile",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_SUPERVISOR",
 				"menuGroup": "LK@GlobalMenuGroup_Userprofile"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_CREW_Dashboard",
+			"id": "UserRoleMenuGroup_CREW_Dashboard",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_CREW",
 				"menuGroup": "LK@GlobalMenuGroup_Dashboard"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_CREW_Orders",
+			"id": "UserRoleMenuGroup_CREW_Orders",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_CREW",
 				"menuGroup": "LK@GlobalMenuGroup_Orders"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_CREW_Vendor",
+			"id": "UserRoleMenuGroup_CREW_Vendor",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_CREW",
 				"menuGroup": "LK@GlobalMenuGroup_Vendor"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_CREW_Products",
+			"id": "UserRoleMenuGroup_CREW_Products",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_CREW",
 				"menuGroup": "LK@GlobalMenuGroup_Products"
 			}
 		},
 		{
-			"id": "UserRoleMenuItem_CREW_Userprofile",
+			"id": "UserRoleMenuGroup_CREW_Userprofile",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
-			"name": "UserRoleMenuItem",
+			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_CREW",
 				"menuGroup": "LK@GlobalMenuGroup_Userprofile"
