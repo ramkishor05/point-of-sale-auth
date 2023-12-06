@@ -1,6 +1,5 @@
 spring:
-   profiles: 
-     active:  aws_rds
+   profiles: aws_rds
    application:
      name: point_of_sale_auth
    main:
@@ -22,7 +21,7 @@ spring:
          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
    db:
      datajson:
-       upload: true
+       upload: false
 eureka:
   client:
     serviceUrl:
@@ -39,7 +38,8 @@ error:
 ---    
 
 spring:
-   profiles: local
+   profiles: 
+     active: local
    application:
      name: point_of_sale_auth
    main:
@@ -59,7 +59,9 @@ spring:
        show_sql: true
        naming: 
          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-
+   db:
+     datajson:
+       upload: true
 # Discovery Server Access
 eureka:
   client:

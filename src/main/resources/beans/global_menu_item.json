@@ -51,6 +51,18 @@
       }
     },
     {
+      "id": "GlobalMenuItem_Vendor",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
+      "name": "GlobalMenuItem",
+      "properties": {
+        "title": "Vendor",
+        "type": "item",
+        "url": "/cust/vendor",
+        "icon": "Vendor",
+        "globalMenuGroup": "LK@GlobalMenuGroup_Vendor"
+      }
+    },
+    {
       "id": "GlobalMenuItem_Business",
       "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
       "name": "GlobalMenuItem",

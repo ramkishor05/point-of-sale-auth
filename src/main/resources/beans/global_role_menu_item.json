@@ -43,6 +43,16 @@
 			}
 		},
 		{
+			"id": "UserRoleMenuItem_OWNER_Vendor",
+			"type": "com.brijframwork.authorization.model.EOUserRoleMenuItem",
+			"name": "UserRoleMenuItem",
+			"properties": {
+				"userRole": "LK@UserRole_OWNER",
+				"menuItem": "LK@GlobalMenuItem_Vendor",
+				"userRoleMenuGroup": "LK@UserRoleMenuGroup_OWNER_Vendor"
+			}
+		},
+		{
 			"id": "UserRoleMenuItem_OWNER_Business",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuItem",
 			"name": "UserRoleMenuItem",
