@@ -1,0 +1,71 @@
+{
+  "id": "Global_Portal_MenuGroup",
+  "order": 2,
+  "objects": [
+    {
+      "id": "Global_Portal_MenuGroup_Dashboard",
+      "type": "com.brijframwork.authorization.model.menus.EOMenuGroup",
+      "name": "Global_Portal_MenuGroup",
+      "properties": {
+        "title": "Dashboard",
+        "idenNo": "Global_Portal_MenuGroup_Dashboard",
+        "type": "group",
+        "icon": "Dashboard",
+        "order":1,
+        "url": "/global/portal/dashboard"
+      }
+    },
+    {
+      "id": "Global_Portal_MenuGroup_Menus",
+      "type": "com.brijframwork.authorization.model.menus.EOMenuGroup",
+      "name": "Global_Portal_MenuGroup",
+      "properties": {
+        "title": "Menus",
+        "idenNo": "Global_Portal_MenuGroup_Menus",
+        "type": "group",
+        "icon": "Menus",
+        "order":2,
+        "url": "/global/portal/menus"
+      }
+    },
+    {
+      "id": "Global_Portal_MenuGroup_Parties",
+      "type": "com.brijframwork.authorization.model.menus.EOMenuGroup",
+      "name": "Global_Portal_MenuGroup",
+      "properties": {
+        "title": "Parties",
+        "idenNo": "Global_Portal_MenuGroup_Parties",
+        "type": "group",
+        "icon": "Parties",
+        "order":4,
+        "url": "/global/portal/parties"
+      }
+    },
+    {
+      "id": "Global_Portal_MenuGroup_Setups",
+      "type": "com.brijframwork.authorization.model.menus.EOMenuGroup",
+      "name": "Global_Portal_MenuGroup",
+      "properties": {
+        "title": "Setups",
+        "idenNo": "Global_Portal_MenuGroup_Setups",
+        "type": "group",
+        "icon": "Setups",
+        "order":5,
+        "url": "/global/portal/setups"
+      }
+    },
+    {
+      "id": "Global_Portal_MenuGroup_UserProfile",
+      "type": "com.brijframwork.authorization.model.menus.EOMenuGroup",
+      "name": "Global_Portal_MenuGroup",
+      "properties": {
+        "title": "User profile",
+        "idenNo": "Global_Portal_MenuGroup_UserProfile",
+        "type": "group",
+        "icon": "UserProfile",
+        "order":6,
+        "url": "/global/portal/profile"
+      }
+    }
+  ]
+}

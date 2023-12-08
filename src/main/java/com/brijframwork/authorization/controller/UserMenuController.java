@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.brijframwork.authorization.beans.UIMenuGroup;
-import com.brijframwork.authorization.service.GlobalMenuService;
+import com.brijframwork.authorization.service.MenuService;
 
 @RestController
 @RequestMapping("/api/menu")
 public class UserMenuController {
 	
 	@Autowired
-    private GlobalMenuService userMenuService;
+    private MenuService userMenuService;
 	
 	@PostMapping
 	public ResponseEntity<UIMenuGroup> addMenuGroup(@RequestBody UIMenuGroup uiMenuGroup){

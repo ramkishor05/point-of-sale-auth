@@ -1,0 +1,456 @@
+{
+	"id": "Business_Portal_MenuItem_Role",
+	"order": 3,
+	"objects": [
+		{
+			"id": "Business_Portal_MenuItem_Role_OWNER_Dashboard",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_OWNER",
+				"menuItem": "LK@Business_Portal_MenuItem_Dashboard",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Dashboard"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_OWNER_Sales",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_OWNER",
+				"menuItem": "LK@Business_Portal_MenuItem_Sales",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Orders"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_OWNER_Purchase",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_OWNER",
+				"menuItem": "LK@Business_Portal_MenuItem_Purchase",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Orders"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_OWNER_Products",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_OWNER",
+				"menuItem": "LK@Business_Portal_MenuItem_Products",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Items"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_OWNER_Business",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_OWNER",
+				"menuItem": "LK@Business_Portal_MenuItem_Business",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Organizations"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_OWNER_Customer",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_OWNER",
+				"menuItem": "LK@Business_Portal_MenuItem_Customer",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Parties"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_OWNER_Supplier",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_OWNER",
+				"menuItem": "LK@Business_Portal_MenuItem_Supplier",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Parties"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_OWNER_Employee",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_OWNER",
+				"menuItem": "LK@Business_Portal_MenuItem_Employee",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Organizations"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_OWNER_Users",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_OWNER",
+				"menuItem": "LK@Business_Portal_MenuItem_Users",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Organizations"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_OWNER_Category_Group",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_OWNER",
+				"menuItem": "LK@Business_Portal_MenuItem_Category_Group",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Setups"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_OWNER_Category_List",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_OWNER",
+				"menuItem": "LK@Business_Portal_MenuItem_Category_List",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Setups"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_OWNER_Unit_Group",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_OWNER",
+				"menuItem": "LK@Business_Portal_MenuItem_Unit_Group",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Setups"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_OWNER_Unit_List",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_OWNER",
+				"menuItem": "LK@Business_Portal_MenuItem_Unit_List",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Setups"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_OWNER_Currency_Group",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_OWNER",
+				"menuItem": "LK@Business_Portal_MenuItem_Currency_Group",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Setups"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_OWNER_Currency_List",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_OWNER",
+				"menuItem": "LK@Business_Portal_MenuItem_Currency_List",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Setups"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_OWNER_Count_Freq",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_OWNER",
+				"menuItem": "LK@Business_Portal_MenuItem_Count_Freq",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Setups"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_OWNER_UserProfile",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_OWNER",
+				"menuItem": "LK@Business_Portal_MenuItem_UserProfile",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_UserProfile"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_MANAGER_Dashboard",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_MANAGER",
+				"menuItem": "LK@Business_Portal_MenuItem_Dashboard",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_MANAGER_Dashboard"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_MANAGER_Sales",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_MANAGER",
+				"menuItem": "LK@Business_Portal_MenuItem_Sales",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_MANAGER_Orders"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_MANAGER_Purchase",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_MANAGER",
+				"menuItem": "LK@Business_Portal_MenuItem_Purchase",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_MANAGER_Orders"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_MANAGER_Products",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_MANAGER",
+				"menuItem": "LK@Business_Portal_MenuItem_Products",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_MANAGER_Items"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_MANAGER_Customer",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_MANAGER",
+				"menuItem": "LK@Business_Portal_MenuItem_Customer",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_MANAGER_Parties"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_MANAGER_Supplier",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_MANAGER",
+				"menuItem": "LK@Business_Portal_MenuItem_Supplier",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_MANAGER_Parties"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_MANAGER_Employee",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_MANAGER",
+				"menuItem": "LK@Business_Portal_MenuItem_Employee",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_MANAGER_Organizations"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_MANAGER_Users",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_MANAGER",
+				"menuItem": "LK@Business_Portal_MenuItem_Users",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_MANAGER_Organizations"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_MANAGER_Category_Group",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_MANAGER",
+				"menuItem": "LK@Business_Portal_MenuItem_Category_Group",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_MANAGER_Setups"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_MANAGER_Category_List",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_MANAGER",
+				"menuItem": "LK@Business_Portal_MenuItem_Category_List",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_MANAGER_Setups"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_MANAGER_Unit_Group",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_MANAGER",
+				"menuItem": "LK@Business_Portal_MenuItem_Unit_Group",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_MANAGER_Setups"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_MANAGER_Unit_List",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_MANAGER",
+				"menuItem": "LK@Business_Portal_MenuItem_Unit_List",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_MANAGER_Setups"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_MANAGER_Currency_Group",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_MANAGER",
+				"menuItem": "LK@Business_Portal_MenuItem_Currency_Group",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_MANAGER_Setups"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_MANAGER_Currency_List",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_MANAGER",
+				"menuItem": "LK@Business_Portal_MenuItem_Currency_List",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_MANAGER_Setups"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_MANAGER_Count_Freq",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_MANAGER",
+				"menuItem": "LK@Business_Portal_MenuItem_Count_Freq",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_MANAGER_Setups"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_MANAGER_UserProfile",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_MANAGER",
+				"menuItem": "LK@Business_Portal_MenuItem_UserProfile",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_MANAGER_UserProfile"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_SUPERVISOR_Dashboard",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_SUPERVISOR",
+				"menuItem": "LK@Business_Portal_MenuItem_Dashboard",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_SUPERVISOR_Dashboard"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_SUPERVISOR_Sales",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_SUPERVISOR",
+				"menuItem": "LK@Business_Portal_MenuItem_Sales",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_SUPERVISOR_Orders"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_SUPERVISOR_Purchase",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_SUPERVISOR",
+				"menuItem": "LK@Business_Portal_MenuItem_Purchase",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_SUPERVISOR_Orders"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_SUPERVISOR_Products",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_SUPERVISOR",
+				"menuItem": "LK@Business_Portal_MenuItem_Products",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_SUPERVISOR_Items"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_SUPERVISOR_Customer",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_SUPERVISOR",
+				"menuItem": "LK@Business_Portal_MenuItem_Customer",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_SUPERVISOR_Parties"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_SUPERVISOR_Supplier",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_SUPERVISOR",
+				"menuItem": "LK@Business_Portal_MenuItem_Supplier",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_SUPERVISOR_Parties"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_SUPERVISOR_UserProfile",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_SUPERVISOR",
+				"menuItem": "LK@Business_Portal_MenuItem_UserProfile",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_SUPERVISOR_UserProfile"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_CREW_Dashboard",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_CREW",
+				"menuItem": "LK@Business_Portal_MenuItem_Dashboard",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_CREW_Dashboard"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_CREW_Sales",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_CREW",
+				"menuItem": "LK@Business_Portal_MenuItem_Sales",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_CREW_Orders"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_CREW_Products",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_CREW",
+				"menuItem": "LK@Business_Portal_MenuItem_Products",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_CREW_Items"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_CREW_Customer",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_CREW",
+				"menuItem": "LK@Business_Portal_MenuItem_Customer",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_CREW_Parties"
+			}
+		},
+		{
+			"id": "Business_Portal_MenuItem_Role_CREW_UserProfile",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"userRole": "LK@UserRole_CREW",
+				"menuItem": "LK@Business_Portal_MenuItem_UserProfile",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_CREW_UserProfile"
+			}
+		}
+	]
+}

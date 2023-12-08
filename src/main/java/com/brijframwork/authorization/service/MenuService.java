@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.brijframwork.authorization.beans.UIMenuGroup;
 
-public interface GlobalMenuService {
+public interface MenuService {
 
 	UIMenuGroup addMenuGroup(UIMenuGroup uiMenuGroup);
 

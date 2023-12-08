@@ -1,19 +1,19 @@
-package com.brijframwork.authorization.model;
+package com.brijframwork.authorization.model.menus;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "GLOBAL_MENU_ITEM")
-public class EOGlobalMenuItem implements Serializable {
+@Table(name = "MENU_GROUP")
+public class EOMenuGroup implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -21,6 +21,9 @@ public class EOGlobalMenuItem implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
 	private long id;
+	
+	@Column(name = "IDEN_NO")
+	private String idenNo;
 	
 	@Column(name = "TITLE")
 	private String title;
@@ -37,10 +40,8 @@ public class EOGlobalMenuItem implements Serializable {
 	@Column(name = "ORDER_SQN")
 	private Integer order;
 	
-	
-	@ManyToOne
-	@JoinColumn(name = "GLOBAL_MENU_GROUP_ID")
-	private EOGlobalMenuGroup  globalMenuGroup;
+	@OneToMany(mappedBy = "menuGroup")
+	private List<EOMenuItem>  menuItemList;
 
 	public long getId() {
 		return id;
@@ -90,13 +91,19 @@ public class EOGlobalMenuItem implements Serializable {
 		this.order = order;
 	}
 
-	public EOGlobalMenuGroup getGlobalMenuGroup() {
-		return globalMenuGroup;
+	public List<EOMenuItem> getMenuItemList() {
+		return menuItemList;
 	}
 
-	public void setGlobalMenuGroup(EOGlobalMenuGroup globalMenuGroup) {
-		this.globalMenuGroup = globalMenuGroup;
+	public void setMenuItemList(List<EOMenuItem> menuItemList) {
+		this.menuItemList = menuItemList;
 	}
 
+	@Override
+	public String toString() {
+		return "EOMenuGroup [id=" + id + ", idenNo=" + idenNo + ", title=" + title + ", url=" + url + ", type=" + type
+				+ ", icon=" + icon + ", order=" + order + "]";
+	}
+	
 	
 }

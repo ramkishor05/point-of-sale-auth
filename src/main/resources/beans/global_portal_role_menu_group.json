@@ -1,0 +1,69 @@
+{
+	"id": "Global_Portal_MenuGroup_Role",
+	"order": 3,
+	"objects": [
+		{
+			"id": "Global_Portal_MenuGroup_Role_OWNER_Dashboard",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
+			"name": "Global_Portal_MenuGroup_Role",
+			"properties": {
+				"userRole": "LK@UserRole_ADMIN",
+				"menuGroup": "LK@Global_Portal_MenuGroup_Dashboard"
+			}
+		},
+		{
+			"id": "Global_Portal_MenuGroup_Role_OWNER_Orders",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
+			"name": "Global_Portal_MenuGroup_Role",
+			"properties": {
+				"userRole": "LK@UserRole_ADMIN",
+				"menuGroup": "LK@Global_Portal_MenuGroup_Menus"
+			}
+		},
+		{
+			"id": "Global_Portal_MenuGroup_Role_OWNER_Parties",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
+			"name": "Global_Portal_MenuGroup_Role",
+			"properties": {
+				"userRole": "LK@UserRole_ADMIN",
+				"menuGroup": "LK@Global_Portal_MenuGroup_Parties"
+			}
+		},
+		{
+			"id": "Global_Portal_MenuGroup_Role_OWNER_Parties",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
+			"name": "Global_Portal_MenuGroup_Role",
+			"properties": {
+				"userRole": "LK@UserRole_ADMIN",
+				"menuGroup": "LK@Global_Portal_MenuGroup_Parties"
+			}
+		},
+		{
+			"id": "Global_Portal_MenuGroup_Role_OWNER_Organizations",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
+			"name": "Global_Portal_MenuGroup_Role",
+			"properties": {
+				"userRole": "LK@UserRole_ADMIN",
+				"menuGroup": "LK@Global_Portal_MenuGroup_Organizations"
+			}
+		},
+		{
+			"id": "Global_Portal_MenuGroup_Role_OWNER_Setups",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
+			"name": "Global_Portal_MenuGroup_Role",
+			"properties": {
+				"userRole": "LK@UserRole_ADMIN",
+				"menuGroup": "LK@Global_Portal_MenuGroup_Setups"
+			}
+		},
+		{
+			"id": "Global_Portal_MenuGroup_Role_OWNER_UserProfile",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
+			"name": "Global_Portal_MenuGroup_Role",
+			"properties": {
+				"userRole": "LK@UserRole_ADMIN",
+				"menuGroup": "LK@Global_Portal_MenuGroup_UserProfile"
+			}
+		}
+	]
+}

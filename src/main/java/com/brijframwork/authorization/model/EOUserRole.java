@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.brijframwork.authorization.model.menus.EORoleMenuItem;
+
 @Entity
 @Table(name = "USER_ROLE")
 public class EOUserRole implements Serializable {
@@ -38,7 +40,7 @@ public class EOUserRole implements Serializable {
 	private List<EOUserAccount> userAccounts;
 	
 	@OneToMany(mappedBy = "userRole")
-	private List<EOUserRoleMenuItem> roleEndpoints;
+	private List<EORoleMenuItem> roleEndpoints;
 	
 	public EOUserRole() {
 	}
@@ -98,11 +100,11 @@ public class EOUserRole implements Serializable {
 		this.userAccounts = userAccounts;
 	}
 
-	public List<EOUserRoleMenuItem> getRoleEndpoints() {
+	public List<EORoleMenuItem> getRoleEndpoints() {
 		return roleEndpoints;
 	}
 
-	public void setRoleEndpoints(List<EOUserRoleMenuItem> roleEndpoints) {
+	public void setRoleEndpoints(List<EORoleMenuItem> roleEndpoints) {
 		this.roleEndpoints = roleEndpoints;
 	}
 

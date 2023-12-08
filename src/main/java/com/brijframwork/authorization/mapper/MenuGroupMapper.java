@@ -6,9 +6,9 @@ import static com.brijframwork.authorization.contants.Constants.SPRING;
 import org.mapstruct.Mapper;
 
 import com.brijframwork.authorization.beans.UIMenuGroup;
-import com.brijframwork.authorization.model.EOGlobalMenuGroup;
+import com.brijframwork.authorization.model.menus.EOMenuGroup;
 
 @Mapper(componentModel = SPRING, implementationPackage = COM_BRIJFRAMEWORK_AUTHORIZATION_MAPPER_IMPL)
-public interface GlobalMenuGroupMapper extends GenericMapper<EOGlobalMenuGroup, UIMenuGroup> {
+public interface MenuGroupMapper extends GenericMapper<EOMenuGroup, UIMenuGroup> {
 
 }

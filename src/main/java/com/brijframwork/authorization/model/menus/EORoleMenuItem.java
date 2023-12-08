@@ -1,5 +1,5 @@
 
-package com.brijframwork.authorization.model;
+package com.brijframwork.authorization.model.menus;
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -12,9 +12,11 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import com.brijframwork.authorization.model.EOUserRole;
+
 @Entity
-@Table(name = "USER_ROLE_MENU_ITEM", uniqueConstraints= {@UniqueConstraint(columnNames = { "USER_ROLE_ID","MENU_ITEM_ID" })})
-public class EOUserRoleMenuItem implements Serializable {
+@Table(name = "ROLE_MENU_ITEM", uniqueConstraints= {@UniqueConstraint(columnNames = { "USER_ROLE_ID","MENU_ITEM_ID" })})
+public class EORoleMenuItem implements Serializable {
 
 	/**
 	 * 
@@ -35,11 +37,11 @@ public class EOUserRoleMenuItem implements Serializable {
 
 	@OneToOne
 	@JoinColumn(name = "MENU_ITEM_ID")
-	private EOGlobalMenuItem menuItem;
+	private EOMenuItem menuItem;
 	
 	@OneToOne
-	@JoinColumn(name = "USER_ROLE_MENU_GROUP_ID")
-	private EOUserRoleMenuGroup  userRoleMenuGroup;
+	@JoinColumn(name = "MENU_GROUP_ID")
+	private EORoleMenuGroup  roleMenuGroup;
 
 	public long getId() {
 		return id;
@@ -65,26 +67,26 @@ public class EOUserRoleMenuItem implements Serializable {
 		this.userRole = userRole;
 	}
 
-	public EOGlobalMenuItem getMenuItem() {
+	public EOMenuItem getMenuItem() {
 		return menuItem;
 	}
 
-	public void setMenuItem(EOGlobalMenuItem menuItem) {
+	public void setMenuItem(EOMenuItem menuItem) {
 		this.menuItem = menuItem;
 	}
 
-	public EOUserRoleMenuGroup getUserRoleMenuGroup() {
-		return userRoleMenuGroup;
+	public EORoleMenuGroup getRoleMenuGroup() {
+		return roleMenuGroup;
 	}
 
-	public void setUserRoleMenuGroup(EOUserRoleMenuGroup userRoleMenuGroup) {
-		this.userRoleMenuGroup = userRoleMenuGroup;
+	public void setRoleMenuGroup(EORoleMenuGroup roleMenuGroup) {
+		this.roleMenuGroup = roleMenuGroup;
 	}
 
 	@Override
 	public String toString() {
 		return "EOUserRoleMenuItem [id=" + id + ", ownerId=" + ownerId + ", userRole=" + userRole + ", menuItem="
-				+ menuItem + ", userRoleMenuGroup=" + userRoleMenuGroup + "]";
+				+ menuItem + ", roleMenuGroup=" + roleMenuGroup + "]";
 	}
 	
 	

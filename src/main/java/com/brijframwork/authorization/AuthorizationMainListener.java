@@ -14,19 +14,19 @@ import org.springframework.stereotype.Component;
 
 import com.brijframework.production.schema.factories.JsonSchemaDataFactory;
 import com.brijframwork.authorization.constant.UserRole;
-import com.brijframwork.authorization.model.EOGlobalMenuGroup;
-import com.brijframwork.authorization.model.EOGlobalMenuItem;
 import com.brijframwork.authorization.model.EOUserAccount;
 import com.brijframwork.authorization.model.EOUserProfile;
 import com.brijframwork.authorization.model.EOUserRole;
-import com.brijframwork.authorization.model.EOUserRoleMenuGroup;
-import com.brijframwork.authorization.model.EOUserRoleMenuItem;
-import com.brijframwork.authorization.repository.GlobalMenuGroupRepository;
-import com.brijframwork.authorization.repository.GlobalMenuItemRepository;
+import com.brijframwork.authorization.model.menus.EOMenuGroup;
+import com.brijframwork.authorization.model.menus.EOMenuItem;
+import com.brijframwork.authorization.model.menus.EORoleMenuGroup;
+import com.brijframwork.authorization.model.menus.EORoleMenuItem;
+import com.brijframwork.authorization.repository.MenuGroupRepository;
+import com.brijframwork.authorization.repository.MenuItemRepository;
+import com.brijframwork.authorization.repository.RoleMenuGroupRepository;
+import com.brijframwork.authorization.repository.RoleMenuItemRepository;
 import com.brijframwork.authorization.repository.UserAccountRepository;
 import com.brijframwork.authorization.repository.UserProfileRepository;
-import com.brijframwork.authorization.repository.UserRoleMenuGroupRepository;
-import com.brijframwork.authorization.repository.UserRoleMenuItemRepository;
 import com.brijframwork.authorization.repository.UserRoleRepository;
 
 @Component
@@ -42,16 +42,16 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 	private UserRoleRepository userRoleRepository;
 	
 	@Autowired
-	private GlobalMenuItemRepository globalMenuItemRepository;
+	private MenuItemRepository globalMenuItemRepository;
 	
 	@Autowired
-	private GlobalMenuGroupRepository globalMenuGroupRepository;
+	private MenuGroupRepository globalMenuGroupRepository;
 	
 	@Autowired
-	private UserRoleMenuGroupRepository userRoleMenuGroupRepository;
+	private RoleMenuGroupRepository userRoleMenuGroupRepository;
 	
 	@Autowired
-	private UserRoleMenuItemRepository userRoleMenuItemRepository;
+	private RoleMenuItemRepository userRoleMenuItemRepository;
 	
 	@Value("${spring.db.datajson.upload}")
 	boolean upload;
@@ -92,65 +92,67 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 	    		userRole.setId(saveUserRole.getId());
 	    		userRoleMap.put(userRole.getPosition(), userRole);
 	    	}
-	    	List<EOGlobalMenuGroup> globalMenuGroupList = instance.getAll(EOGlobalMenuGroup.class);
+	    	List<EOMenuGroup> globalMenuGroupList = instance.getAll(EOMenuGroup.class);
 	    	List<String> globalMenuGroupUrls=globalMenuGroupList.stream().map(userEndpoint->userEndpoint.getUrl()).collect(Collectors.toList());
-	    	Map<String, EOGlobalMenuGroup> globalMenuGroupMap = globalMenuGroupRepository.findByUrls(globalMenuGroupUrls)
-	    			.stream().collect(Collectors.toMap(EOGlobalMenuGroup::getUrl, Function.identity()));
-	    	for (EOGlobalMenuGroup globalMenuGroup : globalMenuGroupList) {
-	    		EOGlobalMenuGroup eoUserEndpoint = globalMenuGroupMap.getOrDefault(globalMenuGroup.getUrl(),globalMenuGroup);
+	    	Map<String, EOMenuGroup> globalMenuGroupMap = globalMenuGroupRepository.findByUrls(globalMenuGroupUrls)
+	    			.stream().collect(Collectors.toMap(EOMenuGroup::getUrl, Function.identity()));
+	    	for (EOMenuGroup globalMenuGroup : globalMenuGroupList) {
+	    		EOMenuGroup eoUserEndpoint = globalMenuGroupMap.getOrDefault(globalMenuGroup.getUrl(),globalMenuGroup);
 	    		BeanUtils.copyProperties(globalMenuGroup, eoUserEndpoint, "id");
-	    		EOGlobalMenuGroup saveGlobalMenuGroup = globalMenuGroupRepository.save(eoUserEndpoint);
+	    		EOMenuGroup saveGlobalMenuGroup = globalMenuGroupRepository.save(eoUserEndpoint);
 	    		globalMenuGroup.setId(saveGlobalMenuGroup.getId());
 	    		globalMenuGroupMap.put(globalMenuGroup.getUrl(), globalMenuGroup);
 			}
-	    	List<EOGlobalMenuItem> globalMenuItemList = instance.getAll(EOGlobalMenuItem.class);
+	    	List<EOMenuItem> globalMenuItemList = instance.getAll(EOMenuItem.class);
 	    	List<String> globalMenuItemUrls=globalMenuItemList.stream().map(userEndpoint->userEndpoint.getUrl()).collect(Collectors.toList());
-	    	Map<String, EOGlobalMenuItem> globalMenuItemMap = globalMenuItemRepository.findByUrls(globalMenuItemUrls)
-	    			.stream().collect(Collectors.toMap(EOGlobalMenuItem::getUrl, Function.identity()));
-	    	for (EOGlobalMenuItem globalMenuItem : globalMenuItemList) {
-	    		EOGlobalMenuItem eoGlobalMenuItem = globalMenuItemMap.getOrDefault(globalMenuItem.getUrl(),globalMenuItem);
+	    	Map<String, EOMenuItem> globalMenuItemMap = globalMenuItemRepository.findByUrls(globalMenuItemUrls)
+	    			.stream().collect(Collectors.toMap(EOMenuItem::getUrl, Function.identity()));
+	    	for (EOMenuItem globalMenuItem : globalMenuItemList) {
+	    		EOMenuItem eoGlobalMenuItem = globalMenuItemMap.getOrDefault(globalMenuItem.getUrl(),globalMenuItem);
 	    		BeanUtils.copyProperties(globalMenuItem, eoGlobalMenuItem, "id");
-	    		EOGlobalMenuItem saveGlobalMenuItem = globalMenuItemRepository.save(eoGlobalMenuItem);
+	    		EOMenuItem saveGlobalMenuItem = globalMenuItemRepository.save(eoGlobalMenuItem);
 	    		globalMenuItem.setId(saveGlobalMenuItem.getId());
 	    		globalMenuItemMap.put(globalMenuItem.getUrl(), globalMenuItem);
 			}
-	    	Map<String, EOUserRoleMenuGroup> userRoleMenuGroupMap = userRoleMenuGroupRepository.findAll().parallelStream().collect(Collectors.toMap((userRoleMenuGroup)->groupKey(userRoleMenuGroup), Function.identity()));
-	    	List<EOUserRoleMenuGroup> userRoleMenuGroups = instance.getAll(EOUserRoleMenuGroup.class);
-	    	for(EOUserRoleMenuGroup userRoleMenuGroup: userRoleMenuGroups) {
+	    	Map<String, EORoleMenuGroup> userRoleMenuGroupMap = userRoleMenuGroupRepository.findAll().parallelStream().collect(Collectors.toMap((userRoleMenuGroup)->groupKey(userRoleMenuGroup), Function.identity()));
+	    	List<EORoleMenuGroup> userRoleMenuGroups = instance.getAll(EORoleMenuGroup.class);
+	    	for(EORoleMenuGroup userRoleMenuGroup: userRoleMenuGroups) {
 	    		try {
-					EOUserRoleMenuGroup eoUserRoleMenuGroup = userRoleMenuGroupMap.getOrDefault(groupKey(userRoleMenuGroup),userRoleMenuGroup);
+					EORoleMenuGroup eoUserRoleMenuGroup = userRoleMenuGroupMap.getOrDefault(groupKey(userRoleMenuGroup),userRoleMenuGroup);
 					BeanUtils.copyProperties(userRoleMenuGroup, eoUserRoleMenuGroup, "id");
-		    		EOUserRoleMenuGroup saveUserRoleMenuGroup = userRoleMenuGroupRepository.save(eoUserRoleMenuGroup);
+		    		EORoleMenuGroup saveUserRoleMenuGroup = userRoleMenuGroupRepository.save(eoUserRoleMenuGroup);
 		    		userRoleMenuGroup.setId(saveUserRoleMenuGroup.getId());
+		    		eoUserRoleMenuGroup.setId(saveUserRoleMenuGroup.getId());
 	    		}catch (Exception e) {
 					System.out.println("userRoleMenuGroup="+userRoleMenuGroup);
+					e.printStackTrace();
 				}
 			}
-	    	Map<String, EOUserRoleMenuItem> userRoleMenuItemMap = userRoleMenuItemRepository.findAll().parallelStream().collect(Collectors.toMap((userRoleMenuItem)->itemKey(userRoleMenuItem), Function.identity()));
-	    	List<EOUserRoleMenuItem> userRoleEndpointList = instance.getAll(EOUserRoleMenuItem.class);
-	    	for(EOUserRoleMenuItem userRoleMenuItem: userRoleEndpointList) {
+	    	Map<String, EORoleMenuItem> userRoleMenuItemMap = userRoleMenuItemRepository.findAll().parallelStream().collect(Collectors.toMap((userRoleMenuItem)->itemKey(userRoleMenuItem), Function.identity()));
+	    	List<EORoleMenuItem> userRoleEndpointList = instance.getAll(EORoleMenuItem.class);
+	    	for(EORoleMenuItem userRoleMenuItem: userRoleEndpointList) {
 	    		try {
-					EOUserRoleMenuItem eoUserRoleEndpoint = userRoleMenuItemMap.getOrDefault(itemKey(userRoleMenuItem),userRoleMenuItem);
-		    		if(eoUserRoleEndpoint!=null)
+					EORoleMenuItem eoUserRoleEndpoint = userRoleMenuItemMap.getOrDefault(itemKey(userRoleMenuItem),userRoleMenuItem);
 					BeanUtils.copyProperties(userRoleMenuItem, eoUserRoleEndpoint, "id");
-		    		EOUserRoleMenuItem saveUserRoleEndpoint = userRoleMenuItemRepository.save(eoUserRoleEndpoint);
+		    		EORoleMenuItem saveUserRoleEndpoint = userRoleMenuItemRepository.save(eoUserRoleEndpoint);
 		    		userRoleMenuItem.setId(saveUserRoleEndpoint.getId());
 	    		}catch (Exception e) {
 					System.out.println("userRoleEndpoint="+userRoleMenuItem);
+					e.printStackTrace();
 				}
 			}
     	}
     }
 
-	private String itemKey(EOUserRoleMenuItem userRoleMenuItem) {
+	private String itemKey(EORoleMenuItem userRoleMenuItem) {
 		return userRoleMenuItem.getUserRole().getId()+"_"+ userRoleMenuItem.getMenuItem().getId();
 	}
 
-	private String groupKey(EOUserRoleMenuGroup userRoleMenuGroup) {
+	private String groupKey(EORoleMenuGroup userRoleMenuGroup) {
 		return userRoleMenuGroup.getUserRole().getId()+"_"+ userRoleMenuGroup.getMenuGroup().getId();
 	}
     
-    public static String getKey(EOUserRoleMenuItem userRoleEndpoint) {
+    public static String getKey(EORoleMenuItem userRoleEndpoint) {
     	return userRoleEndpoint.getUserRole().getId()+"_"+userRoleEndpoint.getMenuItem().getId();
     }
 }

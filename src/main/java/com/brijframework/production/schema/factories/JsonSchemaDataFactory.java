@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.brijframwork.authorization.model.EOUserRoleMenuItem;
-
 public class JsonSchemaDataFactory {
 
 	final ConcurrentHashMap<String, Object> cache = new ConcurrentHashMap<String, Object>();
@@ -78,8 +76,4 @@ public class JsonSchemaDataFactory {
 		return instance;
 	}
 
-	public static void main(String[] args) {
-		JsonSchemaDataFactory instance = JsonSchemaDataFactory.getInstance();
-		instance.getAll(EOUserRoleMenuItem.class).stream().filter(enpoint->enpoint.getUserRole().getRoleId().equals("MANAGER")).forEach(System.out::println);;
-	}
 }

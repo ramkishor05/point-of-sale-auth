@@ -1,19 +1,19 @@
-package com.brijframwork.authorization.model;
+package com.brijframwork.authorization.model.menus;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "GLOBAL_MENU_GROUP")
-public class EOGlobalMenuGroup implements Serializable {
+@Table(name = "MENU_ITEM")
+public class EOMenuItem implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -21,6 +21,9 @@ public class EOGlobalMenuGroup implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
 	private long id;
+	
+	@Column(name = "IDEN_NO")
+	private String idenNo;
 	
 	@Column(name = "TITLE")
 	private String title;
@@ -37,8 +40,10 @@ public class EOGlobalMenuGroup implements Serializable {
 	@Column(name = "ORDER_SQN")
 	private Integer order;
 	
-	@OneToMany(mappedBy = "globalMenuGroup")
-	private List<EOGlobalMenuItem>  menuItemList;
+	
+	@ManyToOne
+	@JoinColumn(name = "MENU_GROUP_ID")
+	private EOMenuGroup  menuGroup;
 
 	public long getId() {
 		return id;
@@ -88,12 +93,25 @@ public class EOGlobalMenuGroup implements Serializable {
 		this.order = order;
 	}
 
-	public List<EOGlobalMenuItem> getMenuItemList() {
-		return menuItemList;
+	public String getIdenNo() {
+		return idenNo;
 	}
 
-	public void setMenuItemList(List<EOGlobalMenuItem> menuItemList) {
-		this.menuItemList = menuItemList;
+	public void setIdenNo(String idenNo) {
+		this.idenNo = idenNo;
 	}
-	
+
+	public EOMenuGroup getMenuGroup() {
+		return menuGroup;
+	}
+
+	public void setMenuGroup(EOMenuGroup menuGroup) {
+		this.menuGroup = menuGroup;
+	}
+
+	@Override
+	public String toString() {
+		return "EOMenuItem [id=" + id + ", idenNo=" + idenNo + ", title=" + title + ", url=" + url + ", type=" + type
+				+ ", icon=" + icon + ", order=" + order + ", menuGroup=" + menuGroup + "]";
+	}
 }

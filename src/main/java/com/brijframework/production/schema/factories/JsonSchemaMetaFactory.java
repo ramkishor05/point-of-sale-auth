@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.brijframwork.authorization.model.EOGlobalMenuItem;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JsonSchemaMetaFactory {
@@ -56,7 +55,7 @@ public class JsonSchemaMetaFactory {
 				load(resourcepath);
 			});
 
-			for(JsonSchemaObject segmentMetaData :  this.getCache().values()) {
+			for (JsonSchemaObject segmentMetaData : this.getCache().values()) {
 				buildRelationship(segmentMetaData);
 			}
 		} catch (IOException | URISyntaxException e) {
@@ -67,26 +66,25 @@ public class JsonSchemaMetaFactory {
 	private void load(String resourcepath) {
 		ObjectMapper objectMapper = new ObjectMapper();
 		try {
-			resourcepath=resourcepath.replaceAll(REGEX, REPLACEMENT);
+			resourcepath = resourcepath.replaceAll(REGEX, REPLACEMENT);
 			InputStream inJson = JsonSchemaMetaFactory.class.getResourceAsStream(resourcepath);
 			JsonSchemaFile jsonSchemaFile = objectMapper.readValue(inJson, JsonSchemaFile.class);
 			List<JsonSchemaObject> schemaObjects = jsonSchemaFile.getObjects();
-			for(JsonSchemaObject segmentMetaData :  schemaObjects) {
+			for (JsonSchemaObject segmentMetaData : schemaObjects) {
 				getCache().put(segmentMetaData.getId(), segmentMetaData);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
 
 	private void buildRelationship(JsonSchemaObject segmentMetaData) {
 		Map<String, Object> properties = segmentMetaData.getProperties();
-		properties.entrySet().forEach(entry->{
+		properties.entrySet().forEach(entry -> {
 			Object value = entry.getValue();
-			if(value instanceof String) {
+			if (value instanceof String) {
 				String ref = value.toString();
-				if(ref.startsWith(LK)) {
+				if (ref.startsWith(LK)) {
 					String[] refInfos = ref.split(LK);
 					JsonSchemaObject refInfo = this.getCache().get(refInfos[1].trim());
 					entry.setValue(refInfo);
@@ -94,11 +92,11 @@ public class JsonSchemaMetaFactory {
 			}
 		});
 		Map<String, Object> relationship = segmentMetaData.getRelationship();
-		relationship.entrySet().forEach(entry->{
+		relationship.entrySet().forEach(entry -> {
 			Object value = entry.getValue();
-			if(value instanceof String) {
+			if (value instanceof String) {
 				String ref = value.toString();
-				if(ref.startsWith(LK)) {
+				if (ref.startsWith(LK)) {
 					String[] refInfos = ref.split(LK);
 					JsonSchemaObject refInfo = this.getCache().get(refInfos[1].trim());
 					entry.setValue(refInfo);
@@ -106,19 +104,15 @@ public class JsonSchemaMetaFactory {
 			}
 		});
 	}
-	
-	public List<JsonSchemaObject> getAll(Class<? extends Object> type){
-		List<JsonSchemaObject> typeObjectList =new ArrayList<>();
-		for(JsonSchemaObject segmentMetaData :  this.getCache().values()) {
-			if(segmentMetaData.getType().equals(type.getName())){
+
+	public List<JsonSchemaObject> getAll(Class<? extends Object> type) {
+		List<JsonSchemaObject> typeObjectList = new ArrayList<>();
+		for (JsonSchemaObject segmentMetaData : this.getCache().values()) {
+			if (segmentMetaData.getType().equals(type.getName())) {
 				typeObjectList.add(segmentMetaData);
 			}
 		}
 		return typeObjectList;
 	}
 
-	public static void main(String[] args) {
-		JsonSchemaMetaFactory instance = JsonSchemaMetaFactory.getInstance();
-		System.out.println(instance.getAll(EOGlobalMenuItem.class));
-	}
 }
