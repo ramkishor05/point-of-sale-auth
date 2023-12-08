@@ -27,27 +27,39 @@
       }
     },
     {
-      "id": "GlobalMenuGroup_Products",
+      "id": "GlobalMenuGroup_Items",
       "type": "com.brijframwork.authorization.model.EOGlobalMenuGroup",
       "name": "GlobalMenuGroup",
       "properties": {
-        "title": "Products",
+        "title": "Items",
         "type": "group",
-        "icon": "Products",
+        "icon": "Items",
         "order":3,
-        "url": "/cust/products"
+        "url": "/cust/items"
       }
     },
     {
-      "id": "GlobalMenuGroup_Vendor",
+      "id": "GlobalMenuGroup_Parties",
       "type": "com.brijframwork.authorization.model.EOGlobalMenuGroup",
       "name": "GlobalMenuGroup",
       "properties": {
-        "title": "Vendor",
+        "title": "Parties",
         "type": "group",
-        "icon": "Vendor",
+        "icon": "Parties",
         "order":4,
-        "url": "/cust/vendor"
+        "url": "/cust/parties"
+      }
+    },
+    {
+      "id": "GlobalMenuGroup_Organizations",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuGroup",
+      "name": "GlobalMenuGroup",
+      "properties": {
+        "title": "Organizations",
+        "type": "group",
+        "icon": "Organizations",
+        "order":4,
+        "url": "/cust/organizations"
       }
     },
     {

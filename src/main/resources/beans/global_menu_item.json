@@ -21,7 +21,7 @@
       "properties": {
         "title": "Sales",
         "type": "item",
-        "url": "/cust/sales",
+        "url": "/cust/orders/sales",
         "icon": "Sales",
         "globalMenuGroup": "LK@GlobalMenuGroup_Orders"
       }
@@ -33,7 +33,7 @@
       "properties": {
         "title": "Purchase",
         "type": "item",
-        "url": "/cust/purchase",
+        "url": "/cust/orders/purchase",
         "icon": "Purchase",
         "globalMenuGroup": "LK@GlobalMenuGroup_Orders"
       }
@@ -43,35 +43,11 @@
       "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
       "name": "GlobalMenuItem",
       "properties": {
-        "title": "Products",
+        "title": "Items",
         "type": "item",
-        "url": "/cust/products",
+        "url": "/cust/items/products",
         "icon": "Products",
         "globalMenuGroup": "LK@GlobalMenuGroup_Products"
-      }
-    },
-    {
-      "id": "GlobalMenuItem_Vendor",
-      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
-      "name": "GlobalMenuItem",
-      "properties": {
-        "title": "Vendor",
-        "type": "item",
-        "url": "/cust/vendor",
-        "icon": "Vendor",
-        "globalMenuGroup": "LK@GlobalMenuGroup_Vendor"
-      }
-    },
-    {
-      "id": "GlobalMenuItem_Business",
-      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
-      "name": "GlobalMenuItem",
-      "properties": {
-        "title": "Business",
-        "type": "item",
-        "url": "/vendor/business",
-        "icon": "Business",
-        "globalMenuGroup": "LK@GlobalMenuGroup_Vendor"
       }
     },
     {
@@ -81,9 +57,9 @@
       "properties": {
         "title": "Customer",
         "type": "item",
-        "url": "/vendor/customer",
+        "url": "/cust/parties/customer",
         "icon": "Customer",
-        "globalMenuGroup": "LK@GlobalMenuGroup_Vendor"
+        "globalMenuGroup": "LK@GlobalMenuGroup_Parties"
       }
     },
     {
@@ -93,9 +69,21 @@
       "properties": {
         "title": "Supplier",
         "type": "item",
-        "url": "/vendor/supplier",
+        "url": "/cust/parties/supplier",
         "icon": "Supplier",
-        "globalMenuGroup": "LK@GlobalMenuGroup_Vendor"
+        "globalMenuGroup": "LK@GlobalMenuGroup_Parties"
+      }
+    },
+    {
+      "id": "GlobalMenuItem_Business",
+      "type": "com.brijframwork.authorization.model.EOGlobalMenuItem",
+      "name": "GlobalMenuItem",
+      "properties": {
+        "title": "Business",
+        "type": "item",
+        "url": "/cust/organizations/business",
+        "icon": "Business",
+        "globalMenuGroup": "LK@GlobalMenuGroup_Organizations"
       }
     },
     {
@@ -105,9 +93,9 @@
       "properties": {
         "title": "Employee",
         "type": "item",
-        "url": "/vendor/employee",
+        "url": "/cust/organizations/employee",
         "icon": "Employee",
-        "globalMenuGroup": "LK@GlobalMenuGroup_Vendor"
+        "globalMenuGroup": "LK@GlobalMenuGroup_Organizations"
       }
     },
     {
@@ -117,9 +105,9 @@
       "properties": {
         "title": "Users",
         "type": "item",
-        "url": "/vendor/users",
+        "url": "/cust/organizations/users",
         "icon": "Users",
-        "globalMenuGroup": "LK@GlobalMenuGroup_Vendor"
+        "globalMenuGroup": "LK@GlobalMenuGroup_Organizations"
       }
     },
     {
@@ -129,7 +117,7 @@
       "properties": {
         "title": "Category Group",
         "type": "item",
-        "url": "/category/group",
+        "url": "/cust/setups/category/group",
         "icon": "CategoryGroup",
         "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
       }
@@ -141,7 +129,7 @@
       "properties": {
         "title": "Category List",
         "type": "item",
-        "url": "/category/list",
+        "url": "/cust/setups/category/list",
         "icon": "CategoryList",
         "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
       }
@@ -153,7 +141,7 @@
       "properties": {
         "title": "Unit Group",
         "type": "item",
-        "url": "/unit/group",
+        "url": "/cust/setups/unit/group",
         "icon": "UnitGroup",
         "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
       }
@@ -165,7 +153,7 @@
       "properties": {
         "title": "Unit List",
         "type": "item",
-        "url": "/unit/list",
+        "url": "/cust/setups/unit/list",
         "icon": "UnitList",
         "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
       }
@@ -177,7 +165,7 @@
       "properties": {
         "title": "Currency Group",
         "type": "item",
-        "url": "/currency/group",
+        "url": "/cust/setups/currency/group",
         "icon": "CurrencyGroup",
         "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
       }
@@ -189,7 +177,7 @@
       "properties": {
         "title": "Currency List",
         "type": "item",
-        "url": "/currency/list",
+        "url": "/cust/setups/currency/list",
         "icon": "CurrencyList",
         "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
       }
@@ -201,7 +189,7 @@
       "properties": {
         "title": "Count Freq",
         "type": "item",
-        "url": "/count/freq",
+        "url": "/cust/setups/count/freq",
         "icon": "CountFreq",
         "globalMenuGroup": "LK@GlobalMenuGroup_Setups"
       }

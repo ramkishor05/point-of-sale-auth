@@ -21,21 +21,30 @@
 			}
 		},
 		{
-			"id": "UserRoleMenuGroup_OWNER_Products",
+			"id": "UserRoleMenuGroup_OWNER_Items",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
 			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
-				"menuGroup": "LK@GlobalMenuGroup_Products"
+				"menuGroup": "LK@GlobalMenuGroup_Items"
 			}
 		},
 		{
-			"id": "UserRoleMenuGroup_OWNER_Vendor",
+			"id": "UserRoleMenuGroup_OWNER_Parties",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
 			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
-				"menuGroup": "LK@GlobalMenuGroup_Vendor"
+				"menuGroup": "LK@GlobalMenuGroup_Parties"
+			}
+		},
+		{
+			"id": "UserRoleMenuGroup_OWNER_Organizations",
+			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
+			"name": "UserRoleMenuGroup",
+			"properties": {
+				"userRole": "LK@UserRole_OWNER",
+				"menuGroup": "LK@GlobalMenuGroup_Organizations"
 			}
 		},
 		{
@@ -48,12 +57,12 @@
 			}
 		},
 		{
-			"id": "UserRoleMenuGroup_OWNER_Userprofile",
+			"id": "UserRoleMenuGroup_OWNER_UserProfile",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
 			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
-				"menuGroup": "LK@GlobalMenuGroup_Userprofile"
+				"menuGroup": "LK@GlobalMenuGroup_UserProfile"
 			}
 		},
 		{
@@ -75,21 +84,30 @@
 			}
 		},
 		{
-			"id": "UserRoleMenuGroup_MANAGER_Products",
+			"id": "UserRoleMenuGroup_MANAGER_Items",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
 			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
-				"menuGroup": "LK@GlobalMenuGroup_Products"
+				"menuGroup": "LK@GlobalMenuGroup_Items"
 			}
 		},
 		{
-			"id": "UserRoleMenuGroup_MANAGER_Vendor",
+			"id": "UserRoleMenuGroup_MANAGER_Parties",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
 			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
-				"menuGroup": "LK@GlobalMenuGroup_Vendor"
+				"menuGroup": "LK@GlobalMenuGroup_Parties"
+			}
+		},
+		{
+			"id": "UserRoleMenuGroup_MANAGER_Organizations",
+			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
+			"name": "UserRoleMenuGroup",
+			"properties": {
+				"userRole": "LK@UserRole_MANAGER",
+				"menuGroup": "LK@GlobalMenuGroup_Organizations"
 			}
 		},
 		{
@@ -102,12 +120,12 @@
 			}
 		},
 		{
-			"id": "UserRoleMenuGroup_MANAGER_Userprofile",
+			"id": "UserRoleMenuGroup_MANAGER_UserProfile",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
 			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
-				"menuGroup": "LK@GlobalMenuGroup_Userprofile"
+				"menuGroup": "LK@GlobalMenuGroup_UserProfile"
 			}
 		},
 		{
@@ -129,30 +147,30 @@
 			}
 		},
 		{
-			"id": "UserRoleMenuGroup_SUPERVISOR_Products",
+			"id": "UserRoleMenuGroup_SUPERVISOR_Items",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
 			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_SUPERVISOR",
-				"menuGroup": "LK@GlobalMenuGroup_Products"
+				"menuGroup": "LK@GlobalMenuGroup_Items"
 			}
 		},
 		{
-			"id": "UserRoleMenuGroup_SUPERVISOR_Vendor",
+			"id": "UserRoleMenuGroup_SUPERVISOR_Parties",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
 			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_SUPERVISOR",
-				"menuGroup": "LK@GlobalMenuGroup_Vendor"
+				"menuGroup": "LK@GlobalMenuGroup_Parties"
 			}
 		},
 		{
-			"id": "UserRoleMenuGroup_SUPERVISOR_Userprofile",
+			"id": "UserRoleMenuGroup_SUPERVISOR_UserProfile",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
 			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_SUPERVISOR",
-				"menuGroup": "LK@GlobalMenuGroup_Userprofile"
+				"menuGroup": "LK@GlobalMenuGroup_UserProfile"
 			}
 		},
 		{
@@ -174,30 +192,30 @@
 			}
 		},
 		{
-			"id": "UserRoleMenuGroup_CREW_Vendor",
+			"id": "UserRoleMenuGroup_CREW_Items",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
 			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_CREW",
-				"menuGroup": "LK@GlobalMenuGroup_Vendor"
+				"menuGroup": "LK@GlobalMenuGroup_Items"
 			}
 		},
 		{
-			"id": "UserRoleMenuGroup_CREW_Products",
+			"id": "UserRoleMenuGroup_CREW_Parties",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
 			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_CREW",
-				"menuGroup": "LK@GlobalMenuGroup_Products"
+				"menuGroup": "LK@GlobalMenuGroup_Parties"
 			}
 		},
 		{
-			"id": "UserRoleMenuGroup_CREW_Userprofile",
+			"id": "UserRoleMenuGroup_CREW_UserProfile",
 			"type": "com.brijframwork.authorization.model.EOUserRoleMenuGroup",
 			"name": "UserRoleMenuGroup",
 			"properties": {
 				"userRole": "LK@UserRole_CREW",
-				"menuGroup": "LK@GlobalMenuGroup_Userprofile"
+				"menuGroup": "LK@GlobalMenuGroup_UserProfile"
 			}
 		}
 	]
