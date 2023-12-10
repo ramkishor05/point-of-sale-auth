@@ -9,7 +9,8 @@
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@Business_Portal_MenuItem_Dashboard",
-				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Dashboard"
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Dashboard",
+				"homePage": true
 			}
 		},
 		{
@@ -179,7 +180,8 @@
 			"properties": {
 				"userRole": "LK@UserRole_MANAGER",
 				"menuItem": "LK@Business_Portal_MenuItem_Dashboard",
-				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_MANAGER_Dashboard"
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_MANAGER_Dashboard",
+				"homePage": true
 			}
 		},
 		{
@@ -339,7 +341,8 @@
 			"properties": {
 				"userRole": "LK@UserRole_SUPERVISOR",
 				"menuItem": "LK@Business_Portal_MenuItem_Dashboard",
-				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_SUPERVISOR_Dashboard"
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_SUPERVISOR_Dashboard",
+				"homePage": true
 			}
 		},
 		{
@@ -409,7 +412,8 @@
 			"properties": {
 				"userRole": "LK@UserRole_CREW",
 				"menuItem": "LK@Business_Portal_MenuItem_Dashboard",
-				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_CREW_Dashboard"
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_CREW_Dashboard",
+				"homePage": true
 			}
 		},
 		{

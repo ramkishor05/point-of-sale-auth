@@ -19,7 +19,9 @@ public interface UserDetailMapper extends GenericMapper<EOUserAccount, UserDetai
 	UserRoleResponse userRole(EOUserRole eoUserRole);
 	
 	default UIMenuItem roleEndpoints(EORoleMenuItem eoRoleEndpoint) {
-		return roleEndpoint(eoRoleEndpoint.getMenuItem());
+		UIMenuItem roleEndpoint = roleEndpoint(eoRoleEndpoint.getMenuItem());
+		roleEndpoint.setHomePage(eoRoleEndpoint.isHomePage());
+		return roleEndpoint;
 	}
 
 	UIMenuItem roleEndpoint(EOMenuItem userEndpoint);

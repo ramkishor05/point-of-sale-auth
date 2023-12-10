@@ -42,6 +42,9 @@ public class EORoleMenuItem implements Serializable {
 	@OneToOne
 	@JoinColumn(name = "MENU_GROUP_ID")
 	private EORoleMenuGroup  roleMenuGroup;
+	
+	@Column(name = "IS_HOME_PAGE")
+	private boolean homePage=false;
 
 	public long getId() {
 		return id;
@@ -81,6 +84,14 @@ public class EORoleMenuItem implements Serializable {
 
 	public void setRoleMenuGroup(EORoleMenuGroup roleMenuGroup) {
 		this.roleMenuGroup = roleMenuGroup;
+	}
+
+	public boolean isHomePage() {
+		return homePage;
+	}
+
+	public void setHomePage(boolean homePage) {
+		this.homePage = homePage;
 	}
 
 	@Override

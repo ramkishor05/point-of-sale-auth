@@ -3,7 +3,7 @@
 	"order": 3,
 	"objects": [
 		{
-			"id": "Global_Portal_MenuGroup_Role_OWNER_Dashboard",
+			"id": "Global_Portal_MenuGroup_Role_ADMIN_Dashboard",
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
@@ -12,7 +12,7 @@
 			}
 		},
 		{
-			"id": "Global_Portal_MenuGroup_Role_OWNER_Orders",
+			"id": "Global_Portal_MenuGroup_Role_ADMIN_Menus",
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
@@ -21,7 +21,7 @@
 			}
 		},
 		{
-			"id": "Global_Portal_MenuGroup_Role_OWNER_Parties",
+			"id": "Global_Portal_MenuGroup_Role_ADMIN_Parties",
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
@@ -30,25 +30,7 @@
 			}
 		},
 		{
-			"id": "Global_Portal_MenuGroup_Role_OWNER_Parties",
-			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
-			"name": "Global_Portal_MenuGroup_Role",
-			"properties": {
-				"userRole": "LK@UserRole_ADMIN",
-				"menuGroup": "LK@Global_Portal_MenuGroup_Parties"
-			}
-		},
-		{
-			"id": "Global_Portal_MenuGroup_Role_OWNER_Organizations",
-			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
-			"name": "Global_Portal_MenuGroup_Role",
-			"properties": {
-				"userRole": "LK@UserRole_ADMIN",
-				"menuGroup": "LK@Global_Portal_MenuGroup_Organizations"
-			}
-		},
-		{
-			"id": "Global_Portal_MenuGroup_Role_OWNER_Setups",
+			"id": "Global_Portal_MenuGroup_Role_ADMIN_Setups",
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
@@ -57,7 +39,7 @@
 			}
 		},
 		{
-			"id": "Global_Portal_MenuGroup_Role_OWNER_UserProfile",
+			"id": "Global_Portal_MenuGroup_Role_ADMIN_UserProfile",
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {

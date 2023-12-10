@@ -97,6 +97,7 @@ public class MenuServiceImpl implements MenuService {
 		uiMenuItem.setUrl(menuItem.getUrl());
 		uiMenuItem.setIcon(menuItem.getIcon());
 		uiMenuItem.setOrder(menuItem.getOrder());
+		uiMenuItem.setHomePage(userRoleMenuItem.isHomePage());	
 		uiMenuGroup.getMenuItems().add(uiMenuItem);
 	}
 

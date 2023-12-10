@@ -40,7 +40,6 @@ public class EOMenuItem implements Serializable {
 	@Column(name = "ORDER_SQN")
 	private Integer order;
 	
-	
 	@ManyToOne
 	@JoinColumn(name = "MENU_GROUP_ID")
 	private EOMenuGroup  menuGroup;

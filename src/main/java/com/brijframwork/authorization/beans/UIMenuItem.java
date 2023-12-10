@@ -8,6 +8,7 @@ public class UIMenuItem {
 	private String icon;
 	private String type;
 	private Integer order;
+	private boolean homePage;
 
 	public long getId() {
 		return id;
@@ -60,4 +61,14 @@ public class UIMenuItem {
 	public void setOrder(Integer order) {
 		this.order = order;
 	}
+
+	public boolean isHomePage() {
+		return homePage;
+	}
+
+	public void setHomePage(boolean homePage) {
+		this.homePage = homePage;
+	}
+	
+	
 }
