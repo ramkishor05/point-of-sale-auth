@@ -7,6 +7,7 @@ public class UIMenuGroup {
 
 	private long id;
 	private String title;
+	private String idenNo;
 	private String url;
 	private String icon;
 	private String type;
@@ -21,7 +22,14 @@ public class UIMenuGroup {
 	public void setId(long id) {
 		this.id = id;
 	}
+	public String getIdenNo() {
+		return idenNo;
+	}
 
+	public void setIdenNo(String idenNo) {
+		this.idenNo = idenNo;
+	}
+	
 	public String getTitle() {
 		return title;
 	}

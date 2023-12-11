@@ -3,6 +3,7 @@ package com.brijframwork.authorization.beans;
 public class UIMenuItem {
 
 	private long id;
+	private String idenNo;
 	private String title;
 	private String url;
 	private String icon;
@@ -16,6 +17,14 @@ public class UIMenuItem {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public String getIdenNo() {
+		return idenNo;
+	}
+
+	public void setIdenNo(String idenNo) {
+		this.idenNo = idenNo;
 	}
 
 	public String getTitle() {
