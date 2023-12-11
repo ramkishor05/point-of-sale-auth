@@ -20,4 +20,5 @@ public interface RoleMenuGroupRepository  extends JpaRepository<EORoleMenuGroup,
 
 	@Query(nativeQuery = true,  value="select * from ROLE_MENU_GROUP URE where URE.USER_ROLE_ID = :roleId and URE.MENU_GROUP_ID=:userEndpointId ")
 	Optional<EORoleMenuGroup> findByRoleIdAndGroupId(@Param("roleId")Long roleId, @Param("userEndpointId") Long userEndpointId);
+
 }

@@ -14,47 +14,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.brijframwork.authorization.beans.UIMenuGroup;
-import com.brijframwork.authorization.service.MenuService;
+import com.brijframwork.authorization.service.MenuGroupService;
 
 @RestController
-@RequestMapping("/api/menu")
-public class UserMenuController {
+@RequestMapping("/api/menu/groups")
+public class MenuGroupController {
 	
 	@Autowired
-    private MenuService userMenuService;
+    private MenuGroupService menuGroupService;
 	
 	@PostMapping
 	public ResponseEntity<UIMenuGroup> addMenuGroup(@RequestBody UIMenuGroup uiMenuGroup){
-    	return ResponseEntity.ok(userMenuService.addMenuGroup(uiMenuGroup));
+    	return ResponseEntity.ok(menuGroupService.addMenuGroup(uiMenuGroup));
 	}
 
 	@PutMapping("/{id}")
 	public ResponseEntity<UIMenuGroup> updateMenuGroup(@PathVariable Long id, @RequestBody UIMenuGroup uiMenuGroup){
-    	return ResponseEntity.ok(userMenuService.updateMenuGroup(uiMenuGroup));
+    	return ResponseEntity.ok(menuGroupService.updateMenuGroup(uiMenuGroup));
 	}
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Boolean> deleteMenuGroup(@PathVariable Long id){
-    	return ResponseEntity.ok(userMenuService.deleteMenuGroup(id));
+    	return ResponseEntity.ok(menuGroupService.deleteMenuGroup(id));
 	}
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<UIMenuGroup> getMenuGroup(@PathVariable Long id){
-    	return ResponseEntity.ok(userMenuService.getMenuGroup(id));
+    	return ResponseEntity.ok(menuGroupService.getMenuGroup(id));
 	}
 	
 	@GetMapping
 	public ResponseEntity<List<UIMenuGroup>> getMenuGroupList(){
-    	return ResponseEntity.ok(userMenuService.getMenuGroupList());
-	}
-	
-	@GetMapping("/type/{type}")
-	public ResponseEntity<List<UIMenuGroup>> getMenuGroupList(@PathVariable String type){
-    	return ResponseEntity.ok(userMenuService.getMenuGroupList(type));
-	}
-	
-	@GetMapping("/role/{roleId}")
-	public ResponseEntity<List<UIMenuGroup>> getMenuGroupList(@PathVariable Long roleId){
-    	return ResponseEntity.ok(userMenuService.getMenuGroupListByRoleId(roleId));
+    	return ResponseEntity.ok(menuGroupService.getMenuGroupList());
 	}
 }

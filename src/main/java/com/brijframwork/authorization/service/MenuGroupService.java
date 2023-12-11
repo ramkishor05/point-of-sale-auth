@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.brijframwork.authorization.beans.UIMenuGroup;
 
-public interface MenuService {
+public interface MenuGroupService {
 
 	UIMenuGroup addMenuGroup(UIMenuGroup uiMenuGroup);
 
@@ -17,7 +17,4 @@ public interface MenuService {
 	List<UIMenuGroup> getMenuGroupList();
 
 	List<UIMenuGroup> getMenuGroupList(String type);
-
-	List<UIMenuGroup> getMenuGroupListByRoleId(Long roleId);
-
 }

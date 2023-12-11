@@ -23,4 +23,7 @@ public interface RoleMenuItemRepository  extends JpaRepository<EORoleMenuItem, L
 
 	@Query(nativeQuery = true,  value="select * from ROLE_MENU_ITEM URE where URE.ROLE_ID =?1")
 	List<EORoleMenuItem>  findAllByRoleId(Long roleId);
+
+	@Query(nativeQuery = true,  value="select * from ROLE_MENU_ITEM URE where URE.TYPE_ID =?1")
+	List<EORoleMenuItem>  findAllByType(String roleId);
 }
