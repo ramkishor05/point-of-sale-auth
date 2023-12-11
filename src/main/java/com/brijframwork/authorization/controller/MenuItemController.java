@@ -17,7 +17,7 @@ import com.brijframwork.authorization.beans.UIMenuItem;
 import com.brijframwork.authorization.service.MenuItemService;
 
 @RestController
-@RequestMapping("/api/menu/items")
+@RequestMapping("/api/menu/item")
 public class MenuItemController {
 	
 	@Autowired

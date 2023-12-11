@@ -17,7 +17,7 @@ import com.brijframwork.authorization.beans.UIRoleMenuGroup;
 import com.brijframwork.authorization.service.RoleMenuGroupService;
 
 @RestController
-@RequestMapping("/api/role/menu/groups")
+@RequestMapping("/api/role/menu/group")
 public class RoleMenuGroupController {
 	
 	@Autowired

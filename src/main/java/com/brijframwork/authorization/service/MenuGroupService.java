@@ -17,4 +17,6 @@ public interface MenuGroupService {
 	List<UIMenuGroup> getMenuGroupList();
 
 	List<UIMenuGroup> getMenuGroupList(String type);
+
+	List<UIMenuGroup> getMenuGroupListByRole(Long roleId);
 }

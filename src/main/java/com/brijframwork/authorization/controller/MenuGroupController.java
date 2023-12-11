@@ -17,7 +17,7 @@ import com.brijframwork.authorization.beans.UIMenuGroup;
 import com.brijframwork.authorization.service.MenuGroupService;
 
 @RestController
-@RequestMapping("/api/menu/groups")
+@RequestMapping("/api/menu/group")
 public class MenuGroupController {
 	
 	@Autowired
@@ -46,5 +46,10 @@ public class MenuGroupController {
 	@GetMapping
 	public ResponseEntity<List<UIMenuGroup>> getMenuGroupList(){
     	return ResponseEntity.ok(menuGroupService.getMenuGroupList());
+	}
+	
+	@GetMapping("/role/{roleId}")
+	public ResponseEntity<List<UIMenuGroup>> getMenuGroupListByRole(@PathVariable Long roleId){
+    	return ResponseEntity.ok(menuGroupService.getMenuGroupListByRole(roleId));
 	}
 }

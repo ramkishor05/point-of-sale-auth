@@ -17,7 +17,7 @@ import com.brijframwork.authorization.beans.UIRoleMenuItem;
 import com.brijframwork.authorization.service.RoleMenuItemService;
 
 @RestController
-@RequestMapping("/api/role/menu/items")
+@RequestMapping("/api/role/menu/item")
 public class RoleMenuItemController {
 	
 	@Autowired
