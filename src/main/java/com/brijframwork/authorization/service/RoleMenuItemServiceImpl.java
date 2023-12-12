@@ -23,7 +23,6 @@ public class RoleMenuItemServiceImpl implements RoleMenuItemService {
 	public UIRoleMenuItem addRoleMenuItem(UIRoleMenuItem uiRoleMenuItem) {
 		EORoleMenuItem eoRoleMenuItem = roleMenuItemMapper.mapToDAO(uiRoleMenuItem);
 		eoRoleMenuItem=roleMenuItemRepository.save(eoRoleMenuItem);
-		
 		return roleMenuItemMapper.mapToDTO(eoRoleMenuItem);
 	}
 

@@ -73,12 +73,12 @@
       }
     },
     {
-      "id": "Global_Portal_MenuItem_Vendors",
+      "id": "Global_Portal_MenuItem_Vendor",
       "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "Vendors",
-        "idenNo": "Global_Portal_MenuItem_Vendors",
+        "idenNo": "Global_Portal_MenuItem_Vendor",
         "type": "item",
         "url": "/global/parties/vendors",
         "icon": "Vendors",
@@ -101,7 +101,7 @@
       }
     },
     {
-      "id": "Global_Portal_MenuItem_Customers",
+      "id": "Global_Portal_MenuItem_Customer",
       "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
@@ -115,17 +115,43 @@
       }
     },
     {
-      "id": "Global_Portal_MenuItem_Users",
+      "id": "Global_Portal_MenuItem_User",
       "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "Users",
-        "idenNo": "Global_Portal_MenuItem_Users",
+        "idenNo": "Global_Portal_MenuItem_User",
         "type": "item",
         "url": "/global/parties/users",
         "icon": "Users",
         "order":5,
         "menuGroup": "LK@Global_Portal_MenuGroup_Parties"
+      }
+    },
+    {
+      "id": "Global_Portal_MenuItem_Employee",
+      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "name": "Global_Portal_MenuItem",
+      "properties": {
+        "title": "Employee",
+        "idenNo": "Global_Portal_MenuItem_Employee",
+        "type": "item",
+        "url": "/business/portal/organizations/employee",
+        "icon": "Employee",
+        "menuGroup": "LK@Portal_MenuGroup_Organizations"
+      }
+    },
+    {
+      "id": "Global_Portal_MenuItem_User",
+      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "name": "Global_Portal_MenuItem",
+      "properties": {
+        "title": "Users",
+        "idenNo": "Global_Portal_MenuItem_User",
+        "type": "item",
+        "url": "/business/portal/organizations/users",
+        "icon": "Users",
+        "menuGroup": "LK@Portal_MenuGroup_Organizations"
       }
     },
     {
@@ -234,7 +260,8 @@
         "title": "User profile",
         "idenNo": "Global_Portal_MenuItem_UserProfile",
         "type": "item",
-        "url": "/global/user/profile",
+        "url": "/global/portal/userprofile/detial",
+        
         "icon": "UserProfile",
         "order":1,
         "menuGroup": "LK@Global_Portal_MenuGroup_UserProfile"

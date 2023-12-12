@@ -10,7 +10,7 @@ public class UIRoleMenuItem {
 
 	private UIMenuItem menuItem;
 	
-	private Long roleMenuGroupId;
+	private UIRoleMenuGroup roleMenuGroup;
 
 	public Long getId() {
 		return id;
@@ -44,11 +44,11 @@ public class UIRoleMenuItem {
 		this.menuItem = menuItem;
 	}
 
-	public Long getRoleMenuGroupId() {
-		return roleMenuGroupId;
+	public UIRoleMenuGroup getRoleMenuGroup() {
+		return roleMenuGroup;
 	}
 
-	public void setRoleMenuGroupId(Long roleMenuGroupId) {
-		this.roleMenuGroupId = roleMenuGroupId;
+	public void setRoleMenuGroup(UIRoleMenuGroup roleMenuGroup) {
+		this.roleMenuGroup = roleMenuGroup;
 	} 
 }
