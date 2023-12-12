@@ -78,8 +78,11 @@ public class MenuGroupServiceImpl implements MenuGroupService {
 				uiMenuItem.setHomePage(eoRoleMenuItem.isHomePage());
 				uiMenuGroup.getMenuItems().add(uiMenuItem);
 			}
+			uiMenuGroup.getMenuItems().sort((m1,m2)->m1.getOrder().compareTo(m2.getOrder()));
 			uiMenuGroups.add(uiMenuGroup);
 		}
+		uiMenuGroups.sort((m1,m2)->m1.getOrder().compareTo(m2.getOrder()));
+
 		return uiMenuGroups;
 	}
 }

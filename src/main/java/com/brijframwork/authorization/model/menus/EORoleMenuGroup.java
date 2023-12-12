@@ -31,6 +31,9 @@ public class EORoleMenuGroup implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
 	private long id;
+	
+	@Column(name = "IDEN_NO")
+	private String idenNo;
 
 	@OneToOne
 	@JoinColumn(name = "USER_ROLE_ID")
@@ -50,6 +53,14 @@ public class EORoleMenuGroup implements Serializable {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+	
+	public String getIdenNo() {
+		return idenNo;
+	}
+
+	public void setIdenNo(String idenNo) {
+		this.idenNo = idenNo;
 	}
 
 	public EOUserRole getUserRole() {

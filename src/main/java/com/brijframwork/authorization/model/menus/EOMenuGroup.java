@@ -51,6 +51,14 @@ public class EOMenuGroup implements Serializable {
 		this.id = id;
 	}
 
+	public String getIdenNo() {
+		return idenNo;
+	}
+
+	public void setIdenNo(String idenNo) {
+		this.idenNo = idenNo;
+	}
+
 	public String getTitle() {
 		return title;
 	}

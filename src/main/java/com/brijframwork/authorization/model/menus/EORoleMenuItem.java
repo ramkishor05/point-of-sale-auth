@@ -28,6 +28,9 @@ public class EORoleMenuItem implements Serializable {
 	@Column(name = "ID")
 	private long id;
 	
+	@Column(name = "IDEN_NO")
+	private String idenNo;
+	
 	@Column(name = "OWNER_ID", nullable = true)
 	private Long ownerId;
 
@@ -52,6 +55,14 @@ public class EORoleMenuItem implements Serializable {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+	
+	public String getIdenNo() {
+		return idenNo;
+	}
+
+	public void setIdenNo(String idenNo) {
+		this.idenNo = idenNo;
 	}
 
 	public Long getOwnerId() {
