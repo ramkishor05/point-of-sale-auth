@@ -145,10 +145,16 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
     }
 
 	private String itemKey(EORoleMenuItem userRoleMenuItem) {
+		if(userRoleMenuItem.getMenuItem()==null || userRoleMenuItem.getUserRole()==null) {
+			return "";
+		}
 		return userRoleMenuItem.getUserRole().getId()+"_"+ userRoleMenuItem.getMenuItem().getId();
 	}
 
 	private String groupKey(EORoleMenuGroup userRoleMenuGroup) {
+		if(userRoleMenuGroup.getMenuGroup()==null || userRoleMenuGroup.getUserRole()==null) {
+			return "";
+		}
 		return userRoleMenuGroup.getUserRole().getId()+"_"+ userRoleMenuGroup.getMenuGroup().getId();
 	}
     
