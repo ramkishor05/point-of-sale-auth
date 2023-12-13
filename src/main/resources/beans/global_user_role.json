@@ -3,13 +3,13 @@
   "order": 1,
   "objects": [
     {
-      "id": "UserRole_ADMIN",
+      "id": "UserRole_App_Admin",
       "type": "com.brijframwork.authorization.model.EOUserRole",
       "name": "GlobalUserRole",
       "properties": {
         "position": 0,
         "roleName": "admin",
-        "roleId": "ADMIN",
+        "roleId": "App_Admin",
         "roleType":"APP"
       }
     },

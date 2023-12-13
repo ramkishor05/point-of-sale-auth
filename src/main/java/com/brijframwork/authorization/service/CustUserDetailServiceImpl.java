@@ -1,6 +1,7 @@
 package com.brijframwork.authorization.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,12 +34,16 @@ public class CustUserDetailServiceImpl implements CustUserDetailService {
 	
 	@Override
 	public UserDetailResponse registerAccount(Long ownerId,UserDetailRequest userDetailRequest) {
-		if(isAlreadyExists(userDetailRequest.getUsername())) {
-			throw new RuntimeException("AlreadyExists");
-		}
+		/*
+		 * if(isAlreadyExists(userDetailRequest.getUsername())) { throw new
+		 * RuntimeException("AlreadyExists"); }
+		 */
 		EOUserRole eoUserRole = userRoleRepository.findById(userDetailRequest.getUserRoleId()).orElseThrow(()-> new RuntimeException("Invalid role id"));
-		
-		EOUserAccount eoUserAccount=new EOUserAccount();
+		if(userDetailRequest.getUserProfile()==null) {
+			UIUserProfile uiUserProfile=new UIUserProfile();
+			userDetailRequest.setUserProfile(uiUserProfile);
+		}
+		EOUserAccount eoUserAccount=userAccountRepository.findUserName(userDetailRequest.getUsername()).orElse(new EOUserAccount());
 		eoUserAccount.setUsername(userDetailRequest.getUsername());
 		eoUserAccount.setPassword(userDetailRequest.getPassword());
 		eoUserAccount.setType(eoUserRole.getRoleId());
@@ -51,6 +56,16 @@ public class CustUserDetailServiceImpl implements CustUserDetailService {
 		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);		
 		return userDetailMapper.mapToDTO(eoUserAccount);
 	}
+	
+	@Override
+	public UserDetailResponse deleteAccount(Long ownerId, String username) {
+		Optional<EOUserAccount> findUserAccount = userAccountRepository.findUserName(username);
+		if(findUserAccount.isPresent()) {
+			userAccountRepository.delete(findUserAccount.get());
+			return userDetailMapper.mapToDTO(new EOUserAccount());
+		}
+		return userDetailMapper.mapToDTO(new EOUserAccount());
+	}
 
 	public boolean isAlreadyExists(String username) {
 		return userAccountRepository.findUserName(username).isPresent();
@@ -62,7 +77,10 @@ public class CustUserDetailServiceImpl implements CustUserDetailService {
 			throw new RuntimeException("User not exists in system.");
 		}
 		EOUserRole eoUserRole = userRoleRepository.findById(userDetailRequest.getUserRoleId()).orElseThrow(()-> new RuntimeException("Invalid role id"));
-		
+		if(userDetailRequest.getUserProfile()==null) {
+			UIUserProfile uiUserProfile=new UIUserProfile();
+			userDetailRequest.setUserProfile(uiUserProfile);
+		}
 		EOUserAccount eoUserAccount=new EOUserAccount();
 		eoUserAccount.setId(userDetailRequest.getId());
 		eoUserAccount.setUsername(userDetailRequest.getUsername());

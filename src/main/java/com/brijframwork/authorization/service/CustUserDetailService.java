@@ -12,4 +12,6 @@ public interface CustUserDetailService {
 	UserDetailResponse updateAccount(Long ownerId, UserDetailRequest uiUserAccount);
 
 	List<UserDetailResponse> getCustUsers(Long ownerId);
+
+	UserDetailResponse deleteAccount(Long ownerId, String username);
 }

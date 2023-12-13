@@ -3,62 +3,62 @@
 	"order": 3,
 	"objects": [
 		{
-			"id": "Global_Portal_MenuGroup_Role_ADMIN_Dashboard",
+			"id": "Global_Portal_MenuGroup_Role_App_Admin_Dashboard",
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
-				"idenNo": "Global_Portal_MenuGroup_Role_ADMIN_Dashboard",
-				"userRole": "LK@UserRole_ADMIN",
+				"idenNo": "Global_Portal_MenuGroup_Role_App_Admin_Dashboard",
+				"userRole": "LK@UserRole_App_Admin",
 				"menuGroup": "LK@Global_Portal_MenuGroup_Dashboard"
 			}
 		},
 		{
-			"id": "Global_Portal_MenuGroup_Role_ADMIN_Menus",
+			"id": "Global_Portal_MenuGroup_Role_App_Admin_Menus",
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
-				"idenNo": "Global_Portal_MenuGroup_Role_ADMIN_Menus",
-				"userRole": "LK@UserRole_ADMIN",
+				"idenNo": "Global_Portal_MenuGroup_Role_App_Admin_Menus",
+				"userRole": "LK@UserRole_App_Admin",
 				"menuGroup": "LK@Global_Portal_MenuGroup_Menus"
 			}
 		},
 		{
-			"id": "Global_Portal_MenuGroup_Role_ADMIN_Parties",
+			"id": "Global_Portal_MenuGroup_Role_App_Admin_Parties",
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
-				"idenNo": "Global_Portal_MenuGroup_Role_ADMIN_Parties",
-				"userRole": "LK@UserRole_ADMIN",
+				"idenNo": "Global_Portal_MenuGroup_Role_App_Admin_Parties",
+				"userRole": "LK@UserRole_App_Admin",
 				"menuGroup": "LK@Global_Portal_MenuGroup_Parties"
 			}
 		},
 		{
-			"id": "Global_Portal_MenuGroup_Role_ADMIN_Organizations",
+			"id": "Global_Portal_MenuGroup_Role_App_Admin_Organizations",
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuGroup_Manager_Organizations",
-				"userRole": "LK@UserRole_ADMIN",
+				"userRole": "LK@UserRole_App_Admin",
 				"menuGroup": "LK@Global_Portal_MenuGroup_Organizations"
 			}
 		},
 		{
-			"id": "Global_Portal_MenuGroup_Role_ADMIN_Setups",
+			"id": "Global_Portal_MenuGroup_Role_App_Admin_Setups",
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
-				"idenNo": "Global_Portal_MenuGroup_Role_ADMIN_Setups",
-				"userRole": "LK@UserRole_ADMIN",
+				"idenNo": "Global_Portal_MenuGroup_Role_App_Admin_Setups",
+				"userRole": "LK@UserRole_App_Admin",
 				"menuGroup": "LK@Global_Portal_MenuGroup_Setups"
 			}
 		},
 		{
-			"id": "Global_Portal_MenuGroup_Role_ADMIN_UserProfile",
+			"id": "Global_Portal_MenuGroup_Role_App_Admin_UserProfile",
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
-				"idenNo": "Global_Portal_MenuGroup_Role_ADMIN_UserProfile",
-				"userRole": "LK@UserRole_ADMIN",
+				"idenNo": "Global_Portal_MenuGroup_Role_App_Admin_UserProfile",
+				"userRole": "LK@UserRole_App_Admin",
 				"menuGroup": "LK@Global_Portal_MenuGroup_UserProfile"
 			}
 		}
