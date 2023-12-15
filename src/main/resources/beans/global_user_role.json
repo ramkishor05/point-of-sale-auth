@@ -10,7 +10,7 @@
         "position": 0,
         "roleName": "admin",
         "roleId": "App_Admin",
-        "roleType":"APP"
+        "roleType":"GLOBAL"
       }
     },
     {
@@ -21,7 +21,7 @@
         "position": 1,
         "roleName": "Owner",
         "roleId": "OWNER",
-        "roleType":"CUST"
+        "roleType":"GLOBAL"
       }
     },
     {
@@ -32,7 +32,7 @@
          "position": 2,
         "roleName": "Manager",
         "roleId": "MANAGER",
-        "roleType":"CUST"
+        "roleType":"VENDOR"
       }
     },
     {
@@ -43,7 +43,7 @@
         "position": 3,
         "roleName": "SUPERVISOR",
         "roleId": "SUPERVISOR",
-        "roleType":"CUST"
+        "roleType":"VENDOR"
       }
     },
     {
@@ -54,7 +54,7 @@
         "position": 4,
         "roleName": "Crew",
         "roleId": "CREW",
-        "roleType":"CUST"
+        "roleType":"VENDOR"
       }
     }
   ]

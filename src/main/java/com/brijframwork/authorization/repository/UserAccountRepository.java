@@ -20,5 +20,8 @@ public interface UserAccountRepository  extends JpaRepository<EOUserAccount, Lon
 
 	@Query(nativeQuery = true,  value="select * from USER_ACCOUNT UA where UA.OWNER_ID = :ownerId")
 	List<EOUserAccount> findAllByOwnerId(Long ownerId);
+	
+	@Query(nativeQuery = true,  value="select * from USER_ACCOUNT UA INNER JOIN USER_ROLE UR ON UR.ID=UA.ROLE_ID  where UA.OWNER_ID = :ownerId AND UR.ROLE_TYPE = :roleType ")
+	List<EOUserAccount> findAllByOwnerIdAndRoleType(Long ownerId, String roleType);
 
 }

@@ -26,8 +26,7 @@ public class CustUserController {
 	
 	@PostMapping
 	public ResponseEntity<?> registerCust(@RequestHeader(OWNER_ID) long ownerId, @RequestBody UserDetailRequest uiUserAccount){
-		
-    	return ResponseEntity.ok(userDetailService.registerAccount(ownerId,uiUserAccount));
+		return ResponseEntity.ok(userDetailService.registerAccount(ownerId,uiUserAccount));
 	}
 	
 	@DeleteMapping("/username/{username}")
