@@ -56,7 +56,8 @@ public class AuthenticationController {
 
 	@GetMapping("/userdetail")
     public ResponseEntity<?> getUserDetailFromToken(@RequestHeader(API_TOKEN) String apiToken) throws AuthenticationException {
-    	String token = apiToken.replaceFirst(Constants.TOKEN_PREFIX, "");
+    	
+		String token = apiToken.replaceFirst(Constants.TOKEN_PREFIX, "");
     	return ResponseEntity.ok(jwtTokenUtil.getUserDetailFromToken(token));
     }
 	

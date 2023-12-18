@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.brijframwork.authorization.beans.UIUserProfile;
 import com.brijframwork.authorization.beans.UserDetailRequest;
 import com.brijframwork.authorization.beans.UserDetailResponse;
+import com.brijframwork.authorization.constant.UserType;
 import com.brijframwork.authorization.mapper.UserDetailMapper;
 import com.brijframwork.authorization.model.EOUserAccount;
 import com.brijframwork.authorization.model.EOUserProfile;
@@ -50,7 +51,7 @@ public class CustUserDetailServiceImpl implements CustUserDetailService {
 		eoUserAccount.setRegisteredMobile(userDetailRequest.getRegisteredMobile());
 		eoUserAccount.setRegisteredEmail(userDetailRequest.getRegisteredEmail());
 		eoUserAccount.setAccountName(userDetailRequest.getAccountName());
-		eoUserAccount.setOwnerId(userDetailRequest.getOwnerId());
+		eoUserAccount.setOwnerId(ownerId);
 		eoUserAccount.setUserRole(eoUserRole);
 		eoUserAccount.setUserProfile(getUserProfile(userDetailRequest.getUserProfile()));
 		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);		
@@ -89,7 +90,7 @@ public class CustUserDetailServiceImpl implements CustUserDetailService {
 		eoUserAccount.setRegisteredMobile(userDetailRequest.getRegisteredMobile());
 		eoUserAccount.setRegisteredEmail(userDetailRequest.getRegisteredEmail());
 		eoUserAccount.setAccountName(userDetailRequest.getAccountName());
-		eoUserAccount.setOwnerId(userDetailRequest.getOwnerId());
+		eoUserAccount.setOwnerId(ownerId);
 		eoUserAccount.setUserRole(eoUserRole);
 		eoUserAccount.setUserProfile(getUserProfile(userDetailRequest.getUserProfile()));
 		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);		
@@ -108,7 +109,7 @@ public class CustUserDetailServiceImpl implements CustUserDetailService {
 
 	@Override
 	public List<UserDetailResponse> getCustUsers(Long ownerId) {
-		return userDetailMapper.mapToDTO(userAccountRepository.findAllByOwnerId(ownerId));
+		return userDetailMapper.mapToDTO(userAccountRepository.findAllByOwnerIdAndRoleType(ownerId, UserType.VENDOR.getType()));
 	}
 
 }
