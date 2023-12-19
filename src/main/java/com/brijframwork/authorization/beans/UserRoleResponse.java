@@ -16,6 +16,8 @@ public class UserRoleResponse implements Serializable {
 	private String roleId;
 	
 	private List<UIMenuItem> roleEndpoints;
+	
+	private List<UIHeaderItem> headerItems;
 
 	public long getId() {
 		return id;
@@ -55,5 +57,13 @@ public class UserRoleResponse implements Serializable {
 
 	public void setRoleEndpoints(List<UIMenuItem> roleEndpoints) {
 		this.roleEndpoints = roleEndpoints;
+	}
+
+	public List<UIHeaderItem> getHeaderItems() {
+		return headerItems;
+	}
+
+	public void setHeaderItems(List<UIHeaderItem> headerItems) {
+		this.headerItems = headerItems;
 	}
 }
