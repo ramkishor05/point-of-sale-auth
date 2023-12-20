@@ -8,7 +8,7 @@
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuGroup_Role_Admin_Dashboard",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuGroup": "LK@Global_Portal_MenuGroup_Dashboard"
 			}
 		},
@@ -18,7 +18,7 @@
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuGroup_Role_Admin_Menus",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuGroup": "LK@Global_Portal_MenuGroup_Menus"
 			}
 		},
@@ -28,7 +28,7 @@
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuGroup_Role_Admin_Parties",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuGroup": "LK@Global_Portal_MenuGroup_Parties"
 			}
 		},
@@ -38,7 +38,7 @@
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuGroup_Manager_Organizations",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuGroup": "LK@Global_Portal_MenuGroup_Organizations"
 			}
 		},
@@ -48,7 +48,7 @@
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuGroup_Role_Admin_Setups",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuGroup": "LK@Global_Portal_MenuGroup_Setups"
 			}
 		},
@@ -58,7 +58,7 @@
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuGroup_Role_Admin_UserProfile",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuGroup": "LK@Global_Portal_MenuGroup_UserProfile"
 			}
 		}

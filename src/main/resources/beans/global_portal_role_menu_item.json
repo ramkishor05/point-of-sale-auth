@@ -8,7 +8,7 @@
 			"name": "Global_Portal_MenuItem_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuItem_Role_Admin_Dashboard",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuItem": "LK@Global_Portal_MenuItem_Dashboard",
 				"roleMenuGroup": "LK@Global_Portal_MenuGroup_Role_Admin_Dashboard",
 				"homePage": true
@@ -20,7 +20,7 @@
 			"name": "Global_Portal_MenuItem_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuItem_Role_Admin_Customer",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuItem": "LK@Global_Portal_MenuItem_Customer",
 				"roleMenuGroup": "LK@Global_Portal_MenuGroup_Role_Admin_Parties"
 			}
@@ -31,7 +31,7 @@
 			"name": "Global_Portal_MenuItem_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuItem_Role_Admin_Supplier",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuItem": "LK@Global_Portal_MenuItem_Supplier",
 				"roleMenuGroup": "LK@Global_Portal_MenuGroup_Role_Admin_Parties"
 			}
@@ -42,7 +42,7 @@
 			"name": "Global_Portal_MenuItem_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuItem_Role_Admin_Vendor",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuItem": "LK@Global_Portal_MenuItem_Vendor",
 				"roleMenuGroup": "LK@Global_Portal_MenuGroup_Role_Admin_Parties"
 			}
@@ -53,7 +53,7 @@
 			"name": "Global_Portal_MenuItem_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuItem_Role_Admin_Employee",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuItem": "LK@Global_Portal_MenuItem_Employee",
 				"roleMenuGroup": "LK@Global_Portal_MenuGroup_Role_Admin_Organizations"
 			}
@@ -64,7 +64,7 @@
 			"name": "Global_Portal_MenuItem_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuItem_Role_Admin_User",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuItem": "LK@Global_Portal_MenuItem_User",
 				"roleMenuGroup": "LK@Global_Portal_MenuGroup_Role_Admin_Organizations"
 			}
@@ -75,7 +75,7 @@
 			"name": "Global_Portal_MenuItem_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuItem_Role_Admin_Category_Group",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuItem": "LK@Global_Portal_MenuItem_Category_Group",
 				"roleMenuGroup": "LK@Global_Portal_MenuGroup_Role_Admin_Setups"
 			}
@@ -86,7 +86,7 @@
 			"name": "Global_Portal_MenuItem_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuItem_Role_Admin_Category_List",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuItem": "LK@Global_Portal_MenuItem_Category_List",
 				"roleMenuGroup": "LK@Global_Portal_MenuGroup_Role_Admin_Setups"
 			}
@@ -97,7 +97,7 @@
 			"name": "Global_Portal_MenuItem_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuItem_Role_Admin_Unit_Group",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuItem": "LK@Global_Portal_MenuItem_Unit_Group",
 				"roleMenuGroup": "LK@Global_Portal_MenuGroup_Role_Admin_Setups"
 			}
@@ -108,7 +108,7 @@
 			"name": "Global_Portal_MenuItem_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuItem_Role_Admin_Unit_List",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuItem": "LK@Global_Portal_MenuItem_Unit_List",
 				"roleMenuGroup": "LK@Global_Portal_MenuGroup_Role_Admin_Setups"
 			}
@@ -119,7 +119,7 @@
 			"name": "Global_Portal_MenuItem_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuItem_Role_Admin_Currency_Group",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuItem": "LK@Global_Portal_MenuItem_Currency_Group",
 				"roleMenuGroup": "LK@Global_Portal_MenuGroup_Role_Admin_Setups"
 			}
@@ -130,7 +130,7 @@
 			"name": "Global_Portal_MenuItem_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuItem_Role_Admin_Currency_List",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuItem": "LK@Global_Portal_MenuItem_Currency_List",
 				"roleMenuGroup": "LK@Global_Portal_MenuGroup_Role_Admin_Setups"
 			}
@@ -141,7 +141,7 @@
 			"name": "Global_Portal_MenuItem_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuItem_Role_Admin_Count_Freq",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuItem": "LK@Global_Portal_MenuItem_Count_Freq",
 				"roleMenuGroup": "LK@Global_Portal_MenuGroup_Role_Admin_Setups"
 			}
@@ -153,7 +153,7 @@
 			"name": "Global_Portal_MenuItem_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuItem_Role_Admin_Menu_Groups",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuItem": "LK@Global_Portal_MenuItem_Menu_Groups",
 				"roleMenuGroup": "LK@Global_Portal_MenuGroup_Role_Admin_Menus"
 			}
@@ -165,7 +165,7 @@
 			"name": "Global_Portal_MenuItem_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuItem_Role_Admin_Menu_Items",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuItem": "LK@Global_Portal_MenuItem_Menu_Items",
 				"roleMenuGroup": "LK@Global_Portal_MenuGroup_Role_Admin_Menus"
 			}
@@ -177,7 +177,7 @@
 			"name": "Global_Portal_MenuItem_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuItem_Role_Admin_Count_Role_Menu_Groups",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuItem": "LK@Global_Portal_MenuItem_Menu_Groups",
 				"roleMenuGroup": "LK@Global_Portal_MenuGroup_Role_Admin_Menus"
 			}
@@ -188,7 +188,7 @@
 			"name": "Global_Portal_MenuItem_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuItem_Role_Admin_Role_Menu_Items",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuItem": "LK@Global_Portal_MenuItem_Menu_Items",
 				"roleMenuGroup": "LK@Global_Portal_MenuGroup_Role_Admin_Menus"
 			}
@@ -199,7 +199,7 @@
 			"name": "Global_Portal_MenuItem_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuItem_Role_Admin_Role_UserProfile",
-				"userRole": "LK@UserRole_Admin",
+				"userRole": "LK@UserRole_ADMIN",
 				"menuItem": "LK@Global_Portal_MenuItem_UserProfile",
 				"roleMenuGroup": "LK@Global_Portal_MenuGroup_Role_Admin_UserProfile"
 			}
