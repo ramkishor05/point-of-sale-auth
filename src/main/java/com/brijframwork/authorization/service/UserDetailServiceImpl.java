@@ -37,7 +37,7 @@ public class UserDetailServiceImpl implements UserDetailService {
 		if(isAlreadyExists(userDetailRequest.getUsername())) {
 			return false;
 		}
-		UserRole owner = UserRole.OWNER;
+		UserRole owner = UserRole.VENDOR;
 		EOUserRole eoUserRole = userRoleRepository.findByPosition(owner.getPosition()).orElse(null);
 		
 		EOUserProfile eoUserProfile=new EOUserProfile();
