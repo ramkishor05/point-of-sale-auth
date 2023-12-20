@@ -17,12 +17,16 @@ import com.brijframwork.authorization.constant.UserRole;
 import com.brijframwork.authorization.model.EOUserAccount;
 import com.brijframwork.authorization.model.EOUserProfile;
 import com.brijframwork.authorization.model.EOUserRole;
+import com.brijframwork.authorization.model.headers.EOHeaderItem;
+import com.brijframwork.authorization.model.headers.EORoleHeaderItem;
 import com.brijframwork.authorization.model.menus.EOMenuGroup;
 import com.brijframwork.authorization.model.menus.EOMenuItem;
 import com.brijframwork.authorization.model.menus.EORoleMenuGroup;
 import com.brijframwork.authorization.model.menus.EORoleMenuItem;
+import com.brijframwork.authorization.repository.HeaderItemRepository;
 import com.brijframwork.authorization.repository.MenuGroupRepository;
 import com.brijframwork.authorization.repository.MenuItemRepository;
+import com.brijframwork.authorization.repository.RoleHeaderItemRepository;
 import com.brijframwork.authorization.repository.RoleMenuGroupRepository;
 import com.brijframwork.authorization.repository.RoleMenuItemRepository;
 import com.brijframwork.authorization.repository.UserAccountRepository;
@@ -48,10 +52,16 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 	private MenuGroupRepository globalMenuGroupRepository;
 	
 	@Autowired
-	private RoleMenuGroupRepository userRoleMenuGroupRepository;
+	private RoleMenuGroupRepository roleMenuGroupRepository;
 	
 	@Autowired
-	private RoleMenuItemRepository userRoleMenuItemRepository;
+	private RoleMenuItemRepository roleMenuItemRepository;
+	
+	@Autowired
+	private HeaderItemRepository headerItemRepository;
+	
+	@Autowired
+	private RoleHeaderItemRepository roleHeaderItemRepository;
 	
 	@Value("${spring.db.datajson.upload}")
 	boolean upload;
@@ -114,51 +124,83 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 	    		globalMenuItem.setId(saveGlobalMenuItem.getId());
 	    		globalMenuItemMap.put(globalMenuItem.getUrl(), globalMenuItem);
 			}
-	    	Map<String, EORoleMenuGroup> userRoleMenuGroupMap = userRoleMenuGroupRepository.findAll().parallelStream().collect(Collectors.toMap((userRoleMenuGroup)->groupKey(userRoleMenuGroup), Function.identity()));
-	    	List<EORoleMenuGroup> userRoleMenuGroups = instance.getAll(EORoleMenuGroup.class);
-	    	for(EORoleMenuGroup userRoleMenuGroup: userRoleMenuGroups) {
+	    	Map<String, EORoleMenuGroup> roleMenuGroupMap = roleMenuGroupRepository.findAll().parallelStream().collect(Collectors.toMap((userRoleMenuGroup)->getRoleMenuGroupKey(userRoleMenuGroup), Function.identity()));
+	    	List<EORoleMenuGroup> roleMenuGroups = instance.getAll(EORoleMenuGroup.class);
+	    	for(EORoleMenuGroup roleMenuGroup: roleMenuGroups) {
 	    		try {
-					EORoleMenuGroup eoUserRoleMenuGroup = userRoleMenuGroupMap.getOrDefault(groupKey(userRoleMenuGroup),userRoleMenuGroup);
-					BeanUtils.copyProperties(userRoleMenuGroup, eoUserRoleMenuGroup, "id");
-		    		EORoleMenuGroup saveUserRoleMenuGroup = userRoleMenuGroupRepository.save(eoUserRoleMenuGroup);
-		    		userRoleMenuGroup.setId(saveUserRoleMenuGroup.getId());
-		    		eoUserRoleMenuGroup.setId(saveUserRoleMenuGroup.getId());
+					EORoleMenuGroup eoRoleMenuGroup = roleMenuGroupMap.getOrDefault(getRoleMenuGroupKey(roleMenuGroup),roleMenuGroup);
+					BeanUtils.copyProperties(roleMenuGroup, eoRoleMenuGroup, "id");
+		    		EORoleMenuGroup saveRoleMenuGroup = roleMenuGroupRepository.save(eoRoleMenuGroup);
+		    		roleMenuGroup.setId(saveRoleMenuGroup.getId());
+		    		eoRoleMenuGroup.setId(saveRoleMenuGroup.getId());
 	    		}catch (Exception e) {
-					System.out.println("userRoleMenuGroup="+userRoleMenuGroup);
+					System.out.println("roleMenuGroup="+roleMenuGroup);
 					e.printStackTrace();
 				}
 			}
-	    	Map<String, EORoleMenuItem> userRoleMenuItemMap = userRoleMenuItemRepository.findAll().parallelStream().collect(Collectors.toMap((userRoleMenuItem)->itemKey(userRoleMenuItem), Function.identity()));
-	    	List<EORoleMenuItem> userRoleEndpointList = instance.getAll(EORoleMenuItem.class);
-	    	for(EORoleMenuItem userRoleMenuItem: userRoleEndpointList) {
+	    	Map<String, EORoleMenuItem> roleMenuItemMap = roleMenuItemRepository.findAll().parallelStream().collect(Collectors.toMap((userRoleMenuItem)->getRoleMenuItemKey(userRoleMenuItem), Function.identity()));
+	    	List<EORoleMenuItem> roleEndpointList = instance.getAll(EORoleMenuItem.class);
+	    	for(EORoleMenuItem roleMenuItem: roleEndpointList) {
 	    		try {
-					EORoleMenuItem eoUserRoleEndpoint = userRoleMenuItemMap.getOrDefault(itemKey(userRoleMenuItem),userRoleMenuItem);
-					BeanUtils.copyProperties(userRoleMenuItem, eoUserRoleEndpoint, "id");
-		    		EORoleMenuItem saveUserRoleEndpoint = userRoleMenuItemRepository.save(eoUserRoleEndpoint);
-		    		userRoleMenuItem.setId(saveUserRoleEndpoint.getId());
+					EORoleMenuItem eoRoleEndpoint = roleMenuItemMap.getOrDefault(getRoleMenuItemKey(roleMenuItem),roleMenuItem);
+					BeanUtils.copyProperties(roleMenuItem, eoRoleEndpoint, "id");
+		    		EORoleMenuItem saveRoleEndpoint = roleMenuItemRepository.save(eoRoleEndpoint);
+		    		roleMenuItem.setId(saveRoleEndpoint.getId());
 	    		}catch (Exception e) {
-					System.out.println("userRoleEndpoint="+userRoleMenuItem);
+					System.out.println("roleEndpoint="+roleMenuItem);
 					e.printStackTrace();
 				}
 			}
+	    	
+	    	Map<String, EOHeaderItem> headerItemMap = headerItemRepository.findAll().parallelStream().collect(Collectors.toMap((headerItem)->headerItem.getIdenNo(), Function.identity()));
+	    	List<EOHeaderItem> headerItemList = instance.getAll(EOHeaderItem.class);
+	    	for(EOHeaderItem headerItem: headerItemList) {
+	    		try {
+	    			EOHeaderItem eoHeaderItem = headerItemMap.getOrDefault(headerItem.getIdenNo(),headerItem);
+					BeanUtils.copyProperties(headerItem, eoHeaderItem, "id");
+					EOHeaderItem saveHeaderItem = headerItemRepository.save(eoHeaderItem);
+		    		headerItem.setId(saveHeaderItem.getId());
+	    		}catch (Exception e) {
+					System.out.println("headerItem="+headerItem);
+					e.printStackTrace();
+				}
+			}
+	    	
+	    	Map<String, EORoleHeaderItem> roleHeaderItemMap = roleHeaderItemRepository.findAll().parallelStream().collect(Collectors.toMap((userRoleHeaderItem)->getRoleHeaderItemKey(userRoleHeaderItem), Function.identity()));
+	    	List<EORoleHeaderItem> userRoleHeaderItemList = instance.getAll(EORoleHeaderItem.class);
+	    	for(EORoleHeaderItem roleHeaderItem: userRoleHeaderItemList) {
+	    		try {
+	    			EORoleHeaderItem eoRoleHeaderItem = roleHeaderItemMap.getOrDefault(getRoleHeaderItemKey(roleHeaderItem),roleHeaderItem);
+					BeanUtils.copyProperties(roleHeaderItem, eoRoleHeaderItem, "id");
+					EORoleHeaderItem saveRoleHeaderItem = roleHeaderItemRepository.save(eoRoleHeaderItem);
+		    		roleHeaderItem.setId(saveRoleHeaderItem.getId());
+	    		}catch (Exception e) {
+					System.out.println("roleHeaderItem="+roleHeaderItem);
+					e.printStackTrace();
+				}
+			}
+	    	
     	}
     }
 
-	private String itemKey(EORoleMenuItem userRoleMenuItem) {
+	private String getRoleMenuItemKey(EORoleMenuItem userRoleMenuItem) {
 		if(userRoleMenuItem.getMenuItem()==null || userRoleMenuItem.getUserRole()==null) {
 			return "";
 		}
 		return userRoleMenuItem.getUserRole().getId()+"_"+ userRoleMenuItem.getMenuItem().getId();
 	}
 
-	private String groupKey(EORoleMenuGroup userRoleMenuGroup) {
+	private String getRoleMenuGroupKey(EORoleMenuGroup userRoleMenuGroup) {
 		if(userRoleMenuGroup.getMenuGroup()==null || userRoleMenuGroup.getUserRole()==null) {
 			return "";
 		}
 		return userRoleMenuGroup.getUserRole().getId()+"_"+ userRoleMenuGroup.getMenuGroup().getId();
 	}
     
-    public static String getKey(EORoleMenuItem userRoleEndpoint) {
-    	return userRoleEndpoint.getUserRole().getId()+"_"+userRoleEndpoint.getMenuItem().getId();
+    public static String getRoleHeaderItemKey(EORoleHeaderItem eoRoleHeaderItem) {
+    	if(eoRoleHeaderItem.getHeaderItem()==null || eoRoleHeaderItem.getUserRole()==null) {
+			return "";
+		}
+    	return eoRoleHeaderItem.getUserRole().getId()+"_"+eoRoleHeaderItem.getHeaderItem().getId();
     }
 }

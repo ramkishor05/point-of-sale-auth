@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.brijframwork.authorization.model.header.EOHeaderItem;
+import com.brijframwork.authorization.model.headers.EOHeaderItem;
 
 @Repository
 @Transactional

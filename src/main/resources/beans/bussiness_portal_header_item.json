@@ -1,0 +1,58 @@
+{
+	"id": "Business_Portal_HeaderItem",
+	"order": 2,
+	"objects": [
+		{
+			"id": "Business_Portal_HeaderItem_SearchBox",
+			"type": "com.brijframwork.authorization.model.headers.EOHeaderItem",
+			"name": "Business_Portal_HeaderItem",
+			"properties": {
+				"title": "SearchBox",
+				"idenNo": "Business_Portal_HeaderItem_SearchBox",
+				"type": "item",
+				"url": "",
+				"icon": "SearchBox",
+				"order": 1
+			}
+		},
+		{
+			"id": "Business_Portal_HeaderItem_BusinessOptions",
+			"type": "com.brijframwork.authorization.model.headers.EOHeaderItem",
+			"name": "Business_Portal_HeaderItem",
+			"properties": {
+				"title": "BusinessOptions",
+				"idenNo": "Business_Portal_HeaderItem_BusinessOptions",
+				"type": "item",
+				"url": "",
+				"icon": "BusinessOptions",
+				"order": 2
+			}
+		},
+		{
+			"id": "Business_Portal_HeaderItem_ProfileSection",
+			"type": "com.brijframwork.authorization.model.headers.EOHeaderItem",
+			"name": "Business_Portal_HeaderItem",
+			"properties": {
+				"title": "ProfileSection",
+				"idenNo": "Business_Portal_HeaderItem_ProfileSection",
+				"type": "item",
+				"url": "",
+				"icon": "ProfileSection",
+				"order": 4
+			}
+		},
+		{
+			"id": "Business_Portal_HeaderItem_NotificationSection",
+			"type": "com.brijframwork.authorization.model.headers.EOHeaderItem",
+			"name": "Business_Portal_HeaderItem",
+			"properties": {
+				"title": "NotificationSection",
+				"idenNo": "Business_Portal_HeaderItem_NotificationSection",
+				"type": "item",
+				"url": "",
+				"icon": "NotificationSection",
+				"order": 3
+			}
+		}
+	]
+}

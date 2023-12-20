@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.brijframwork.authorization.model.headers.EORoleHeaderItem;
+import com.brijframwork.authorization.model.menus.EORoleMenuGroup;
 import com.brijframwork.authorization.model.menus.EORoleMenuItem;
 
 @Entity
@@ -40,7 +42,14 @@ public class EOUserRole implements Serializable {
 	private List<EOUserAccount> userAccounts;
 	
 	@OneToMany(mappedBy = "userRole")
-	private List<EORoleMenuItem> roleEndpoints;
+	private List<EORoleMenuGroup> roleMenuGroups;
+
+	@OneToMany(mappedBy = "userRole")
+	private List<EORoleMenuItem> roleMenuItems;
+	
+	
+	@OneToMany(mappedBy = "userRole")
+	private List<EORoleHeaderItem> roleHeaderItems;
 	
 	public EOUserRole() {
 	}
@@ -100,12 +109,28 @@ public class EOUserRole implements Serializable {
 		this.userAccounts = userAccounts;
 	}
 
-	public List<EORoleMenuItem> getRoleEndpoints() {
-		return roleEndpoints;
+	public List<EORoleMenuGroup> getRoleMenuGroups() {
+		return roleMenuGroups;
 	}
 
-	public void setRoleEndpoints(List<EORoleMenuItem> roleEndpoints) {
-		this.roleEndpoints = roleEndpoints;
+	public void setRoleMenuGroups(List<EORoleMenuGroup> roleMenuGroups) {
+		this.roleMenuGroups = roleMenuGroups;
+	}
+
+	public List<EORoleMenuItem> getRoleMenuItems() {
+		return roleMenuItems;
+	}
+
+	public void setRoleMenuItems(List<EORoleMenuItem> roleMenuItems) {
+		this.roleMenuItems = roleMenuItems;
+	}
+
+	public List<EORoleHeaderItem> getRoleHeaderItems() {
+		return roleHeaderItems;
+	}
+
+	public void setRoleHeaderItems(List<EORoleHeaderItem> roleHeaderItems) {
+		this.roleHeaderItems = roleHeaderItems;
 	}
 
 	@Override

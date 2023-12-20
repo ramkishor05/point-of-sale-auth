@@ -15,9 +15,11 @@ public class UserRoleResponse implements Serializable {
 	
 	private String roleId;
 	
-	private List<UIMenuItem> roleEndpoints;
+	private List<UIMenuGroup> roleMenuGroups;
 	
-	private List<UIHeaderItem> headerItems;
+	private List<UIMenuItem> roleMenuItems;
+	
+	private List<UIHeaderItem> roleHeaderItems;
 
 	public long getId() {
 		return id;
@@ -51,19 +53,27 @@ public class UserRoleResponse implements Serializable {
 		this.roleId = roleId;
 	}
 
-	public List<UIMenuItem> getRoleEndpoints() {
-		return roleEndpoints;
+	public List<UIMenuGroup> getRoleMenuGroups() {
+		return roleMenuGroups;
 	}
 
-	public void setRoleEndpoints(List<UIMenuItem> roleEndpoints) {
-		this.roleEndpoints = roleEndpoints;
+	public void setRoleMenuGroups(List<UIMenuGroup> roleMenuGroups) {
+		this.roleMenuGroups = roleMenuGroups;
 	}
 
-	public List<UIHeaderItem> getHeaderItems() {
-		return headerItems;
+	public List<UIMenuItem> getRoleMenuItems() {
+		return roleMenuItems;
 	}
 
-	public void setHeaderItems(List<UIHeaderItem> headerItems) {
-		this.headerItems = headerItems;
+	public void setRoleMenuItems(List<UIMenuItem> roleMenuItems) {
+		this.roleMenuItems = roleMenuItems;
+	}
+
+	public List<UIHeaderItem> getRoleHeaderItems() {
+		return roleHeaderItems;
+	}
+
+	public void setRoleHeaderItems(List<UIHeaderItem> roleHeaderItems) {
+		this.roleHeaderItems = roleHeaderItems;
 	}
 }

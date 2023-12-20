@@ -1,4 +1,4 @@
-package com.brijframwork.authorization.model.header;
+package com.brijframwork.authorization.model.headers;
 
 import java.io.Serializable;
 

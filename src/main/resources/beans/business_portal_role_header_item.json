@@ -1,0 +1,66 @@
+{
+	"id": "Business_Portal_HeaderItem_Role",
+	"order": 3,
+	"objects": [
+		{
+			"id": "Business_Portal_HeaderItem_Role_OWNER_SearchBox",
+			"type": "com.brijframwork.authorization.model.headers.EORoleHeaderItem",
+			"name": "Business_Portal_HeaderItem_Role",
+			"properties": {
+				"idenNo":"Business_Portal_HeaderItem_Role_OWNER_SearchBox",
+				"userRole": "LK@UserRole_OWNER",
+				"headerItem": "LK@Business_Portal_HeaderItem_SearchBox"
+			}
+		},
+		{
+			"id": "Business_Portal_HeaderItem_Role_OWNER_BusinessOptions",
+			"type": "com.brijframwork.authorization.model.headers.EORoleHeaderItem",
+			"name": "Business_Portal_HeaderItem_Role",
+			"properties": {
+				"idenNo":"Business_Portal_HeaderItem_Role_OWNER_BusinessOptions",
+				"userRole": "LK@UserRole_OWNER",
+				"headerItem": "LK@Business_Portal_HeaderItem_BusinessOptions"
+			}
+		},
+		{
+			"id": "Business_Portal_HeaderItem_Role_OWNER_ProfileSection",
+			"type": "com.brijframwork.authorization.model.headers.EORoleHeaderItem",
+			"name": "Business_Portal_HeaderItem_Role",
+			"properties": {
+				"idenNo":"Business_Portal_HeaderItem_Role_OWNER_ProfileSection",
+				"userRole": "LK@UserRole_OWNER",
+				"headerItem": "LK@Business_Portal_HeaderItem_ProfileSection"
+			}
+		},
+		{
+			"id": "Business_Portal_HeaderItem_Role_OWNER_NotificationSection",
+			"type": "com.brijframwork.authorization.model.headers.EORoleHeaderItem",
+			"name": "Business_Portal_HeaderItem_Role",
+			"properties": {
+				"idenNo":"Business_Portal_HeaderItem_Role_OWNER_NotificationSection",
+				"userRole": "LK@UserRole_OWNER",
+				"headerItem": "LK@Business_Portal_HeaderItem_NotificationSection"
+			}
+		},
+		{
+			"id": "Business_Portal_HeaderItem_Role_MANAGER_SearchBox",
+			"type": "com.brijframwork.authorization.model.headers.EORoleHeaderItem",
+			"name": "Business_Portal_HeaderItem_Role",
+			"properties": {
+				"idenNo":"Business_Portal_HeaderItem_Role_MANAGER_SearchBox",
+				"userRole": "LK@UserRole_MANAGER",
+				"headerItem": "LK@Business_Portal_HeaderItem_SearchBox"
+			}
+		},
+		{
+			"id": "Business_Portal_HeaderItem_Role_MANAGER_BusinessOptions",
+			"type": "com.brijframwork.authorization.model.headers.EORoleHeaderItem",
+			"name": "Business_Portal_HeaderItem_Role",
+			"properties": {
+				"idenNo":"Business_Portal_HeaderItem_Role_MANAGER_BusinessOptions",
+				"userRole": "LK@UserRole_MANAGER",
+				"headerItem": "LK@Business_Portal_HeaderItem_BusinessOptions"
+			}
+		}
+	]
+}
