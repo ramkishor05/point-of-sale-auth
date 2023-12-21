@@ -1,25 +1,17 @@
 package com.brijframwork.authorization.model.headers;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.brijframwork.authorization.model.EOEntityObject;
 
 @Entity
 @Table(name = "HEADER_ITEM")
-public class EOHeaderItem implements Serializable{
+public class EOHeaderItem extends EOEntityObject{
 
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ID")
-	private long id;
-	
 	@Column(name = "IDEN_NO")
 	private String idenNo;
 	
@@ -37,14 +29,6 @@ public class EOHeaderItem implements Serializable{
 	
 	@Column(name = "ORDER_SQN")
 	private Integer order;
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	public String getIdenNo() {
 		return idenNo;

@@ -20,7 +20,7 @@ public class UserRoleResponse implements Serializable {
 	private List<UIMenuItem> roleMenuItems;
 	
 	private List<UIHeaderItem> roleHeaderItems;
-
+	
 	public long getId() {
 		return id;
 	}
@@ -76,4 +76,5 @@ public class UserRoleResponse implements Serializable {
 	public void setRoleHeaderItems(List<UIHeaderItem> roleHeaderItems) {
 		this.roleHeaderItems = roleHeaderItems;
 	}
+
 }

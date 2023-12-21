@@ -1,13 +1,9 @@
 package com.brijframwork.authorization.model;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -17,14 +13,9 @@ import com.brijframwork.authorization.model.menus.EORoleMenuItem;
 
 @Entity
 @Table(name = "USER_ROLE")
-public class EOUserRole implements Serializable {
+public class EOUserRole extends EOEntityObject{
 
 	private static final long serialVersionUID = 1L;
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ID")
-	private long id;
 
 	@Column(name = "POSITION")
 	private int position;
@@ -59,14 +50,6 @@ public class EOUserRole implements Serializable {
 		this.position = position;
 		this.roleName = roleName;
 		this.roleId = roleId;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
 	}
 
 	public int getPosition() {
@@ -135,8 +118,7 @@ public class EOUserRole implements Serializable {
 
 	@Override
 	public String toString() {
-		return "EOUserRole [id=" + id + ", position=" + position + ", roleName=" + roleName + ", roleID=" + roleId;
+		return "EOUserRole [id=" + getId() + ", position=" + position + ", roleName=" + roleName + ", roleID=" + roleId;
 	}
-
 	
 }

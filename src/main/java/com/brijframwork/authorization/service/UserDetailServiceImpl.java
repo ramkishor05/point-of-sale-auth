@@ -1,7 +1,10 @@
 package com.brijframwork.authorization.service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +17,10 @@ import com.brijframwork.authorization.mapper.UserDetailMapper;
 import com.brijframwork.authorization.model.EOUserAccount;
 import com.brijframwork.authorization.model.EOUserProfile;
 import com.brijframwork.authorization.model.EOUserRole;
+import com.brijframwork.authorization.model.menus.EORoleMenuItem;
+import com.brijframwork.authorization.model.onboarding.EOUserOnBoarding;
 import com.brijframwork.authorization.repository.UserAccountRepository;
+import com.brijframwork.authorization.repository.UserOnBoardingRepository;
 import com.brijframwork.authorization.repository.UserProfileRepository;
 import com.brijframwork.authorization.repository.UserRoleRepository;
 
@@ -31,7 +37,10 @@ public class UserDetailServiceImpl implements UserDetailService {
 	private UserAccountRepository userAccountRepository;
 	
 	@Autowired
-	UserDetailMapper userDetailMapper;
+	private UserDetailMapper userDetailMapper;
+
+	@Autowired
+	private UserOnBoardingService userOnBoardingService;
 
 	@Override
 	public boolean register(UIUserAccount userDetailRequest) {
@@ -56,8 +65,13 @@ public class UserDetailServiceImpl implements UserDetailService {
 		eoUserAccount.setUserRole(eoUserRole);
 		eoUserAccount.setUserProfile(eoUserProfile);
 		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);
+		
+		userOnBoardingService.initOnBoarding(eoUserAccount);
+		
 		return true;
 	}
+
+
 
 	@Override
 	public boolean isAlreadyExists(String username) {
@@ -86,6 +100,7 @@ public class UserDetailServiceImpl implements UserDetailService {
 		eoUserAccount.setRegisteredEmail(uiUserAccount.getEmail());
 		eoUserAccount.setOwnerId(uiUserAccount.getOwnerId());
 		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);
+		userOnBoardingService.initOnBoarding(eoUserAccount);
 		return uiUserAccount;
 	}
 

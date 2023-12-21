@@ -1,32 +1,24 @@
 
 package com.brijframwork.authorization.model.menus;
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import com.brijframwork.authorization.model.EOEntityObject;
 import com.brijframwork.authorization.model.EOUserRole;
 
 @Entity
 @Table(name = "ROLE_MENU_ITEM", uniqueConstraints= {@UniqueConstraint(columnNames = { "USER_ROLE_ID","MENU_ITEM_ID" })})
-public class EORoleMenuItem implements Serializable {
+public class EORoleMenuItem extends EOEntityObject {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ID")
-	private long id;
 	
 	@Column(name = "IDEN_NO")
 	private String idenNo;
@@ -48,14 +40,6 @@ public class EORoleMenuItem implements Serializable {
 	
 	@Column(name = "IS_HOME_PAGE")
 	private boolean homePage=false;
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
 	
 	public String getIdenNo() {
 		return idenNo;
@@ -107,7 +91,7 @@ public class EORoleMenuItem implements Serializable {
 
 	@Override
 	public String toString() {
-		return "EOUserRoleMenuItem [id=" + id + ", ownerId=" + ownerId + ", userRole=" + userRole + ", menuItem="
+		return "EOUserRoleMenuItem [id=" + getId() + ", ownerId=" + ownerId + ", userRole=" + userRole + ", menuItem="
 				+ menuItem + ", roleMenuGroup=" + roleMenuGroup + "]";
 	}
 	

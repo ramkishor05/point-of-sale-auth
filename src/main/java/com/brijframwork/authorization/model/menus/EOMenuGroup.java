@@ -1,27 +1,20 @@
 package com.brijframwork.authorization.model.menus;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.brijframwork.authorization.model.EOEntityObject;
+
 @Entity
 @Table(name = "MENU_GROUP")
-public class EOMenuGroup implements Serializable {
+public class EOMenuGroup extends EOEntityObject{
 
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ID")
-	private long id;
-	
 	@Column(name = "IDEN_NO")
 	private String idenNo;
 	
@@ -42,14 +35,6 @@ public class EOMenuGroup implements Serializable {
 	
 	@OneToMany(mappedBy = "menuGroup")
 	private List<EOMenuItem>  menuItemList;
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	public String getIdenNo() {
 		return idenNo;
@@ -109,7 +94,7 @@ public class EOMenuGroup implements Serializable {
 
 	@Override
 	public String toString() {
-		return "EOMenuGroup [id=" + id + ", idenNo=" + idenNo + ", title=" + title + ", url=" + url + ", type=" + type
+		return "EOMenuGroup [id=" + getId() + ", idenNo=" + idenNo + ", title=" + title + ", url=" + url + ", type=" + type
 				+ ", icon=" + icon + ", order=" + order + "]";
 	}
 	

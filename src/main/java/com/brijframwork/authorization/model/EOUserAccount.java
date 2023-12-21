@@ -1,32 +1,27 @@
 
 package com.brijframwork.authorization.model;
-import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import com.brijframwork.authorization.model.onboarding.EOUserOnBoarding;
+
 @Entity
 @Table(name = "USER_ACCOUNT", uniqueConstraints= {@UniqueConstraint(columnNames = { "USERNAME" })})
-public class EOUserAccount implements Serializable {
+public class EOUserAccount extends EOEntityObject {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ID")
-	private long id;
 
 	@Column(name = "USERNAME")
 	private String username;
@@ -60,17 +55,12 @@ public class EOUserAccount implements Serializable {
 	@Column(name = "ON_BOARDING", nullable = true)
 	private Boolean onBoarding;
 	
+	@OneToMany(mappedBy = "userAccount")
+	private List<EOUserOnBoarding> onBoardingList;
+	
 	@PrePersist
 	public void init() {
 		onBoarding=false;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
 	}
 
 	public String getUsername() {
@@ -152,10 +142,18 @@ public class EOUserAccount implements Serializable {
 	public void setOnBoarding(Boolean onBoarding) {
 		this.onBoarding = onBoarding;
 	}
+	
+	public List<EOUserOnBoarding> getOnBoardingList() {
+		return onBoardingList;
+	}
+
+	public void setOnBoardingList(List<EOUserOnBoarding> onBoardingList) {
+		this.onBoardingList = onBoardingList;
+	}
 
 	@Override
 	public String toString() {
-		return "EOUserLogin [id=" + id + ", username=" + username + ", password=" + password + ", accountName="
+		return "EOUserLogin [id=" + getId() + ", username=" + username + ", password=" + password + ", accountName="
 				+ accountName + ", type=" + type + ", userRole=" + userRole + ", userProfile=" + userProfile + "]";
 	}
 	

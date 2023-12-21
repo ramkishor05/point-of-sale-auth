@@ -26,6 +26,7 @@ import com.brijframwork.authorization.beans.UserDetailResponse;
 import com.brijframwork.authorization.mapper.UserDetailMapper;
 import com.brijframwork.authorization.model.EOUserAccount;
 import com.brijframwork.authorization.repository.UserAccountRepository;
+import com.brijframwork.authorization.service.UserOnBoardingService;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
@@ -49,6 +50,9 @@ public class TokenProvider implements Serializable {
 
 	@Autowired
 	private UserAccountRepository userLoginRepository;
+	
+	@Autowired
+	private UserOnBoardingService userOnBoardingService;
 
 	public String getUsernameFromToken(String token) {
         return getClaimFromToken(token, Claims::getSubject);
@@ -133,6 +137,7 @@ public class TokenProvider implements Serializable {
 		String username = this.getUsernameFromToken(token);
 		Optional<EOUserAccount> findUserLogin = userLoginRepository.findUserName(username);
 		EOUserAccount eoUserAccount = findUserLogin.orElse(null);
+		userOnBoardingService.initOnBoarding(eoUserAccount);
 		return userDetailMapper.mapToDTO(eoUserAccount);
 	}
 

@@ -1,5 +1,7 @@
 package com.brijframwork.authorization.beans;
 
+import java.util.List;
+
 public class UserDetailResponse {
 
 	private long id;
@@ -23,6 +25,8 @@ public class UserDetailResponse {
 	private UserRoleResponse userRole;
 
 	private UIUserProfile userProfile;
+
+	private List<UIUserOnBoarding> onBoardingList;
 
 	public long getId() {
 		return id;
@@ -115,4 +119,11 @@ public class UserDetailResponse {
 		this.userProfile = userProfile;
 	}
 
+	public List<UIUserOnBoarding> getOnBoardingList() {
+		return onBoardingList;
+	}
+
+	public void setOnBoardingList(List<UIUserOnBoarding> onBoardingList) {
+		this.onBoardingList = onBoardingList;
+	}
 }
