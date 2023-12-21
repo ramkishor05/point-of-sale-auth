@@ -17,6 +17,8 @@ public class UserDetailResponse {
 	private String type;
 
 	private Long ownerId;
+	
+	private Boolean onBoarding;
 
 	private UserRoleResponse userRole;
 
@@ -84,6 +86,17 @@ public class UserDetailResponse {
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
+	}
+
+	public Boolean getOnBoarding() {
+		if(onBoarding==null) {
+			return true;
+		}
+		return onBoarding;
+	}
+
+	public void setOnBoarding(Boolean onBoarding) {
+		this.onBoarding = onBoarding;
 	}
 
 	public UserRoleResponse getUserRole() {

@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -55,6 +56,14 @@ public class EOUserAccount implements Serializable {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "PROFILE_ID")
 	private EOUserProfile userProfile;
+	
+	@Column(name = "ON_BOARDING", nullable = true)
+	private Boolean onBoarding;
+	
+	@PrePersist
+	public void init() {
+		onBoarding=false;
+	}
 
 	public long getId() {
 		return id;
@@ -134,6 +143,14 @@ public class EOUserAccount implements Serializable {
 
 	public void setOwnerId(Long ownerId) {
 		this.ownerId = ownerId;
+	}
+
+	public Boolean getOnBoarding() {
+		return onBoarding;
+	}
+
+	public void setOnBoarding(Boolean onBoarding) {
+		this.onBoarding = onBoarding;
 	}
 
 	@Override

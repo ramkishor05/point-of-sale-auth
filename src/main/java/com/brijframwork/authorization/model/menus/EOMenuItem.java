@@ -40,6 +40,9 @@ public class EOMenuItem implements Serializable {
 	@Column(name = "ORDER_SQN")
 	private Integer order;
 	
+	@Column(name = "ON_BOARDING", nullable = true)
+	private Boolean onBoarding;
+	
 	@ManyToOne
 	@JoinColumn(name = "MENU_GROUP_ID")
 	private EOMenuGroup  menuGroup;
@@ -98,6 +101,14 @@ public class EOMenuItem implements Serializable {
 
 	public void setIdenNo(String idenNo) {
 		this.idenNo = idenNo;
+	}
+
+	public Boolean getOnBoarding() {
+		return onBoarding;
+	}
+
+	public void setOnBoarding(Boolean onBoarding) {
+		this.onBoarding = onBoarding;
 	}
 
 	public EOMenuGroup getMenuGroup() {

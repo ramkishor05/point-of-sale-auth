@@ -10,6 +10,18 @@ public class UIMenuItem {
 	private String type;
 	private Integer order;
 	private boolean homePage;
+	private Boolean onBoarding;
+	
+	public Boolean getOnBoarding() {
+		if(onBoarding==null) {
+			return false;
+		}
+		return onBoarding;
+	}
+
+	public void setOnBoarding(Boolean onBoarding) {
+		this.onBoarding = onBoarding;
+	}
 
 	public long getId() {
 		return id;

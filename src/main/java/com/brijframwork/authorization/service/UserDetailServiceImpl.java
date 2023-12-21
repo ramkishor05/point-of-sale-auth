@@ -1,6 +1,7 @@
 package com.brijframwork.authorization.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -104,5 +105,16 @@ public class UserDetailServiceImpl implements UserDetailService {
 		return userDetailMapper.mapToDTO(userAccountRepository.findAll());
 	}
 
+	@Override
+	public boolean updateOnboarding(Long id, boolean onboarding) {
+		Optional<EOUserAccount> findUserAccount = userAccountRepository.findById(id);
+		if(findUserAccount.isPresent()) {
+			EOUserAccount eoUserAccount = findUserAccount.get();
+			eoUserAccount.setOnBoarding(onboarding);
+			userAccountRepository.save(eoUserAccount);
+			return true;
+		}
+		return false;
+	}
 
 }

@@ -70,28 +70,6 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
     public void onApplicationEvent(final ContextRefreshedEvent event) {
     	Map<Integer, EOUserRole> userRoleMap = userRoleRepository.findAll().parallelStream().collect(Collectors.toMap(EOUserRole::getPosition, Function.identity()));
     	Map<String, EOUserAccount> userAccountMap = userAccountRepository.findAll().parallelStream().collect(Collectors.toMap(EOUserAccount::getUsername, Function.identity()));
-    	for(UserRole userRole : UserRole.values()) {
-    		EOUserRole findByPosition = userRoleMap.get(userRole.getPosition());
-    		if(findByPosition==null) {
-    			EOUserRole eoUserRole = new EOUserRole(userRole.getPosition(),userRole.getRole(),userRole.getRole());
-    			eoUserRole.setRoleType(userRole.getType());
-    			eoUserRole=userRoleRepository.saveAndFlush(eoUserRole);
-    			EOUserAccount findUserAccount = userAccountMap.get(eoUserRole.getRoleName());
-    	    	if(findUserAccount==null) {
-    	    		EOUserAccount eoUserAccount=new EOUserAccount();
-    	    		eoUserAccount.setAccountName(eoUserRole.getRoleName());
-    	    		eoUserAccount.setUsername(eoUserRole.getRoleName());
-    	    		eoUserAccount.setType(eoUserRole.getRoleName());
-    	    		eoUserAccount.setPassword((eoUserRole.getRoleName()));
-    	    		eoUserAccount.setUserRole(eoUserRole);
-    	    		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);
-    	    		EOUserProfile eoUserProfile=new EOUserProfile();
-    	    		eoUserProfile.setFullName(eoUserRole.getRoleName());
-    	    		eoUserProfile.setUserAccount(eoUserAccount);
-    	    		userProfileRepository.saveAndFlush(eoUserProfile);
-    	    	}
-    		}
-    	}
     	if(upload) {
 	    	JsonSchemaDataFactory instance = JsonSchemaDataFactory.getInstance();
 	    	List<EOUserRole> userRoleList = instance.getAll(EOUserRole.class);
@@ -101,6 +79,21 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 	    		EOUserRole saveUserRole=userRoleRepository.saveAndFlush(eoUserRole);
 	    		userRole.setId(saveUserRole.getId());
 	    		userRoleMap.put(userRole.getPosition(), userRole);
+	    		if(UserRole.ADMIN.getType().equalsIgnoreCase(userRole.getRoleType())) {
+	    			EOUserAccount eoUserAccount = userAccountMap.getOrDefault(eoUserRole.getRoleName(), new EOUserAccount());
+    	    		eoUserAccount.setAccountName(eoUserRole.getRoleName());
+    	    		eoUserAccount.setUsername(eoUserRole.getRoleName());
+    	    		eoUserAccount.setType(eoUserRole.getRoleName());
+    	    		eoUserAccount.setPassword((eoUserAccount.getPassword()==null? eoUserRole.getRoleName() : eoUserAccount.getPassword()));
+    	    		eoUserAccount.setUserRole(eoUserRole);
+    	    		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);
+    	    		if(eoUserAccount.getUserProfile()==null) {
+	    	    		EOUserProfile eoUserProfile=   new EOUserProfile();
+	    	    		eoUserProfile.setFullName(eoUserRole.getRoleName());
+	    	    		eoUserProfile.setUserAccount(eoUserAccount);
+	    	    		userProfileRepository.saveAndFlush(eoUserProfile);
+    	    		}
+	    		}
 	    	}
 	    	List<EOMenuGroup> globalMenuGroupList = instance.getAll(EOMenuGroup.class);
 	    	List<String> globalMenuGroupUrls=globalMenuGroupList.stream().map(userEndpoint->userEndpoint.getUrl()).collect(Collectors.toList());
@@ -192,6 +185,7 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 
 	private String getRoleMenuGroupKey(EORoleMenuGroup userRoleMenuGroup) {
 		if(userRoleMenuGroup.getMenuGroup()==null || userRoleMenuGroup.getUserRole()==null) {
+			
 			return "";
 		}
 		return userRoleMenuGroup.getUserRole().getId()+"_"+ userRoleMenuGroup.getMenuGroup().getId();

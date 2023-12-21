@@ -4,12 +4,11 @@ public enum UserRole {
 
 	ADMIN("ADMIN",1, "GLOBAL"), 
 	
-	CUSTOMER("CUSTOMER",1, "APP"),
+	CUSTOMER("CUSTOMER",2, "APP"),
 	
-	SUPPLIER("SUPPLIER",1, "APP"),
+	SUPPLIER("SUPPLIER",3, "APP"),
 	
-	VENDOR("VENDOR",1, "APP")
-	; 
+	VENDOR("VENDOR",4, "APP"); 
 	
 	String role;
 	int position;

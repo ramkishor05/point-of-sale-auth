@@ -89,8 +89,7 @@ public class EORoleMenuGroup implements Serializable {
 
 	@Override
 	public String toString() {
-		return "EORoleMenuGroup [id=" + id + ", userRole=" + userRole + ", menuGroup=" + menuGroup + ", roleMenuItems="
-				+ roleMenuItems + "]";
+		return "EORoleMenuGroup [id=" + id + ", userRole=" + userRole + ", menuGroup=" + menuGroup + "";
 	}
 
 	

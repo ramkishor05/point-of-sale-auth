@@ -20,4 +20,6 @@ public interface UserDetailService {
 	UIUserProfile getUserProfile(Long id);
 
 	List<UserDetailResponse> getUsers();
+
+	boolean updateOnboarding(Long id, boolean onboarding);
 }

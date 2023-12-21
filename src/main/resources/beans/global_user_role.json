@@ -3,7 +3,7 @@
   "order": 1,
   "objects": [
     {
-      "id": "UserRole_Admin",
+      "id": "UserRole_ADMIN",
       "type": "com.brijframwork.authorization.model.EOUserRole",
       "name": "GlobalUserRole",
       "properties": {
@@ -19,8 +19,8 @@
       "name": "GlobalUserRole",
       "properties": {
         "position": 1,
-        "roleName": "Owner",
-        "roleId": "OWNER",
+        "roleName": "Vendor",
+        "roleId": "VENDOR",
         "roleType":"APP"
       }
     },
