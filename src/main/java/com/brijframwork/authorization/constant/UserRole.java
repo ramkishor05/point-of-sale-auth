@@ -2,43 +2,49 @@ package com.brijframwork.authorization.constant;
 
 public enum UserRole {
 
-	ADMIN("ADMIN",1, "GLOBAL"), 
-	
-	CUSTOMER("CUSTOMER",2, "APP"),
-	
-	SUPPLIER("SUPPLIER",3, "APP"),
-	
-	VENDOR("VENDOR",4, "APP"); 
-	
-	String role;
+	ADMIN("Admin","ADMIN", 1, "GLOBAL"),
+
+	CUSTOMER("Customer","CUSTOMER", 2, "APP"),
+
+	SUPPLIER("Supplier","SUPPLIER", 3, "APP"),
+
+	VENDOR("Vendor","VENDOR", 4, "APP");
+
+	String roleName;
+	String roleId;
 	int position;
-	String type;
-	
-	private UserRole(String role, int position,String type) {
-		this.role = role;
+	String roleType;
+
+	private UserRole(String roleName, String roleId, int position, String roleType) {
+		this.roleName = roleName;
+		this.roleId=roleId;
 		this.position = position;
-		this.type=type;
+		this.roleType = roleType;
 	}
 
-	public String getRole() {
-		return role;
+	public String getRoleName() {
+		return roleName;
+	}
+
+	public String getRoleId() {
+		return roleId;
 	}
 
 	public int getPosition() {
 		return position;
 	}
-	
-	public String getType() {
-		return type;
+
+	public String getRoleType() {
+		return roleType;
 	}
 
 	UserRole forRoleId(int userRoleId) {
-		for(UserRole userRole: values()) {
-			if(userRole.getPosition()==userRoleId) {
+		for (UserRole userRole : values()) {
+			if (userRole.getPosition() == userRoleId) {
 				return userRole;
 			}
 		}
 		return null;
 	}
-	
+
 }

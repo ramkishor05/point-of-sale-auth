@@ -33,6 +33,9 @@ public class EOUserOnBoarding  extends EOEntityObject {
 	@Column(name = "ON_BOARDING_STATUS")
 	private Boolean onBoardingStatus;
 	
+	@Column(name = "ON_BOARDING_LEVEL", nullable = true)
+	private Integer onBoardingLevel;
+	
 	@PrePersist
 	public void init() {
 		onBoardingStatus=false;
@@ -61,5 +64,12 @@ public class EOUserOnBoarding  extends EOEntityObject {
 	public void setOnBoardingStatus(Boolean onBoardingStatus) {
 		this.onBoardingStatus = onBoardingStatus;
 	}
-	
+
+	public Integer getOnBoardingLevel() {
+		return onBoardingLevel;
+	}
+
+	public void setOnBoardingLevel(Integer onBoardingLevel) {
+		this.onBoardingLevel = onBoardingLevel;
+	}
 }

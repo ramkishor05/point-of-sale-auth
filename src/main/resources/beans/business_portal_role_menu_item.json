@@ -40,7 +40,9 @@
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@Business_Portal_MenuItem_Products",
-				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Items"
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Items",
+				"onBoarding": true,
+				"onBoardingLevel" : 2
 			}
 		},
 		{
@@ -50,7 +52,9 @@
 			"properties": {
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@Business_Portal_MenuItem_Business",
-				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Organizations"
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Organizations",
+				"onBoarding": true,
+				"onBoardingLevel" : 1
 			}
 		},
 		{

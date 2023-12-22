@@ -7,10 +7,32 @@
       "type": "com.brijframwork.authorization.model.EOUserRole",
       "name": "GlobalUserRole",
       "properties": {
-        "position": 0,
+        "position": 1,
         "roleName": "admin",
         "roleId": "ADMIN",
         "roleType":"GLOBAL"
+      }
+    },
+    {
+      "id": "UserRole_CUSTOMER",
+      "type": "com.brijframwork.authorization.model.EOUserRole",
+      "name": "GlobalUserRole",
+      "properties": {
+        "position": 2,
+        "roleName": "Customer",
+        "roleId": "CUSTOMER",
+        "roleType":"APP"
+      }
+    },
+    {
+      "id": "UserRole_SUPPLIER",
+      "type": "com.brijframwork.authorization.model.EOUserRole",
+      "name": "GlobalUserRole",
+      "properties": {
+        "position": 3,
+        "roleName": "Supplier",
+        "roleId": "SUPPLIER",
+        "roleType":"APP"
       }
     },
     {
@@ -18,7 +40,7 @@
       "type": "com.brijframwork.authorization.model.EOUserRole",
       "name": "GlobalUserRole",
       "properties": {
-        "position": 1,
+        "position": 4,
         "roleName": "Vendor",
         "roleId": "VENDOR",
         "roleType":"APP"
@@ -29,7 +51,7 @@
       "type": "com.brijframwork.authorization.model.EOUserRole",
       "name": "GlobalUserRole",
       "properties": {
-         "position": 2,
+         "position": 5,
         "roleName": "Manager",
         "roleId": "MANAGER",
         "roleType":"VENDOR"
@@ -40,7 +62,7 @@
       "type": "com.brijframwork.authorization.model.EOUserRole",
       "name": "GlobalUserRole",
       "properties": {
-        "position": 3,
+        "position": 6,
         "roleName": "Supervisor",
         "roleId": "SUPERVISOR",
         "roleType":"VENDOR"
@@ -51,7 +73,7 @@
       "type": "com.brijframwork.authorization.model.EOUserRole",
       "name": "GlobalUserRole",
       "properties": {
-        "position": 4,
+        "position": 7,
         "roleName": "Crew",
         "roleId": "CREW",
         "roleType":"VENDOR"

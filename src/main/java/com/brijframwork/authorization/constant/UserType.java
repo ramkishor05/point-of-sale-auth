@@ -3,6 +3,7 @@ package com.brijframwork.authorization.constant;
 public enum UserType {
 
 	GLOBAL("GLOBAL"),
+	APP("APP"), 
 	VENDOR("VENDOR"), 
 	SUPPLIER("SUPPLIER");
 	

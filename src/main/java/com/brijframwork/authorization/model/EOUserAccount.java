@@ -60,7 +60,7 @@ public class EOUserAccount extends EOEntityObject {
 	
 	@PrePersist
 	public void init() {
-		onBoarding=false;
+		onBoarding=true;
 	}
 
 	public String getUsername() {

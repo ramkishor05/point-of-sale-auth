@@ -136,7 +136,7 @@ public class TokenProvider implements Serializable {
 	public UserDetailResponse getUserDetailFromToken(String token) {
 		String username = this.getUsernameFromToken(token);
 		Optional<EOUserAccount> findUserLogin = userLoginRepository.findUserName(username);
-		EOUserAccount eoUserAccount = findUserLogin.orElse(null);
+		EOUserAccount eoUserAccount = findUserLogin.orElseThrow(()-> new RuntimeException("Not found!"));
 		userOnBoardingService.initOnBoarding(eoUserAccount);
 		return userDetailMapper.mapToDTO(eoUserAccount);
 	}

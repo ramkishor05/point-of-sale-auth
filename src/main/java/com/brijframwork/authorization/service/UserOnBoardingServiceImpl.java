@@ -1,7 +1,9 @@
 package com.brijframwork.authorization.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -25,17 +27,15 @@ public class UserOnBoardingServiceImpl implements UserOnBoardingService {
 		if(eoUserAccount==null) {
 			return;
 		}
-		Map<String, EOUserOnBoarding> onBoardingMap = eoUserAccount.getOnBoardingList().parallelStream().collect(Collectors.toMap((eoUserOnBoarding)->getOnBoardingKey(eoUserOnBoarding.getRoleMenuItem(), eoUserOnBoarding.getUserAccount()), Function.identity()));
+		Map<String, EOUserOnBoarding> onBoardingMap = Optional.ofNullable(eoUserAccount.getOnBoardingList()).orElse(new ArrayList<EOUserOnBoarding>()).parallelStream().collect(Collectors.toMap((eoUserOnBoarding)->getOnBoardingKey(eoUserOnBoarding.getRoleMenuItem(), eoUserOnBoarding.getUserAccount()), Function.identity()));
 		List<EORoleMenuItem> roleMenuItems = eoUserAccount.getUserRole().getRoleMenuItems();
 		for(EORoleMenuItem eoRoleMenuItem:  roleMenuItems) {
 			String onBoardingKey = getOnBoardingKey(eoRoleMenuItem, eoUserAccount);
-			if(onBoardingMap.containsKey(onBoardingKey)) {
-				continue;
-			}
-			if(eoRoleMenuItem.getMenuItem().getOnBoarding()) {
-				EOUserOnBoarding eoUserOnBoarding=new EOUserOnBoarding();
+			if(eoRoleMenuItem.getOnBoarding()) {
+				EOUserOnBoarding eoUserOnBoarding=onBoardingMap.getOrDefault(onBoardingKey, new EOUserOnBoarding()) ;
 				eoUserOnBoarding.setUserAccount(eoUserAccount);
 				eoUserOnBoarding.setRoleMenuItem(eoRoleMenuItem);
+				eoUserOnBoarding.setOnBoardingLevel(eoRoleMenuItem.getOnBoardingLevel());
 				userOnBoardingRepository.save(eoUserOnBoarding);
 			}
 		}

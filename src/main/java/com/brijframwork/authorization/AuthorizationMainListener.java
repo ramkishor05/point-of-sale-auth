@@ -79,7 +79,7 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 	    		EOUserRole saveUserRole=userRoleRepository.saveAndFlush(eoUserRole);
 	    		userRole.setId(saveUserRole.getId());
 	    		userRoleMap.put(userRole.getPosition(), userRole);
-	    		if(UserRole.ADMIN.getType().equalsIgnoreCase(userRole.getRoleType())) {
+	    		if(UserRole.ADMIN.getRoleType().equalsIgnoreCase(userRole.getRoleType())) {
 	    			EOUserAccount eoUserAccount = userAccountMap.getOrDefault(eoUserRole.getRoleName(), new EOUserAccount());
     	    		eoUserAccount.setAccountName(eoUserRole.getRoleName());
     	    		eoUserAccount.setUsername(eoUserRole.getRoleName());

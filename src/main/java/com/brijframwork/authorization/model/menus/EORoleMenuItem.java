@@ -40,6 +40,12 @@ public class EORoleMenuItem extends EOEntityObject {
 	
 	@Column(name = "IS_HOME_PAGE")
 	private boolean homePage=false;
+
+	@Column(name = "ON_BOARDING", nullable = true)
+	private Boolean onBoarding;
+	
+	@Column(name = "ON_BOARDING_LEVEL", nullable = true)
+	private Integer onBoardingLevel;
 	
 	public String getIdenNo() {
 		return idenNo;
@@ -87,6 +93,25 @@ public class EORoleMenuItem extends EOEntityObject {
 
 	public void setHomePage(boolean homePage) {
 		this.homePage = homePage;
+	}
+
+	public Boolean getOnBoarding() {
+		if(onBoarding==null) {
+			return false;
+		}
+		return onBoarding;
+	}
+
+	public void setOnBoarding(Boolean onBoarding) {
+		this.onBoarding = onBoarding;
+	}
+
+	public Integer getOnBoardingLevel() {
+		return onBoardingLevel;
+	}
+
+	public void setOnBoardingLevel(Integer onBoardingLevel) {
+		this.onBoardingLevel = onBoardingLevel;
 	}
 
 	@Override

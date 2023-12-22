@@ -8,6 +8,8 @@ public class UIUserOnBoarding {
 	
 	private Boolean onBoardingStatus;
 
+	private Integer onBoardingLevel;
+
 	public long getId() {
 		return id;
 	}
@@ -30,6 +32,14 @@ public class UIUserOnBoarding {
 
 	public void setOnBoardingStatus(Boolean onBoardingStatus) {
 		this.onBoardingStatus = onBoardingStatus;
+	}
+	
+	public Integer getOnBoardingLevel() {
+		return onBoardingLevel;
+	}
+
+	public void setOnBoardingLevel(Integer onBoardingLevel) {
+		this.onBoardingLevel = onBoardingLevel;
 	}
 	
 }
