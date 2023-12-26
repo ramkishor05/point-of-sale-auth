@@ -46,7 +46,7 @@ public class UserDetailServiceImpl implements UserDetailService {
 		
 		EOUserProfile eoUserProfile=new EOUserProfile();
 		eoUserProfile.setFullName(eoUserRole.getRoleName());
-		eoUserProfile = userProfileRepository.saveAndFlush(eoUserProfile);
+		eoUserProfile = userProfileRepository.save(eoUserProfile);
 		
 		EOUserAccount eoUserAccount=new EOUserAccount();
 		eoUserAccount.setUsername(userDetailRequest.getUsername());
@@ -58,7 +58,8 @@ public class UserDetailServiceImpl implements UserDetailService {
 		eoUserAccount.setOwnerId(userDetailRequest.getOwnerId());
 		eoUserAccount.setUserRole(eoUserRole);
 		eoUserAccount.setUserProfile(eoUserProfile);
-		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);
+		eoUserAccount.setOnBoarding(true);		
+		eoUserAccount=userAccountRepository.save(eoUserAccount);
 		
 		userOnBoardingService.initOnBoarding(eoUserAccount);
 		
