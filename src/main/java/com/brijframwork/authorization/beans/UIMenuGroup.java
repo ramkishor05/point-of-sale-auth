@@ -14,6 +14,7 @@ public class UIMenuGroup {
 	
 	private List<UIMenuItem> menuItems;
 	private Integer order;
+	private Boolean disabled;
 
 	public long getId() {
 		return id;
@@ -85,4 +86,16 @@ public class UIMenuGroup {
 	public void setMenuItems(List<UIMenuItem> menuItems) {
 		this.menuItems = menuItems;
 	}
+	
+	public Boolean getDisabled() {
+		if(disabled==null) {
+			return false;
+		}
+		return disabled;
+	}
+
+	public void setDisabled(Boolean disabled) {
+		this.disabled = disabled;
+	}
+	
 }

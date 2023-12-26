@@ -5,15 +5,20 @@ import static com.brijframwork.authorization.contants.Constants.SPRING;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.mapstruct.Mapper;
 
 import com.brijframwork.authorization.beans.UIHeaderItem;
 import com.brijframwork.authorization.beans.UIMenuGroup;
 import com.brijframwork.authorization.beans.UIMenuItem;
+import com.brijframwork.authorization.beans.UIUserOnBoarding;
+import com.brijframwork.authorization.beans.UIUserProfile;
 import com.brijframwork.authorization.beans.UserDetailResponse;
 import com.brijframwork.authorization.beans.UserRoleResponse;
 import com.brijframwork.authorization.model.EOUserAccount;
+import com.brijframwork.authorization.model.EOUserProfile;
 import com.brijframwork.authorization.model.EOUserRole;
 import com.brijframwork.authorization.model.headers.EOHeaderItem;
 import com.brijframwork.authorization.model.headers.EORoleHeaderItem;
@@ -21,9 +26,98 @@ import com.brijframwork.authorization.model.menus.EOMenuGroup;
 import com.brijframwork.authorization.model.menus.EOMenuItem;
 import com.brijframwork.authorization.model.menus.EORoleMenuGroup;
 import com.brijframwork.authorization.model.menus.EORoleMenuItem;
+import com.brijframwork.authorization.model.onboarding.EOUserOnBoarding;
 
 @Mapper(componentModel = SPRING, implementationPackage = COM_BRIJFRAMEWORK_AUTHORIZATION_MAPPER_IMPL)
 public interface UserDetailMapper extends GenericMapper<EOUserAccount, UserDetailResponse> {
+
+	@Override
+	default UserDetailResponse mapToDTO(EOUserAccount eoUserAccount) {
+		if ( eoUserAccount == null ) {
+            return null;
+        }
+
+        UserDetailResponse userDetailResponse = new UserDetailResponse();
+
+        if ( eoUserAccount.getId() != null ) {
+            userDetailResponse.setId( eoUserAccount.getId() );
+        }
+        userDetailResponse.setUsername( eoUserAccount.getUsername() );
+        userDetailResponse.setAccountName( eoUserAccount.getAccountName() );
+        userDetailResponse.setRegisteredEmail( eoUserAccount.getRegisteredEmail() );
+        userDetailResponse.setRegisteredMobile( eoUserAccount.getRegisteredMobile() );
+        userDetailResponse.setType( eoUserAccount.getType() );
+        userDetailResponse.setOwnerId( eoUserAccount.getOwnerId() );
+        userDetailResponse.setOnBoarding( eoUserAccount.getOnBoarding() );
+        userDetailResponse.setUserRole( userRole( eoUserAccount.getUserRole() ) );
+        userDetailResponse.setUserProfile( mapUserProfileToUserProfileDTO( eoUserAccount.getUserProfile() ) );
+        userDetailResponse.setOnBoardingList( mapUserOnBoardingListToUserOnBoardingListDTO( eoUserAccount.getOnBoardingList() ) );
+        
+        List<UIUserOnBoarding> onBoardingList = userDetailResponse.getOnBoardingList();
+        
+        Map<String, UIUserOnBoarding> onBoardingMenuIdenNoMap = onBoardingList.stream().collect(Collectors.toMap((uiUserOnBoarding)->uiUserOnBoarding.getRoleMenuItem().getIdenNo(), (uiUserOnBoarding)->uiUserOnBoarding));
+        
+        Map<Integer, Boolean> onBoardingLevelStatusMap = onBoardingList.stream().collect(Collectors.toMap(UIUserOnBoarding::getOnBoardingLevel, UIUserOnBoarding::getOnBoardingStatus));
+        if(userDetailResponse.getOnBoarding()) {
+	        userDetailResponse.setOnBoarding(!(onBoardingList.isEmpty()|| onBoardingList.stream().anyMatch(onBoarding->onBoarding.getOnBoardingStatus().equals(false))));
+        }
+        if(userDetailResponse.getOnBoarding()) {
+            List<UIMenuGroup> uiMenuGroups = userDetailResponse.getUserRole().getRoleMenuGroups();
+	        for(UIMenuGroup uiMenuGroup : uiMenuGroups) {
+	        	List<UIMenuItem> menuItems = uiMenuGroup.getMenuItems();
+	        	checkOnBoardingStatus(onBoardingMenuIdenNoMap, onBoardingLevelStatusMap, menuItems);
+	        	uiMenuGroup.setDisabled(menuItems.stream().filter(menuItem->!menuItem.getDisabled()).count()==0);
+	        }
+	        List<UIMenuItem> menuItems = userDetailResponse.getUserRole().getRoleMenuItems();
+	        checkOnBoardingStatus(onBoardingMenuIdenNoMap, onBoardingLevelStatusMap, menuItems);
+        }
+        return userDetailResponse;
+	}
+
+	default void checkOnBoardingStatus(Map<String, UIUserOnBoarding> onBoardingMenuIdenNoMap,
+			Map<Integer, Boolean> onBoardingLevelStatusMap, List<UIMenuItem> menuItems) {
+		for(UIMenuItem uiMenuItem: menuItems) {
+			if(uiMenuItem.getDisabled()) {
+				continue;
+			}
+			uiMenuItem.setDisabled(true);
+			if(uiMenuItem.getOnBoarding()) {
+				uiMenuItem.setDisabled(false);
+				UIUserOnBoarding uiUserOnBoarding = onBoardingMenuIdenNoMap.get(uiMenuItem.getIdenNo());
+				Boolean preOnBoardingStatus = onBoardingLevelStatusMap.get(uiUserOnBoarding.getOnBoardingLevel()-1);
+				if(preOnBoardingStatus!=null) {
+					if(!preOnBoardingStatus) {
+						uiMenuItem.setDisabled(true);
+					} 
+				}
+			} 
+		}
+	}
+
+    public default List<UIUserOnBoarding> mapUserOnBoardingListToUserOnBoardingListDTO(List<EOUserOnBoarding> onBoardingList) {
+        if ( onBoardingList == null ) {
+            return null;
+        }
+
+        List<UIUserOnBoarding> list = new ArrayList<UIUserOnBoarding>( onBoardingList.size() );
+        for ( EOUserOnBoarding eOUserOnBoarding : onBoardingList ) {
+            list.add( mapUserOnBoardingToUserOnBoardingDTO( eOUserOnBoarding ) );
+        }
+
+        list.sort((b1,b2)->b1.getOnBoardingLevel().compareTo(b2.getOnBoardingLevel()));
+        
+        for(UIUserOnBoarding uiUserOnBoarding: list) {
+        	uiUserOnBoarding.setOnBoardingActive(false);
+        	if(!uiUserOnBoarding.getOnBoardingStatus()) {
+        		uiUserOnBoarding.setOnBoardingActive(true);
+        	}
+        }
+        return list;
+    }
+    
+	public UIUserOnBoarding mapUserOnBoardingToUserOnBoardingDTO(EOUserOnBoarding eOUserOnBoarding);
+
+	UIUserProfile mapUserProfileToUserProfileDTO(EOUserProfile userProfile);
 
 	UserRoleResponse userRole(EOUserRole eoUserRole);
 	
@@ -38,6 +132,8 @@ public interface UserDetailMapper extends GenericMapper<EOUserAccount, UserDetai
 	
 	default UIMenuGroup mapRoleMenuGroupToMenuGroupDTO(EORoleMenuGroup eoRoleMenuGroup) {
 		UIMenuGroup uiMenuGroup = mapToMenuGroupDTO(eoRoleMenuGroup.getMenuGroup());
+		uiMenuGroup.setIdenNo(eoRoleMenuGroup.getIdenNo());
+		uiMenuGroup.setId(eoRoleMenuGroup.getId());
 		uiMenuGroup.setMenuItems(mapRoleMenuItemToMenuItemDTOs(eoRoleMenuGroup.getRoleMenuItems()));
 		return uiMenuGroup;
 	}
@@ -54,9 +150,12 @@ public interface UserDetailMapper extends GenericMapper<EOUserAccount, UserDetai
 	}
 	
 	default UIMenuItem mapRoleMenuItemToMenuItemDTO(EORoleMenuItem eoRoleMenuItem) {
-		UIMenuItem roleEndpoint = mapToMenuItemDTO(eoRoleMenuItem.getMenuItem());
-		roleEndpoint.setHomePage(eoRoleMenuItem.isHomePage());
-		return roleEndpoint;
+		UIMenuItem uiMenuItem = mapToMenuItemDTO(eoRoleMenuItem.getMenuItem());
+		uiMenuItem.setIdenNo(eoRoleMenuItem.getIdenNo());
+		uiMenuItem.setId(eoRoleMenuItem.getId());
+		uiMenuItem.setHomePage(eoRoleMenuItem.isHomePage());
+		uiMenuItem.setOnBoarding(eoRoleMenuItem.getOnBoarding());	
+		return uiMenuItem;
 	}
 	
 	UIMenuItem mapToMenuItemDTO(EOMenuItem eoMenuItem);

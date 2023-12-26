@@ -13,14 +13,17 @@ import org.springframework.stereotype.Service;
 import com.brijframwork.authorization.model.EOUserAccount;
 import com.brijframwork.authorization.model.menus.EORoleMenuItem;
 import com.brijframwork.authorization.model.onboarding.EOUserOnBoarding;
+import com.brijframwork.authorization.repository.UserAccountRepository;
 import com.brijframwork.authorization.repository.UserOnBoardingRepository;
 
 @Service
 public class UserOnBoardingServiceImpl implements UserOnBoardingService {
-	
 
 	@Autowired
 	private UserOnBoardingRepository userOnBoardingRepository;
+	
+	@Autowired
+	private UserAccountRepository userAccountRepository;
 
 	@Override
 	public void initOnBoarding(EOUserAccount eoUserAccount) {
@@ -43,5 +46,30 @@ public class UserOnBoardingServiceImpl implements UserOnBoardingService {
 
 	private String getOnBoardingKey(EORoleMenuItem roleMenuItem, EOUserAccount userAccount) {
 		return roleMenuItem.getId()+"_"+userAccount.getId();
+	}
+
+	@Override
+	public void saveOnBoardingStatus(boolean onboarding, String idenNo, List<EOUserOnBoarding> eoUserOnBoardingList) {
+		for(EOUserOnBoarding eoUserOnBoarding:  eoUserOnBoardingList) {
+			if(eoUserOnBoarding.getRoleMenuItem()==null) {
+				continue;
+			}
+			if(eoUserOnBoarding.getRoleMenuItem().getIdenNo()==null) {
+				continue;
+			}
+			if(eoUserOnBoarding.getRoleMenuItem().getIdenNo().equals(idenNo)) {
+				eoUserOnBoarding.setOnBoardingStatus(onboarding);
+				userOnBoardingRepository.save(eoUserOnBoarding);
+			}
+		}
+	}
+
+	@Override
+	public boolean updateOnBoardingStatus(boolean onboarding, String idenNo, EOUserAccount eoUserAccount) {
+		List<EOUserOnBoarding> onBoardingList = eoUserAccount.getOnBoardingList();
+		saveOnBoardingStatus(onboarding , idenNo, onBoardingList);
+		eoUserAccount.setOnBoarding(onBoardingList.stream().anyMatch(onBoarding->onBoarding.getOnBoardingStatus().equals(false)));
+		userAccountRepository.save(eoUserAccount);
+		return true;
 	}
 }

@@ -21,5 +21,5 @@ public interface UserDetailService {
 
 	List<UserDetailResponse> getUsers();
 
-	boolean updateOnboarding(Long id, boolean onboarding);
+	boolean updateOnboarding(Long id, boolean onboarding, String idenNo);
 }

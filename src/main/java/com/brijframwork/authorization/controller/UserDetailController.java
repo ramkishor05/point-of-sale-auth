@@ -46,9 +46,9 @@ public class UserDetailController {
     	return ResponseEntity.ok(userDetailService.updateUserProfile(uiUserProfile));
 	}
 	
-	@PutMapping("/onboarding/{id}/{onboarding}")
-	public ResponseEntity<?> updateOnboarding(@PathVariable Long id, @PathVariable Boolean onboarding){
-    	return ResponseEntity.ok(userDetailService.updateOnboarding(id, onboarding));
+	@PutMapping("/onboarding/{id}/{onboarding}/{idenNo}")
+	public ResponseEntity<?> updateOnboarding(@PathVariable Long id, @PathVariable Boolean onboarding,@PathVariable String idenNo){
+    	return ResponseEntity.ok(userDetailService.updateOnboarding(id, onboarding, idenNo));
 	}
 	
 	@GetMapping("/profile/{id}")

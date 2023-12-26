@@ -1,26 +1,20 @@
 package com.brijframwork.authorization.service;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.brijframwork.authorization.beans.UIUserAccount;
 import com.brijframwork.authorization.beans.UIUserProfile;
 import com.brijframwork.authorization.beans.UserDetailResponse;
-import com.brijframwork.authorization.beans.UIUserAccount;
 import com.brijframwork.authorization.constant.UserRole;
 import com.brijframwork.authorization.mapper.UserDetailMapper;
 import com.brijframwork.authorization.model.EOUserAccount;
 import com.brijframwork.authorization.model.EOUserProfile;
 import com.brijframwork.authorization.model.EOUserRole;
-import com.brijframwork.authorization.model.menus.EORoleMenuItem;
-import com.brijframwork.authorization.model.onboarding.EOUserOnBoarding;
 import com.brijframwork.authorization.repository.UserAccountRepository;
-import com.brijframwork.authorization.repository.UserOnBoardingRepository;
 import com.brijframwork.authorization.repository.UserProfileRepository;
 import com.brijframwork.authorization.repository.UserRoleRepository;
 
@@ -121,13 +115,11 @@ public class UserDetailServiceImpl implements UserDetailService {
 	}
 
 	@Override
-	public boolean updateOnboarding(Long id, boolean onboarding) {
+	public boolean updateOnboarding(Long id, boolean onboarding , String idenNo) {
 		Optional<EOUserAccount> findUserAccount = userAccountRepository.findById(id);
 		if(findUserAccount.isPresent()) {
 			EOUserAccount eoUserAccount = findUserAccount.get();
-			eoUserAccount.setOnBoarding(onboarding);
-			userAccountRepository.save(eoUserAccount);
-			return true;
+			return userOnBoardingService.updateOnBoardingStatus(onboarding, idenNo, eoUserAccount);
 		}
 		return false;
 	}

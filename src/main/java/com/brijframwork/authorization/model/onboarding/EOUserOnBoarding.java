@@ -58,6 +58,9 @@ public class EOUserOnBoarding  extends EOEntityObject {
 	}
 
 	public Boolean getOnBoardingStatus() {
+		if(onBoardingStatus==null) {
+			return false;
+		}
 		return onBoardingStatus;
 	}
 

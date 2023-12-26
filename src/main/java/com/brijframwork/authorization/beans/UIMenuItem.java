@@ -11,6 +11,7 @@ public class UIMenuItem {
 	private Integer order;
 	private boolean homePage;
 	private Boolean onBoarding;
+	private Boolean disabled;
 	
 	public Boolean getOnBoarding() {
 		if(onBoarding==null) {
@@ -89,6 +90,17 @@ public class UIMenuItem {
 
 	public void setHomePage(boolean homePage) {
 		this.homePage = homePage;
+	}
+
+	public Boolean getDisabled() {
+		if(disabled==null) {
+			return false;
+		}
+		return disabled;
+	}
+
+	public void setDisabled(Boolean disabled) {
+		this.disabled = disabled;
 	}
 	
 	
