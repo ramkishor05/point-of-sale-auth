@@ -102,6 +102,12 @@ public class UIMenuItem {
 	public void setDisabled(Boolean disabled) {
 		this.disabled = disabled;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "UIMenuItem [id=" + id + ", idenNo=" + idenNo + ", title=" + title + ", url=" + url + ", icon=" + icon
+				+ ", type=" + type + ", order=" + order + ", homePage=" + homePage + ", onBoarding=" + onBoarding
+				+ ", disabled=" + disabled + "]";
+	}
 	
 }
