@@ -42,6 +42,7 @@ public class UserOnBoardingServiceImpl implements UserOnBoardingService {
 				userOnBoardingRepository.save(eoUserOnBoarding);
 			}
 		}
+		eoUserAccount.setOnBoarding(!eoUserAccount.getOnBoardingList().isEmpty());
 	}
 
 	private String getOnBoardingKey(EORoleMenuItem roleMenuItem, EOUserAccount userAccount) {

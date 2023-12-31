@@ -1,5 +1,6 @@
 package com.brijframwork.authorization.beans;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserDetailResponse {
@@ -120,6 +121,9 @@ public class UserDetailResponse {
 	}
 
 	public List<UIUserOnBoarding> getOnBoardingList() {
+		if(onBoardingList==null) {
+			onBoardingList=new ArrayList<UIUserOnBoarding>();
+		}
 		return onBoardingList;
 	}
 
