@@ -43,12 +43,13 @@ public class UserOnBoardingServiceImpl implements UserOnBoardingService {
 			}
 		}
 		if(eoUserAccount.getOnBoardingList().isEmpty()) {
-			eoUserAccount.setOnBoarding(false);
+			eoUserAccount.setOnBoarding(!eoUserAccount.getOnBoardingList().isEmpty());
+			userAccountRepository.save(eoUserAccount);
 		} else {
-			boolean allMatch = eoUserAccount.getOnBoardingList().stream().allMatch(OnBoarding->OnBoarding.getOnBoardingStatus());
-			eoUserAccount.setOnBoarding(!allMatch);
+			eoUserAccount.setOnBoarding(!eoUserAccount.getOnBoardingList().stream().allMatch(onBoarding->onBoarding.getOnBoardingStatus()));
+			userAccountRepository.save(eoUserAccount);
 		}
-		userAccountRepository.save(eoUserAccount);
+		
 	}
 
 	private String getOnBoardingKey(EORoleMenuItem roleMenuItem, EOUserAccount userAccount) {
