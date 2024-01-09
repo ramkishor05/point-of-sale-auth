@@ -58,9 +58,6 @@ public interface UserDetailMapper extends GenericMapper<EOUserAccount, UserDetai
         Map<String, UIUserOnBoarding> onBoardingMenuIdenNoMap = onBoardingList.stream().collect(Collectors.toMap((uiUserOnBoarding)->uiUserOnBoarding.getRoleMenuItem().getIdenNo(), (uiUserOnBoarding)->uiUserOnBoarding));
         
         Map<Integer, Boolean> onBoardingLevelStatusMap = onBoardingList.stream().collect(Collectors.toMap(UIUserOnBoarding::getOnBoardingLevel, UIUserOnBoarding::getOnBoardingStatus));
-       /* if(userDetailResponse.getOnBoarding()) {
-	        userDetailResponse.setOnBoarding(!(onBoardingList.isEmpty()|| onBoardingList.stream().anyMatch(onBoarding->onBoarding.getOnBoardingStatus().equals(false))));
-        }*/
         if(userDetailResponse.getOnBoarding()) {
             List<UIMenuGroup> uiMenuGroups = userDetailResponse.getUserRole().getRoleMenuGroups();
 	        for(UIMenuGroup uiMenuGroup : uiMenuGroups) {

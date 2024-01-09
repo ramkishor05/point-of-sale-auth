@@ -42,6 +42,19 @@
       }
     },
     {
+      "id": "Business_Portal_MenuItem_CashBook",
+      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "name": "Business_Portal_MenuItem",
+      "properties": {
+        "title": "CashBook",
+        "idenNo": "Business_Portal_MenuItem_CashBook",
+        "type": "item",
+        "url": "/business/portal/accounting/cashbook",
+        "icon": "CashBook",
+        "menuGroup": "LK@Business_Portal_MenuGroup_Accounting"
+      }
+    },
+    {
       "id": "Business_Portal_MenuItem_Products",
       "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
       "name": "Business_Portal_MenuItem",

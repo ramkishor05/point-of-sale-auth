@@ -37,6 +37,18 @@
 			}
 		},
 		{
+			"id": "Business_Portal_MenuItem_Role_OWNER_CashBook",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"idenNo": "Business_Portal_MenuItem_Role_OWNER_CashBook",
+				"userRole": "LK@UserRole_OWNER",
+				"menuItem": "LK@Business_Portal_MenuItem_CashBook",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Accounting",
+				"onBoarding": false
+			}
+		},
+		{
 			"id": "Business_Portal_MenuItem_Role_OWNER_Products",
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
 			"name": "Business_Portal_MenuItem_Role",

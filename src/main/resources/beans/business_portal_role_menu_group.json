@@ -23,6 +23,16 @@
 			}
 		},
 		{
+			"id": "Business_Portal_MenuGroup_Role_OWNER_Accounting",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
+			"name": "Business_Portal_MenuGroup_Role",
+			"properties": {
+				"idenNo": "Business_Portal_MenuGroup_Owner_Accounting",
+				"userRole": "LK@UserRole_OWNER",
+				"menuGroup": "LK@Business_Portal_MenuGroup_Accounting"
+			}
+		},
+		{
 			"id": "Business_Portal_MenuGroup_Role_OWNER_Items",
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
 			"name": "Business_Portal_MenuGroup_Role",

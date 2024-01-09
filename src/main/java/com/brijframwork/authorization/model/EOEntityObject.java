@@ -85,6 +85,9 @@ public abstract class EOEntityObject implements Serializable {
 	}
 
 	public Boolean getRecordState() {
+		if(recordState==null) {
+			recordState=false;
+		}
 		return recordState;
 	}
 
