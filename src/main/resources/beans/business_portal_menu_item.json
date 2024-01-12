@@ -42,11 +42,24 @@
       }
     },
     {
+      "id": "Business_Portal_MenuItem_AccountBook",
+      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "name": "Business_Portal_MenuItem",
+      "properties": {
+        "title": "Account Book",
+        "idenNo": "Business_Portal_MenuItem_AccountBook",
+        "type": "item",
+        "url": "/business/portal/accounting/accountbook",
+        "icon": "AccountBook",
+        "menuGroup": "LK@Business_Portal_MenuGroup_Accounting"
+      }
+    },
+    {
       "id": "Business_Portal_MenuItem_CashBook",
       "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
       "name": "Business_Portal_MenuItem",
       "properties": {
-        "title": "CashBook",
+        "title": "Cash Book",
         "idenNo": "Business_Portal_MenuItem_CashBook",
         "type": "item",
         "url": "/business/portal/accounting/cashbook",
