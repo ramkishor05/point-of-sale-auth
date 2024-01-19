@@ -136,9 +136,9 @@
         "title": "Employee",
         "idenNo": "Global_Portal_MenuItem_Employee",
         "type": "item",
-        "url": "/business/portal/organizations/employee",
+        "url": "/global/portal/organizations/employee",
         "icon": "Employee",
-        "menuGroup": "LK@Portal_MenuGroup_Organizations"
+        "menuGroup": "LK@Global_Portal_MenuGroup_Organizations"
       }
     },
     {
@@ -149,9 +149,9 @@
         "title": "Users",
         "idenNo": "Global_Portal_MenuItem_User",
         "type": "item",
-        "url": "/business/portal/organizations/users",
+        "url": "/global/portal/organizations/users",
         "icon": "Users",
-        "menuGroup": "LK@Portal_MenuGroup_Organizations"
+        "menuGroup": "LK@Global_Portal_MenuGroup_Organizations"
       }
     },
     {

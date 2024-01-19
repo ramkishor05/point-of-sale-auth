@@ -8,6 +8,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cglib.core.CollectionUtils;
 import org.springframework.stereotype.Service;
 
 import com.brijframwork.authorization.model.EOUserAccount;
@@ -42,14 +43,15 @@ public class UserOnBoardingServiceImpl implements UserOnBoardingService {
 				userOnBoardingRepository.save(eoUserOnBoarding);
 			}
 		}
-		if(eoUserAccount.getOnBoardingList().isEmpty()) {
-			eoUserAccount.setOnBoarding(!eoUserAccount.getOnBoardingList().isEmpty());
-			userAccountRepository.save(eoUserAccount);
-		} else {
-			eoUserAccount.setOnBoarding(!eoUserAccount.getOnBoardingList().stream().allMatch(onBoarding->onBoarding.getOnBoardingStatus()));
-			userAccountRepository.save(eoUserAccount);
+		if(!org.springframework.util.CollectionUtils.isEmpty(eoUserAccount.getOnBoardingList())) {
+			if(eoUserAccount.getOnBoardingList().isEmpty()) {
+				eoUserAccount.setOnBoarding(!eoUserAccount.getOnBoardingList().isEmpty());
+				userAccountRepository.save(eoUserAccount);
+			} else {
+				eoUserAccount.setOnBoarding(!eoUserAccount.getOnBoardingList().stream().allMatch(onBoarding->onBoarding.getOnBoardingStatus()));
+				userAccountRepository.save(eoUserAccount);
+			}
 		}
-		
 	}
 
 	private String getOnBoardingKey(EORoleMenuItem roleMenuItem, EOUserAccount userAccount) {
