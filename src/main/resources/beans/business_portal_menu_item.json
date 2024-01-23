@@ -238,16 +238,55 @@
       }
     },
     {
-      "id": "Business_Portal_MenuItem_UserProfile",
+      "id": "Business_Portal_MenuItem_User_SecurityCenter",
       "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
       "name": "Business_Portal_MenuItem",
       "properties": {
-        "title": "User profile",
-        "idenNo": "Business_Portal_MenuItem_UserProfile",
+        "title": "Security Center",
+        "idenNo": "Business_Portal_MenuItem_User_SecurityCenter",
+        "type": "item",
+        "url": "/business/portal/user/security",
+        "icon": "SecurityCenter",
+        "menuGroup": "LK@Business_Portal_MenuGroup_Account"
+      }
+    },
+    {
+      "id": "Business_Portal_MenuItem_User_ProfileCenter",
+      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "name": "Business_Portal_MenuItem",
+      "properties": {
+        "title": "Security Center",
+        "idenNo": "Business_Portal_MenuItem_User_ProfileCenter",
         "type": "item",
         "url": "/business/portal/user/profile",
-        "icon": "UserProfile",
-        "menuGroup": "LK@Business_Portal_MenuGroup_UserProfile"
+        "icon": "ProfileCenter",
+        "menuGroup": "LK@Business_Portal_MenuGroup_Account"
+      }
+    },
+    {
+      "id": "Business_Portal_MenuItem_User_PrivacyCenter",
+      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "name": "Business_Portal_MenuItem",
+      "properties": {
+        "title": "Privacy Center",
+        "idenNo": "Business_Portal_MenuItem_User_PrivacyCenter",
+        "type": "item",
+        "url": "/business/portal/user/privacy",
+        "icon": "PrivacyCenter",
+        "menuGroup": "LK@Business_Portal_MenuGroup_Account"
+      }
+    },
+    {
+      "id": "Business_Portal_MenuItem_User_OwnershipCenter",
+      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "name": "Business_Portal_MenuItem",
+      "properties": {
+        "title": "Ownership Center",
+        "idenNo": "Business_Portal_MenuItem_User_OwnershipCenter",
+        "type": "item",
+        "url": "/business/portal/user/ownership",
+        "icon": "OwnershipCenter",
+        "menuGroup": "LK@Business_Portal_MenuGroup_Account"
       }
     }
   ]

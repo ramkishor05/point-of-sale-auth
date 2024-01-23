@@ -94,16 +94,16 @@
       }
     },
     {
-      "id": "Business_Portal_MenuGroup_UserProfile",
+      "id": "Business_Portal_MenuGroup_Account",
       "type": "com.brijframwork.authorization.model.menus.EOMenuGroup",
       "name": "Business_Portal_MenuGroup",
       "properties": {
-        "title": "User profile",
-        "idenNo": "Business_Portal_MenuGroup_UserProfile",
+        "title": "Account",
+        "idenNo": "Business_Portal_MenuGroup_Account",
         "type": "group",
-        "icon": "UserProfile",
+        "icon": "Account",
         "order":8,
-        "url": "/business/portal/profile"
+        "url": "/business/portal/account"
       }
     }
   ]

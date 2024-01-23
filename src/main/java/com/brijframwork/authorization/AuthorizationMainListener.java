@@ -96,36 +96,36 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 	    		}
 	    	}
 	    	List<EOMenuGroup> globalMenuGroupList = instance.getAll(EOMenuGroup.class);
-	    	List<String> globalMenuGroupUrls=globalMenuGroupList.stream().map(userEndpoint->userEndpoint.getUrl()).collect(Collectors.toList());
-	    	Map<String, EOMenuGroup> globalMenuGroupMap = globalMenuGroupRepository.findByUrls(globalMenuGroupUrls)
+	    	Map<String, EOMenuGroup> globalMenuGroupMap = globalMenuGroupRepository.findAll()
 	    			.stream().collect(Collectors.toMap(EOMenuGroup::getUrl, Function.identity()));
 	    	for (EOMenuGroup globalMenuGroup : globalMenuGroupList) {
 	    		EOMenuGroup eoUserEndpoint = globalMenuGroupMap.getOrDefault(globalMenuGroup.getUrl(),globalMenuGroup);
 	    		BeanUtils.copyProperties(globalMenuGroup, eoUserEndpoint, "id");
 	    		EOMenuGroup saveGlobalMenuGroup = globalMenuGroupRepository.save(eoUserEndpoint);
 	    		globalMenuGroup.setId(saveGlobalMenuGroup.getId());
-	    		globalMenuGroupMap.put(globalMenuGroup.getUrl(), globalMenuGroup);
+	    		globalMenuGroupMap.remove(globalMenuGroup.getUrl());
 			}
 	    	List<EOMenuItem> globalMenuItemList = instance.getAll(EOMenuItem.class);
-	    	List<String> globalMenuItemUrls=globalMenuItemList.stream().map(userEndpoint->userEndpoint.getUrl()).collect(Collectors.toList());
-	    	Map<String, EOMenuItem> globalMenuItemMap = globalMenuItemRepository.findByUrls(globalMenuItemUrls)
+	    	Map<String, EOMenuItem> globalMenuItemMap = globalMenuItemRepository.findAll()
 	    			.stream().collect(Collectors.toMap(EOMenuItem::getUrl, Function.identity()));
 	    	for (EOMenuItem globalMenuItem : globalMenuItemList) {
 	    		EOMenuItem eoGlobalMenuItem = globalMenuItemMap.getOrDefault(globalMenuItem.getUrl(),globalMenuItem);
 	    		BeanUtils.copyProperties(globalMenuItem, eoGlobalMenuItem, "id");
 	    		EOMenuItem saveGlobalMenuItem = globalMenuItemRepository.save(eoGlobalMenuItem);
 	    		globalMenuItem.setId(saveGlobalMenuItem.getId());
-	    		globalMenuItemMap.put(globalMenuItem.getUrl(), globalMenuItem);
+	    		globalMenuItemMap.remove(globalMenuItem.getUrl());
 			}
 	    	Map<String, EORoleMenuGroup> roleMenuGroupMap = roleMenuGroupRepository.findAll().parallelStream().collect(Collectors.toMap((userRoleMenuGroup)->getRoleMenuGroupKey(userRoleMenuGroup), Function.identity()));
 	    	List<EORoleMenuGroup> roleMenuGroups = instance.getAll(EORoleMenuGroup.class);
 	    	for(EORoleMenuGroup roleMenuGroup: roleMenuGroups) {
 	    		try {
-					EORoleMenuGroup eoRoleMenuGroup = roleMenuGroupMap.getOrDefault(getRoleMenuGroupKey(roleMenuGroup),roleMenuGroup);
+	    			String roleMenuGroupKey= getRoleMenuGroupKey(roleMenuGroup);
+					EORoleMenuGroup eoRoleMenuGroup = roleMenuGroupMap.getOrDefault(roleMenuGroupKey,roleMenuGroup);
 					BeanUtils.copyProperties(roleMenuGroup, eoRoleMenuGroup, "id");
 		    		EORoleMenuGroup saveRoleMenuGroup = roleMenuGroupRepository.save(eoRoleMenuGroup);
 		    		roleMenuGroup.setId(saveRoleMenuGroup.getId());
 		    		eoRoleMenuGroup.setId(saveRoleMenuGroup.getId());
+		    		roleMenuGroupMap.remove(roleMenuGroupKey);
 	    		}catch (Exception e) {
 					System.out.println("roleMenuGroup="+roleMenuGroup);
 					e.printStackTrace();
@@ -135,10 +135,12 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 	    	List<EORoleMenuItem> roleEndpointList = instance.getAll(EORoleMenuItem.class);
 	    	for(EORoleMenuItem roleMenuItem: roleEndpointList) {
 	    		try {
-					EORoleMenuItem eoRoleEndpoint = roleMenuItemMap.getOrDefault(getRoleMenuItemKey(roleMenuItem),roleMenuItem);
+	    			String roleMenuItemKey= getRoleMenuItemKey(roleMenuItem);
+					EORoleMenuItem eoRoleEndpoint = roleMenuItemMap.getOrDefault(roleMenuItemKey,roleMenuItem);
 					BeanUtils.copyProperties(roleMenuItem, eoRoleEndpoint, "id");
 		    		EORoleMenuItem saveRoleEndpoint = roleMenuItemRepository.save(eoRoleEndpoint);
 		    		roleMenuItem.setId(saveRoleEndpoint.getId());
+		    		roleMenuGroupMap.remove(roleMenuItemKey);
 	    		}catch (Exception e) {
 					System.out.println("roleEndpoint="+roleMenuItem);
 					e.printStackTrace();
@@ -153,6 +155,7 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 					BeanUtils.copyProperties(headerItem, eoHeaderItem, "id");
 					EOHeaderItem saveHeaderItem = headerItemRepository.save(eoHeaderItem);
 		    		headerItem.setId(saveHeaderItem.getId());
+		    		headerItemMap.remove(headerItem.getIdenNo());
 	    		}catch (Exception e) {
 					System.out.println("headerItem="+headerItem);
 					e.printStackTrace();
@@ -163,16 +166,23 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 	    	List<EORoleHeaderItem> userRoleHeaderItemList = instance.getAll(EORoleHeaderItem.class);
 	    	for(EORoleHeaderItem roleHeaderItem: userRoleHeaderItemList) {
 	    		try {
-	    			EORoleHeaderItem eoRoleHeaderItem = roleHeaderItemMap.getOrDefault(getRoleHeaderItemKey(roleHeaderItem),roleHeaderItem);
+	    			String roleHeaderItemKey=getRoleHeaderItemKey(roleHeaderItem);
+	    			EORoleHeaderItem eoRoleHeaderItem = roleHeaderItemMap.getOrDefault(roleHeaderItemKey,roleHeaderItem);
 					BeanUtils.copyProperties(roleHeaderItem, eoRoleHeaderItem, "id");
 					EORoleHeaderItem saveRoleHeaderItem = roleHeaderItemRepository.save(eoRoleHeaderItem);
 		    		roleHeaderItem.setId(saveRoleHeaderItem.getId());
+		    		roleHeaderItemMap.remove(roleHeaderItemKey);
 	    		}catch (Exception e) {
 					System.out.println("roleHeaderItem="+roleHeaderItem);
 					e.printStackTrace();
 				}
 			}
-	    	
+	    	roleHeaderItemRepository.deleteAll(roleHeaderItemMap.values());
+	    	headerItemRepository.deleteAll(headerItemMap.values());
+	    	roleMenuItemRepository.deleteAll(roleMenuItemMap.values());
+	    	roleMenuGroupRepository.deleteAll(roleMenuGroupMap.values());
+	    	globalMenuItemRepository.deleteAll(globalMenuItemMap.values());
+	    	globalMenuGroupRepository.deleteAll(globalMenuGroupMap.values());
     	}
     }
 

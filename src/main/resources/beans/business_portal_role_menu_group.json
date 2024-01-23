@@ -73,13 +73,13 @@
 			}
 		},
 		{
-			"id": "Business_Portal_MenuGroup_Role_OWNER_UserProfile",
+			"id": "Business_Portal_MenuGroup_Role_OWNER_Account",
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
 			"name": "Business_Portal_MenuGroup_Role",
 			"properties": {
-				"idenNo": "Business_Portal_MenuGroup_Owner_UserProfile",
+				"idenNo": "Business_Portal_MenuGroup_Owner_Account",
 				"userRole": "LK@UserRole_OWNER",
-				"menuGroup": "LK@Business_Portal_MenuGroup_UserProfile"
+				"menuGroup": "LK@Business_Portal_MenuGroup_Account"
 			}
 		},
 		{
@@ -143,13 +143,13 @@
 			}
 		},
 		{
-			"id": "Business_Portal_MenuGroup_Role_MANAGER_UserProfile",
+			"id": "Business_Portal_MenuGroup_Role_MANAGER_Account",
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
 			"name": "Business_Portal_MenuGroup_Role",
 			"properties": {
-				"idenNo": "Business_Portal_MenuGroup_Manager_UserProfile",
+				"idenNo": "Business_Portal_MenuGroup_Manager_Account",
 				"userRole": "LK@UserRole_MANAGER",
-				"menuGroup": "LK@Business_Portal_MenuGroup_UserProfile"
+				"menuGroup": "LK@Business_Portal_MenuGroup_Account"
 			}
 		},
 		{
@@ -193,13 +193,13 @@
 			}
 		},
 		{
-			"id": "Business_Portal_MenuGroup_Role_SUPERVISOR_UserProfile",
+			"id": "Business_Portal_MenuGroup_Role_SUPERVISOR_Account",
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
 			"name": "Business_Portal_MenuGroup_Role",
 			"properties": {
 				"idenNo": "Business_Portal_MenuGroup_Supervior_Orders",
 				"userRole": "LK@UserRole_SUPERVISOR",
-				"menuGroup": "LK@Business_Portal_MenuGroup_UserProfile"
+				"menuGroup": "LK@Business_Portal_MenuGroup_Account"
 			}
 		},
 		{
@@ -243,13 +243,13 @@
 			}
 		},
 		{
-			"id": "Business_Portal_MenuGroup_Role_CREW_UserProfile",
+			"id": "Business_Portal_MenuGroup_Role_CREW_Account",
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
 			"name": "Business_Portal_MenuGroup_Role",
 			"properties": {
-				"idenNo": "Business_Portal_MenuGroup_Crew_UserProfile",
+				"idenNo": "Business_Portal_MenuGroup_Crew_Account",
 				"userRole": "LK@UserRole_CREW",
-				"menuGroup": "LK@Business_Portal_MenuGroup_UserProfile"
+				"menuGroup": "LK@Business_Portal_MenuGroup_Account"
 			}
 		}
 	]
