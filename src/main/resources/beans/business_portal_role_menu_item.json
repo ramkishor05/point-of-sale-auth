@@ -212,7 +212,7 @@
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
 			"name": "Business_Portal_MenuItem_Role",
 			"properties": {
-				"idenNo": "Business_Portal_MenuItem_Role_CREW_User_SecurityCenter",
+				"idenNo": "Business_Portal_MenuItem_Role_OWNER_User_SecurityCenter",
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@Business_Portal_MenuItem_User_SecurityCenter",
 				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Account"
@@ -223,7 +223,7 @@
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
 			"name": "Business_Portal_MenuItem_Role",
 			"properties": {
-				"idenNo": "Business_Portal_MenuItem_Role_CREW_User_ProfileCenter",
+				"idenNo": "Business_Portal_MenuItem_Role_OWNER_User_ProfileCenter",
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@Business_Portal_MenuItem_User_ProfileCenter",
 				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Account"
@@ -234,7 +234,7 @@
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
 			"name": "Business_Portal_MenuItem_Role",
 			"properties": {
-				"idenNo": "Business_Portal_MenuItem_Role_CREW_User_PrivacyCenter",
+				"idenNo": "Business_Portal_MenuItem_Role_OWNER_User_PrivacyCenter",
 				"userRole": "LK@UserRole_OWNER",
 				"menuItem": "LK@Business_Portal_MenuItem_User_PrivacyCenter",
 				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Account"
@@ -418,17 +418,6 @@
 			}
 		},
 		{
-			"id": "Business_Portal_MenuItem_Role_MANAGER_Account",
-			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
-			"name": "Business_Portal_MenuItem_Role",
-			"properties": {
-				"idenNo": "Business_Portal_MenuItem_Role_MANAGER_Account",
-				"userRole": "LK@UserRole_MANAGER",
-				"menuItem": "LK@Business_Portal_MenuItem_Account",
-				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_MANAGER_Account"
-			}
-		},
-		{
 			"id": "Business_Portal_MenuItem_Role_SUPERVISOR_Dashboard",
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
 			"name": "Business_Portal_MenuItem_Role",
@@ -496,17 +485,6 @@
 			}
 		},
 		{
-			"id": "Business_Portal_MenuItem_Role_SUPERVISOR_Account",
-			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
-			"name": "Business_Portal_MenuItem_Role",
-			"properties": {
-				"idenNo": "Business_Portal_MenuItem_Role_SUPERVISOR_Account",
-				"userRole": "LK@UserRole_SUPERVISOR",
-				"menuItem": "LK@Business_Portal_MenuItem_Account",
-				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_SUPERVISOR_Account"
-			}
-		},
-		{
 			"id": "Business_Portal_MenuItem_Role_CREW_Dashboard",
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
 			"name": "Business_Portal_MenuItem_Role",
@@ -516,6 +494,7 @@
 				"menuItem": "LK@Business_Portal_MenuItem_Dashboard",
 				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_CREW_Dashboard",
 				"homePage": true
+				
 			}
 		},
 		{

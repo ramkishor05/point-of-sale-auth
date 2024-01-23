@@ -197,7 +197,7 @@
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
 			"name": "Business_Portal_MenuGroup_Role",
 			"properties": {
-				"idenNo": "Business_Portal_MenuGroup_Supervior_Orders",
+				"idenNo": "Business_Portal_MenuGroup_Role_SUPERVISOR_Account",
 				"userRole": "LK@UserRole_SUPERVISOR",
 				"menuGroup": "LK@Business_Portal_MenuGroup_Account"
 			}

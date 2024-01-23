@@ -255,7 +255,7 @@
       "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
       "name": "Business_Portal_MenuItem",
       "properties": {
-        "title": "Security Center",
+        "title": "User Profile",
         "idenNo": "Business_Portal_MenuItem_User_ProfileCenter",
         "type": "item",
         "url": "/business/portal/user/profile",
@@ -281,11 +281,11 @@
       "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
       "name": "Business_Portal_MenuItem",
       "properties": {
-        "title": "Ownership Center",
+        "title": "Membership",
         "idenNo": "Business_Portal_MenuItem_User_OwnershipCenter",
         "type": "item",
-        "url": "/business/portal/user/ownership",
-        "icon": "OwnershipCenter",
+        "url": "/business/portal/user/membership",
+        "icon": "membership",
         "menuGroup": "LK@Business_Portal_MenuGroup_Account"
       }
     }
