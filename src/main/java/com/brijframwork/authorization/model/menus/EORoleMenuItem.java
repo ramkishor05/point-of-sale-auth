@@ -1,17 +1,24 @@
 
 package com.brijframwork.authorization.model.menus;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 import com.brijframwork.authorization.model.EOEntityObject;
 import com.brijframwork.authorization.model.EOUserRole;
+import com.brijframwork.authorization.model.onboarding.EOUserOnBoarding;
 
 @Entity
-@Table(name = "ROLE_MENU_ITEM", uniqueConstraints= {@UniqueConstraint(columnNames = { "USER_ROLE_ID","MENU_ITEM_ID" })})
+@Table(name = "ROLE_MENU_ITEM", uniqueConstraints= {
+		@UniqueConstraint(columnNames = { "USER_ROLE_ID","MENU_ITEM_ID" }),
+		@UniqueConstraint(columnNames = { "IDEN_NO" }) })
 public class EORoleMenuItem extends EOEntityObject {
 
 	/**
@@ -46,6 +53,9 @@ public class EORoleMenuItem extends EOEntityObject {
 	
 	@Column(name = "ON_BOARDING_LEVEL", nullable = true)
 	private Integer onBoardingLevel;
+	
+	@OneToMany(mappedBy = "roleMenuItem", cascade = CascadeType.ALL)
+	private List<EOUserOnBoarding> userOnBoardingList;
 	
 	public String getIdenNo() {
 		return idenNo;
@@ -112,6 +122,14 @@ public class EORoleMenuItem extends EOEntityObject {
 
 	public void setOnBoardingLevel(Integer onBoardingLevel) {
 		this.onBoardingLevel = onBoardingLevel;
+	}
+
+	public List<EOUserOnBoarding> getUserOnBoardingList() {
+		return userOnBoardingList;
+	}
+
+	public void setUserOnBoardingList(List<EOUserOnBoarding> userOnBoardingList) {
+		this.userOnBoardingList = userOnBoardingList;
 	}
 
 	@Override

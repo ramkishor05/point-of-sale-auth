@@ -5,11 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import com.brijframwork.authorization.model.EOEntityObject;
 
 @Entity
-@Table(name = "MENU_ITEM")
+@Table(name = "MENU_ITEM", uniqueConstraints = {@UniqueConstraint(columnNames = { "IDEN_NO" }) })
 public class EOMenuItem extends EOEntityObject {
 
 	private static final long serialVersionUID = 1L;

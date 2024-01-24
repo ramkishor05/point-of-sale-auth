@@ -4,7 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -27,7 +26,7 @@ public class EOUserOnBoarding  extends EOEntityObject {
 	private EOUserAccount userAccount;
 
 	@JoinColumn(name = "ROLE_MENU_ITEM_ID")
-	@OneToOne
+	@ManyToOne
 	private EORoleMenuItem roleMenuItem;
 		
 	@Column(name = "ON_BOARDING_STATUS")

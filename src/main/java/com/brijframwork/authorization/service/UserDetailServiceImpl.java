@@ -85,7 +85,7 @@ public class UserDetailServiceImpl implements UserDetailService {
 	}
 
 	@Override
-	public UIUserAccount updateUserAccount(UIUserAccount uiUserAccount) {
+	public UserDetailResponse updateUserAccount(UIUserAccount uiUserAccount) {
 		EOUserAccount eoUserAccount=userAccountRepository.getOne(uiUserAccount.getId());
 		eoUserAccount.setUsername(uiUserAccount.getUsername());
 		eoUserAccount.setPassword(uiUserAccount.getPassword());
@@ -96,7 +96,7 @@ public class UserDetailServiceImpl implements UserDetailService {
 		eoUserAccount.setOwnerId(uiUserAccount.getOwnerId());
 		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);
 		userOnBoardingService.initOnBoarding(eoUserAccount);
-		return uiUserAccount;
+		return userDetailMapper.mapToDTO(eoUserAccount);
 	}
 
 	@Override

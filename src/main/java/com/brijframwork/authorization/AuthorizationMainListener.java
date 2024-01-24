@@ -1,5 +1,6 @@
 package com.brijframwork.authorization;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -30,6 +31,7 @@ import com.brijframwork.authorization.repository.RoleHeaderItemRepository;
 import com.brijframwork.authorization.repository.RoleMenuGroupRepository;
 import com.brijframwork.authorization.repository.RoleMenuItemRepository;
 import com.brijframwork.authorization.repository.UserAccountRepository;
+import com.brijframwork.authorization.repository.UserOnBoardingRepository;
 import com.brijframwork.authorization.repository.UserProfileRepository;
 import com.brijframwork.authorization.repository.UserRoleRepository;
 
@@ -62,6 +64,9 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 	
 	@Autowired
 	private RoleHeaderItemRepository roleHeaderItemRepository;
+	
+	@Autowired
+	private UserOnBoardingRepository userOnBoardingRepository;
 	
 	@Value("${spring.db.datajson.upload}")
 	boolean upload;
@@ -96,24 +101,23 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 	    		}
 	    	}
 	    	List<EOMenuGroup> globalMenuGroupList = instance.getAll(EOMenuGroup.class);
-	    	Map<String, EOMenuGroup> globalMenuGroupMap = globalMenuGroupRepository.findAll()
-	    			.stream().collect(Collectors.toMap(EOMenuGroup::getUrl, Function.identity()));
+	    	Map<String, EOMenuGroup> globalMenuGroupMap = globalMenuGroupRepository.findAll().stream().collect(Collectors.toMap(EOMenuGroup::getIdenNo, Function.identity()));
 	    	for (EOMenuGroup globalMenuGroup : globalMenuGroupList) {
-	    		EOMenuGroup eoUserEndpoint = globalMenuGroupMap.getOrDefault(globalMenuGroup.getUrl(),globalMenuGroup);
+	    		EOMenuGroup eoUserEndpoint = globalMenuGroupMap.getOrDefault(globalMenuGroup.getIdenNo(),globalMenuGroup);
 	    		BeanUtils.copyProperties(globalMenuGroup, eoUserEndpoint, "id");
 	    		EOMenuGroup saveGlobalMenuGroup = globalMenuGroupRepository.save(eoUserEndpoint);
 	    		globalMenuGroup.setId(saveGlobalMenuGroup.getId());
-	    		//globalMenuGroupMap.remove(globalMenuGroup.getUrl());
+	    		globalMenuGroupMap.remove(globalMenuGroup.getIdenNo());
 			}
 	    	List<EOMenuItem> globalMenuItemList = instance.getAll(EOMenuItem.class);
 	    	Map<String, EOMenuItem> globalMenuItemMap = globalMenuItemRepository.findAll()
-	    			.stream().collect(Collectors.toMap(EOMenuItem::getUrl, Function.identity()));
+	    			.stream().collect(Collectors.toMap(EOMenuItem::getIdenNo, Function.identity()));
 	    	for (EOMenuItem globalMenuItem : globalMenuItemList) {
-	    		EOMenuItem eoGlobalMenuItem = globalMenuItemMap.getOrDefault(globalMenuItem.getUrl(),globalMenuItem);
+	    		EOMenuItem eoGlobalMenuItem = globalMenuItemMap.getOrDefault(globalMenuItem.getIdenNo(),globalMenuItem);
 	    		BeanUtils.copyProperties(globalMenuItem, eoGlobalMenuItem, "id");
 	    		EOMenuItem saveGlobalMenuItem = globalMenuItemRepository.save(eoGlobalMenuItem);
 	    		globalMenuItem.setId(saveGlobalMenuItem.getId());
-	    		//globalMenuItemMap.remove(globalMenuItem.getUrl());
+	    		globalMenuItemMap.remove(globalMenuItem.getIdenNo());
 			}
 	    	Map<String, EORoleMenuGroup> roleMenuGroupMap = roleMenuGroupRepository.findAll().parallelStream().collect(Collectors.toMap((userRoleMenuGroup)->getRoleMenuGroupKey(userRoleMenuGroup), Function.identity()));
 	    	List<EORoleMenuGroup> roleMenuGroups = instance.getAll(EORoleMenuGroup.class);
@@ -125,7 +129,7 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 		    		EORoleMenuGroup saveRoleMenuGroup = roleMenuGroupRepository.save(eoRoleMenuGroup);
 		    		roleMenuGroup.setId(saveRoleMenuGroup.getId());
 		    		eoRoleMenuGroup.setId(saveRoleMenuGroup.getId());
-		    		//roleMenuGroupMap.remove(roleMenuGroupKey);
+		    		roleMenuGroupMap.remove(roleMenuGroupKey);
 	    		}catch (Exception e) {
 					System.out.println("roleMenuGroup="+roleMenuGroup);
 					e.printStackTrace();
@@ -140,7 +144,7 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 					BeanUtils.copyProperties(roleMenuItem, eoRoleEndpoint, "id");
 		    		EORoleMenuItem saveRoleEndpoint = roleMenuItemRepository.save(eoRoleEndpoint);
 		    		roleMenuItem.setId(saveRoleEndpoint.getId());
-		    		//roleMenuGroupMap.remove(roleMenuItemKey);
+		    		roleMenuGroupMap.remove(roleMenuItemKey);
 	    		}catch (Exception e) {
 					System.out.println("roleEndpoint="+roleMenuItem);
 					e.printStackTrace();
@@ -155,7 +159,7 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 					BeanUtils.copyProperties(headerItem, eoHeaderItem, "id");
 					EOHeaderItem saveHeaderItem = headerItemRepository.save(eoHeaderItem);
 		    		headerItem.setId(saveHeaderItem.getId());
-		    		//headerItemMap.remove(headerItem.getIdenNo());
+		    		headerItemMap.remove(headerItem.getIdenNo());
 	    		}catch (Exception e) {
 					System.out.println("headerItem="+headerItem);
 					e.printStackTrace();
@@ -171,24 +175,30 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 					BeanUtils.copyProperties(roleHeaderItem, eoRoleHeaderItem, "id");
 					EORoleHeaderItem saveRoleHeaderItem = roleHeaderItemRepository.save(eoRoleHeaderItem);
 		    		roleHeaderItem.setId(saveRoleHeaderItem.getId());
-		    		//roleHeaderItemMap.remove(roleHeaderItemKey);
+		    		roleHeaderItemMap.remove(roleHeaderItemKey);
 	    		}catch (Exception e) {
 					System.out.println("roleHeaderItem="+roleHeaderItem);
 					e.printStackTrace();
 				}
-			}/*
+			}
 	    	if(!roleHeaderItemMap.isEmpty())
 	    	roleHeaderItemRepository.deleteAll(roleHeaderItemMap.values());
 	    	if(!headerItemMap.isEmpty())
 	    	headerItemRepository.deleteAll(headerItemMap.values());
-	    	if(!roleMenuItemMap.isEmpty())
-	    	roleMenuItemRepository.deleteAll(roleMenuItemMap.values());
+	    	if(!roleMenuItemMap.isEmpty()) {
+	    		Collection<EORoleMenuItem> values = roleMenuItemMap.values();
+	    		for(EORoleMenuItem eoRoleMenuItem :  values) {
+	    			userOnBoardingRepository.deleteByRoleMenuItem(eoRoleMenuItem);
+	    		}
+	    		if(!values.isEmpty())
+	    		roleMenuItemRepository.deleteAll(values);
+	    	}
 	    	if(!roleMenuGroupMap.isEmpty())
 	    	roleMenuGroupRepository.deleteAll(roleMenuGroupMap.values());
 	    	if(!globalMenuItemMap.isEmpty())
 	    	globalMenuItemRepository.deleteAll(globalMenuItemMap.values());
 	    	if(!globalMenuGroupMap.isEmpty())
-	    	globalMenuGroupRepository.deleteAll(globalMenuGroupMap.values());*/
+	    	globalMenuGroupRepository.deleteAll(globalMenuGroupMap.values());
     	}
     }
 

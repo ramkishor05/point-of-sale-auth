@@ -2,15 +2,17 @@ package com.brijframwork.authorization.model.menus;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 import com.brijframwork.authorization.model.EOEntityObject;
 
 @Entity
-@Table(name = "MENU_GROUP")
+@Table(name = "MENU_GROUP", uniqueConstraints = {@UniqueConstraint(columnNames = { "IDEN_NO" }) })
 public class EOMenuGroup extends EOEntityObject{
 
 	private static final long serialVersionUID = 1L;
@@ -33,7 +35,7 @@ public class EOMenuGroup extends EOEntityObject{
 	@Column(name = "ORDER_SQN")
 	private Integer order;
 	
-	@OneToMany(mappedBy = "menuGroup")
+	@OneToMany(mappedBy = "menuGroup", cascade = CascadeType.ALL)
 	private List<EOMenuItem>  menuItemList;
 
 	public String getIdenNo() {

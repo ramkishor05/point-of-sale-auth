@@ -15,7 +15,7 @@ public interface UserDetailService {
 
 	UIUserProfile updateUserProfile(UIUserProfile uiUserProfile);
 
-	UIUserAccount updateUserAccount(UIUserAccount uiUserAccount);
+	UserDetailResponse updateUserAccount(UIUserAccount uiUserAccount);
 
 	UIUserProfile getUserProfile(Long id);
 

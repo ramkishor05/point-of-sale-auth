@@ -3,6 +3,7 @@ package com.brijframwork.authorization.model.menus;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -16,7 +17,8 @@ import com.brijframwork.authorization.model.EOUserRole;
 
 @Entity
 @Table(name = "ROLE_MENU_GROUP", uniqueConstraints = {
-		@UniqueConstraint(columnNames = { "USER_ROLE_ID", "MENU_GROUP_ID" }) })
+		@UniqueConstraint(columnNames = { "USER_ROLE_ID", "MENU_GROUP_ID" }) ,
+		@UniqueConstraint(columnNames = { "IDEN_NO" }) })
 public class EORoleMenuGroup extends EOEntityObject {
 
 	/**
@@ -35,7 +37,7 @@ public class EORoleMenuGroup extends EOEntityObject {
 	@JoinColumn(name = "MENU_GROUP_ID")
 	private EOMenuGroup menuGroup;
 
-	@OneToMany(mappedBy = "roleMenuGroup")
+	@OneToMany(mappedBy = "roleMenuGroup", cascade = CascadeType.ALL)
 	private List<EORoleMenuItem> roleMenuItems;
 		
 	public String getIdenNo() {
