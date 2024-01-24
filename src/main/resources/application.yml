@@ -1,5 +1,6 @@
 spring:
-   profiles: aws_rds
+   profiles:
+     active: aws_rds
    application:
      name: point_of_sale_auth
    main:
@@ -7,9 +8,9 @@ spring:
    sql.init.mode: always
    datasource:
      driverClassName: com.mysql.cj.jdbc.Driver
-     url: jdbc:mysql://pointofsale.cjajb4uwr0of.us-east-1.rds.amazonaws.com:3306/point_of_sale_auth
-     username: admin
-     password: admin123
+     url: jdbc:mysql://sql6.freesqldatabase.com:3306/sql6679213
+     username: sql6679213
+     password: fUKN7NnTzL
      show-sql: true
    jpa: 
      hibernate: 
@@ -21,7 +22,7 @@ spring:
          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
    db:
      datajson:
-       upload: false
+       upload: true
 eureka:
   client:
     serviceUrl:
@@ -38,8 +39,7 @@ error:
 ---    
 
 spring:
-   profiles: 
-     active: local
+   profiles: local
    application:
      name: point_of_sale_auth
    main:

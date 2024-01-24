@@ -1,0 +1,18 @@
+Hi
+
+Your account number is: 863240
+
+Your new database is now ready to use.
+
+To connect to your database use these details;
+
+Host: sql6.freesqldatabase.com
+Database name: sql6679213
+Database user: sql6679213
+Database password: fUKN7NnTzL
+Port number: 3306
+
+
+pointofsale25@gmail.com
+
+Ram@9450
