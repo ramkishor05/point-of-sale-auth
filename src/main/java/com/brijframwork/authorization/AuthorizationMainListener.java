@@ -181,10 +181,12 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 					e.printStackTrace();
 				}
 			}
-	    	if(!roleHeaderItemMap.isEmpty())
-	    	roleHeaderItemRepository.deleteAll(roleHeaderItemMap.values());
-	    	if(!headerItemMap.isEmpty())
-	    	headerItemRepository.deleteAll(headerItemMap.values());
+	    	if(!roleHeaderItemMap.isEmpty()) {
+	    		roleHeaderItemRepository.deleteAll(roleHeaderItemMap.values());
+	    	}
+	    	if(!headerItemMap.isEmpty()) {
+	    		headerItemRepository.deleteAll(headerItemMap.values());
+	    	}
 	    	if(!roleMenuItemMap.isEmpty()) {
 	    		Collection<EORoleMenuItem> values = roleMenuItemMap.values();
 	    		for(EORoleMenuItem eoRoleMenuItem :  values) {
@@ -193,12 +195,15 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 	    		if(!values.isEmpty())
 	    		roleMenuItemRepository.deleteAll(values);
 	    	}
-	    	if(!roleMenuGroupMap.isEmpty())
-	    	roleMenuGroupRepository.deleteAll(roleMenuGroupMap.values());
-	    	if(!globalMenuItemMap.isEmpty())
-	    	globalMenuItemRepository.deleteAll(globalMenuItemMap.values());
-	    	if(!globalMenuGroupMap.isEmpty())
-	    	globalMenuGroupRepository.deleteAll(globalMenuGroupMap.values());
+	    	if(!roleMenuGroupMap.isEmpty()) {
+	    		roleMenuGroupRepository.deleteAll(roleMenuGroupMap.values());
+	    	}
+	    	if(!globalMenuItemMap.isEmpty()) {
+	    		globalMenuItemRepository.deleteAll(globalMenuItemMap.values());
+	    	}
+	    	if(!globalMenuGroupMap.isEmpty()) {
+	    		globalMenuGroupRepository.deleteAll(globalMenuGroupMap.values());
+	    	}
     	}
     }
 
