@@ -81,7 +81,7 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 	    	for (EOUserRole userRole : userRoleList) {
 	    		EOUserRole eoUserRole = userRoleMap.getOrDefault(userRole.getPosition(),userRole);
 	    		BeanUtils.copyProperties(userRole, eoUserRole, "id");
-	    		EOUserRole saveUserRole=userRoleRepository.saveAndFlush(eoUserRole);
+	    		EOUserRole saveUserRole=userRoleRepository.save(eoUserRole);
 	    		userRole.setId(saveUserRole.getId());
 	    		userRoleMap.put(userRole.getPosition(), userRole);
 	    		if(UserRole.ADMIN.getRoleType().equalsIgnoreCase(userRole.getRoleType())) {
@@ -91,12 +91,12 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
     	    		eoUserAccount.setType(eoUserRole.getRoleName());
     	    		eoUserAccount.setPassword((eoUserAccount.getPassword()==null? eoUserRole.getRoleName() : eoUserAccount.getPassword()));
     	    		eoUserAccount.setUserRole(eoUserRole);
-    	    		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);
+    	    		eoUserAccount=userAccountRepository.save(eoUserAccount);
     	    		if(eoUserAccount.getUserProfile()==null) {
 	    	    		EOUserProfile eoUserProfile=   new EOUserProfile();
 	    	    		eoUserProfile.setFullName(eoUserRole.getRoleName());
 	    	    		eoUserProfile.setUserAccount(eoUserAccount);
-	    	    		userProfileRepository.saveAndFlush(eoUserProfile);
+	    	    		userProfileRepository.save(eoUserProfile);
     	    		}
 	    		}
 	    	}
@@ -135,16 +135,17 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 					e.printStackTrace();
 				}
 			}
-	    	Map<String, EORoleMenuItem> roleMenuItemMap = roleMenuItemRepository.findAll().parallelStream().collect(Collectors.toMap((userRoleMenuItem)->getRoleMenuItemKey(userRoleMenuItem), Function.identity()));
+	    	Map<String, EORoleMenuItem> deleteRoleMenuItemMap = roleMenuItemRepository.findAll().parallelStream().collect(Collectors.toMap((userRoleMenuItem)->getRoleMenuItemKey(userRoleMenuItem), Function.identity()));
+	    	Map<String, EORoleMenuItem> checkRoleMenuItemMap = roleMenuItemRepository.findAll().parallelStream().collect(Collectors.toMap((userRoleMenuItem)->getRoleMenuItemKey(userRoleMenuItem), Function.identity()));
 	    	List<EORoleMenuItem> roleEndpointList = instance.getAll(EORoleMenuItem.class);
 	    	for(EORoleMenuItem roleMenuItem: roleEndpointList) {
 	    		try {
 	    			String roleMenuItemKey= getRoleMenuItemKey(roleMenuItem);
-					EORoleMenuItem eoRoleEndpoint = roleMenuItemMap.getOrDefault(roleMenuItemKey,roleMenuItem);
+					EORoleMenuItem eoRoleEndpoint = checkRoleMenuItemMap.getOrDefault(roleMenuItemKey,roleMenuItem);
 					BeanUtils.copyProperties(roleMenuItem, eoRoleEndpoint, "id");
 		    		EORoleMenuItem saveRoleEndpoint = roleMenuItemRepository.save(eoRoleEndpoint);
 		    		roleMenuItem.setId(saveRoleEndpoint.getId());
-		    		roleMenuGroupMap.remove(roleMenuItemKey);
+		    		deleteRoleMenuItemMap.remove(roleMenuItemKey);
 	    		}catch (Exception e) {
 					System.out.println("roleEndpoint="+roleMenuItem);
 					e.printStackTrace();
@@ -187,8 +188,8 @@ public class AuthorizationMainListener implements ApplicationListener<ContextRef
 	    	if(!headerItemMap.isEmpty()) {
 	    		headerItemRepository.deleteAll(headerItemMap.values());
 	    	}
-	    	if(!roleMenuItemMap.isEmpty()) {
-	    		Collection<EORoleMenuItem> values = roleMenuItemMap.values();
+	    	if(!deleteRoleMenuItemMap.isEmpty()) {
+	    		Collection<EORoleMenuItem> values = deleteRoleMenuItemMap.values();
 	    		for(EORoleMenuItem eoRoleMenuItem :  values) {
 	    			userOnBoardingRepository.deleteByRoleMenuItem(eoRoleMenuItem);
 	    		}

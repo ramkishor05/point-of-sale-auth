@@ -22,14 +22,14 @@ public class UserRoleServiceImpl implements UserRoleService {
 	@Override
 	public UIUserRole addUserRole(UIUserRole uiUserRole) {
 		EOUserRole eoUserRole = userRoleMapper.mapToDAO(uiUserRole);
-		eoUserRole=userRoleRepository.saveAndFlush(eoUserRole);
+		eoUserRole=userRoleRepository.save(eoUserRole);
 		return userRoleMapper.mapToDTO(eoUserRole);
 	}
 
 	@Override
 	public UIUserRole updateUserRole(UIUserRole uiUserRole) {
 		EOUserRole eoUserRole = userRoleMapper.mapToDAO(uiUserRole);
-		eoUserRole=userRoleRepository.saveAndFlush(eoUserRole);
+		eoUserRole=userRoleRepository.save(eoUserRole);
 		return userRoleMapper.mapToDTO(eoUserRole);
 	}
 

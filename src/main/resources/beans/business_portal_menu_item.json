@@ -15,6 +15,19 @@
         "menuGroup": "LK@Business_Portal_MenuGroup_Dashboard"
       }
     },
+    {	
+      "id": "Business_Portal_MenuItem_Ordering",
+      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "name": "Business_Portal_MenuItem",
+      "properties": {
+        "title": "Ordering",
+        "idenNo": "Business_Portal_MenuItem_Ordering",
+        "type": "item",
+        "url": "/business/portal/orders/ordering",
+        "icon": "Ordering",
+        "menuGroup": "LK@Business_Portal_MenuGroup_Orders"
+      }
+    },
     {
       "id": "Business_Portal_MenuItem_Sales",
       "type": "com.brijframwork.authorization.model.menus.EOMenuItem",

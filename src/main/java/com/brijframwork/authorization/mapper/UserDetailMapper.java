@@ -81,6 +81,9 @@ public interface UserDetailMapper extends GenericMapper<EOUserAccount, UserDetai
 			if(uiMenuItem.getOnBoarding()) {
 				uiMenuItem.setDisabled(false);
 				UIUserOnBoarding uiUserOnBoarding = onBoardingMenuIdenNoMap.get(uiMenuItem.getIdenNo());
+				if(uiUserOnBoarding==null) {
+					continue;
+				}
 				Boolean preOnBoardingStatus = onBoardingLevelStatusMap.get(uiUserOnBoarding.getOnBoardingLevel()-1);
 				if(preOnBoardingStatus!=null) {
 					if(!preOnBoardingStatus) {

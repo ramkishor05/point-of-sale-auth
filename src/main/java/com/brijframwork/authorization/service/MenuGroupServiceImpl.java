@@ -54,7 +54,7 @@ public class MenuGroupServiceImpl implements MenuGroupService {
 
 	@Override
 	public UIMenuGroup getMenuGroup(Long id) {
-		return menuGroupMapper.mapToDTO(menuGroupRepository.getOne(id));
+		return menuGroupMapper.mapToDTO(menuGroupRepository.findById(id).orElse(null));
 	}
 
 	@Override

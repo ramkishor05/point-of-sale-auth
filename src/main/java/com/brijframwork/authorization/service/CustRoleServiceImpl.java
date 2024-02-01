@@ -24,7 +24,7 @@ public class CustRoleServiceImpl implements CustRoleService {
 	public UIUserRole addUserRole(UIUserRole uiUserRole) {
 		EOUserRole eoUserRole = userRoleMapper.mapToDAO(uiUserRole);
 		eoUserRole.setRoleType(UserType.VENDOR.getType());
-		eoUserRole=userRoleRepository.saveAndFlush(eoUserRole);
+		eoUserRole=userRoleRepository.save(eoUserRole);
 		return userRoleMapper.mapToDTO(eoUserRole);
 	}
 
@@ -32,7 +32,7 @@ public class CustRoleServiceImpl implements CustRoleService {
 	public UIUserRole updateUserRole(UIUserRole uiUserRole) {
 		EOUserRole eoUserRole = userRoleMapper.mapToDAO(uiUserRole);
 		eoUserRole.setRoleType(UserType.VENDOR.getType());
-		eoUserRole=userRoleRepository.saveAndFlush(eoUserRole);
+		eoUserRole=userRoleRepository.save(eoUserRole);
 		return userRoleMapper.mapToDTO(eoUserRole);
 	}
 

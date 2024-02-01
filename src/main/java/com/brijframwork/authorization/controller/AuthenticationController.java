@@ -23,7 +23,7 @@ import com.brijframwork.authorization.constant.Constants;
 @RequestMapping("/api/authentication")
 public class AuthenticationController {
 	
-	private static final String API_TOKEN = "api_token";
+	private static final String API_TOKEN = "Authorization";
 
     @Autowired
     private AuthenticationManager authenticationManager;

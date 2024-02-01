@@ -56,7 +56,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         		"/api/user/**",
         		"/api/cust/**",
         		"/api/menu/**",
-        		"/api/role/**").permitAll()
+        		"/api/role/**","/api/home/**").permitAll()
 	    .anyRequest().authenticated()
 	    .and()
 	    .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

@@ -42,7 +42,7 @@ public class MenuItemServiceImpl implements MenuItemService {
 
 	@Override
 	public UIMenuItem getMenuItem(Long id) {
-		return menuItemMapper.mapToDTO(menuItemRepository.getOne(id));
+		return menuItemMapper.mapToDTO(menuItemRepository.findById(id).orElse(null));
 	}
 
 	@Override

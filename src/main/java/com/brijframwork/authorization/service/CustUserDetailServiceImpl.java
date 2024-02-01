@@ -54,7 +54,7 @@ public class CustUserDetailServiceImpl implements CustUserDetailService {
 		eoUserAccount.setOwnerId(ownerId);
 		eoUserAccount.setUserRole(eoUserRole);
 		eoUserAccount.setUserProfile(getUserProfile(userDetailRequest.getUserProfile()));
-		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);		
+		eoUserAccount=userAccountRepository.save(eoUserAccount);		
 		return userDetailMapper.mapToDTO(eoUserAccount);
 	}
 	
@@ -93,7 +93,7 @@ public class CustUserDetailServiceImpl implements CustUserDetailService {
 		eoUserAccount.setOwnerId(ownerId);
 		eoUserAccount.setUserRole(eoUserRole);
 		eoUserAccount.setUserProfile(getUserProfile(userDetailRequest.getUserProfile()));
-		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);		
+		eoUserAccount=userAccountRepository.save(eoUserAccount);		
 		return userDetailMapper.mapToDTO(eoUserAccount);
 	}
 
@@ -104,7 +104,7 @@ public class CustUserDetailServiceImpl implements CustUserDetailService {
 		eoUserProfile.setFullName(userProfile.getFullName());
 		eoUserProfile.setPreferredName(userProfile.getPreferredName());
 		eoUserProfile.setPictureURL(userProfile.getPictureURL());
-		return userProfileRepository.saveAndFlush(eoUserProfile);
+		return userProfileRepository.save(eoUserProfile);
 	}
 
 	@Override

@@ -15,6 +15,17 @@
 			}
 		},
 		{
+			"id": "Business_Portal_MenuItem_Role_OWNER_Ordering",
+			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
+			"name": "Business_Portal_MenuItem_Role",
+			"properties": {
+				"idenNo": "Business_Portal_MenuItem_Role_OWNER_Ordering",
+				"userRole": "LK@UserRole_OWNER",
+				"menuItem": "LK@Business_Portal_MenuItem_Ordering",
+				"roleMenuGroup": "LK@Business_Portal_MenuGroup_Role_OWNER_Orders"
+			}
+		},
+		{
 			"id": "Business_Portal_MenuItem_Role_OWNER_Sales",
 			"type": "com.brijframwork.authorization.model.menus.EORoleMenuItem",
 			"name": "Business_Portal_MenuItem_Role",

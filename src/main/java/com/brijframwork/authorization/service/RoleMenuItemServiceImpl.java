@@ -41,7 +41,7 @@ public class RoleMenuItemServiceImpl implements RoleMenuItemService {
 
 	@Override
 	public UIRoleMenuItem getRoleMenuItem(Long id) {
-		return roleMenuItemMapper.mapToDTO(roleMenuItemRepository.getOne(id));
+		return roleMenuItemMapper.mapToDTO(roleMenuItemRepository.findById(id).orElse(null));
 	}
 
 	@Override

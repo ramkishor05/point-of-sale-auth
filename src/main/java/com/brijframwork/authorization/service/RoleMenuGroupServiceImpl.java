@@ -42,7 +42,7 @@ public class RoleMenuGroupServiceImpl implements RoleMenuGroupService {
 
 	@Override
 	public UIRoleMenuGroup getRoleMenuGroup(Long id) {
-		return roleMenuGroupMapper.mapToDTO(roleMenuGroupRepository.getOne(id));
+		return roleMenuGroupMapper.mapToDTO(roleMenuGroupRepository.findById(id).orElse(null));
 	}
 
 	@Override

@@ -75,18 +75,18 @@ public class UserDetailServiceImpl implements UserDetailService {
 
 	@Override
 	public UIUserProfile updateUserProfile(UIUserProfile uiUserProfile) {
-		EOUserProfile eoUserProfile=userProfileRepository.getOne(uiUserProfile.getId());
+		EOUserProfile eoUserProfile=userProfileRepository.findById(uiUserProfile.getId()).orElse(null);
 		eoUserProfile.setTitle(uiUserProfile.getTitle());
 		eoUserProfile.setFullName(uiUserProfile.getFullName());
 		eoUserProfile.setPreferredName(uiUserProfile.getPreferredName());
 		eoUserProfile.setPictureURL(uiUserProfile.getPictureURL());
-		eoUserProfile = userProfileRepository.saveAndFlush(eoUserProfile);
+		eoUserProfile = userProfileRepository.save(eoUserProfile);
 		return uiUserProfile;
 	}
 
 	@Override
 	public UserDetailResponse updateUserAccount(UIUserAccount uiUserAccount) {
-		EOUserAccount eoUserAccount=userAccountRepository.getOne(uiUserAccount.getId());
+		EOUserAccount eoUserAccount=userAccountRepository.findById(uiUserAccount.getId()).orElse(null);
 		eoUserAccount.setUsername(uiUserAccount.getUsername());
 		eoUserAccount.setPassword(uiUserAccount.getPassword());
 		eoUserAccount.setType(uiUserAccount.getType());
@@ -94,14 +94,14 @@ public class UserDetailServiceImpl implements UserDetailService {
 		eoUserAccount.setRegisteredMobile(uiUserAccount.getMobile());
 		eoUserAccount.setRegisteredEmail(uiUserAccount.getEmail());
 		eoUserAccount.setOwnerId(uiUserAccount.getOwnerId());
-		eoUserAccount=userAccountRepository.saveAndFlush(eoUserAccount);
+		eoUserAccount=userAccountRepository.save(eoUserAccount);
 		userOnBoardingService.initOnBoarding(eoUserAccount);
 		return userDetailMapper.mapToDTO(eoUserAccount);
 	}
 
 	@Override
 	public UIUserProfile getUserProfile(Long id) {
-		EOUserProfile eoUserProfile=userProfileRepository.getOne(id);
+		EOUserProfile eoUserProfile=userProfileRepository.findById(id).orElse(null);
 		UIUserProfile uiUserProfile=new UIUserProfile();
 		uiUserProfile.setTitle(eoUserProfile.getTitle());
 		uiUserProfile.setFullName(eoUserProfile.getFullName());
