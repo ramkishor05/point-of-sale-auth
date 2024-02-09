@@ -116,14 +116,6 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<mainClass>
-						com.brijframework.authorization.AuthorizationApplication</mainClass>
-				</configuration>
-			</plugin>
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<!-- or newer version -->
@@ -138,6 +130,13 @@
 						</path>
 						<!-- other annotation processors -->
 					</annotationProcessorPaths>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.brijframework.authorization.AuthorizationApplication</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>

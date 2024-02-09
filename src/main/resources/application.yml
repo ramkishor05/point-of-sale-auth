@@ -28,7 +28,7 @@ eureka:
       defaultZone: http://localhost:1111/eureka/
 # HTTP Server (Tomcat) Port
 server: 
-  port: 2222
+  port: 3333
 logging.level.org.hibernate.SQL: DEBUG
 logging.level.org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 # Disable Spring Boot's "Whitelabel" default error page, so we can use our own
@@ -69,13 +69,14 @@ eureka:
       defaultZone: http://localhost:1111/eureka/
 # HTTP Server (Tomcat) Port
 server: 
-  port: 2222
+  port: 3333
 logging.level.org.hibernate.SQL: DEBUG
 logging.level.org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 # Disable Spring Boot's "Whitelabel" default error page, so we can use our own
 error:
   whitelabel:
     enabled: true
+    
 ---
 spring:
    profiles: dev
@@ -107,7 +108,7 @@ eureka:
         defaultZone: http://localhost:1111/eureka/
 # HTTP Server (Tomcat) Port
 server: 
-  port: 2222
+  port: 3333
 logging.level.org.hibernate.SQL: DEBUG
 logging.level.org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 # Disable Spring Boot's "Whitelabel" default error page, so we can use our own
