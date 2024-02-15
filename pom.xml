@@ -3,6 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	
+	<modelVersion>4.0.0</modelVersion>
+	
 	<parent>
 		<groupId>com.brijframework</groupId>
 		<artifactId>point-of-sale-api</artifactId>
@@ -10,18 +12,17 @@
 		<relativePath /> 
 	</parent>
 	
-	<modelVersion>4.0.0</modelVersion>
 	<artifactId>point-of-sale-auth</artifactId>
 	<name>point-of-sale-auth</name>
 	<description>point-of-sale-auth</description>
 	<packaging>jar</packaging>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
 		<org.mapstruct.version>1.3.0.Final</org.mapstruct.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>11</maven.compiler.source>
-		<maven.compiler.target>11</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<spring-cloud.version>Hoxton.SR1</spring-cloud.version>
 	</properties>
 
@@ -107,12 +108,10 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>com.google.cloud.tools</groupId>
-				<artifactId>appengine-maven-plugin</artifactId>
-				<version>2.4.4</version>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<version>1</version>
-					<projectId>GCLOUD_CONFIG</projectId>
+					<mainClass>com.brijframework.authorization.AuthorizationApplication</mainClass>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -128,17 +127,10 @@
 							<artifactId>mapstruct-processor</artifactId>
 							<version>${org.mapstruct.version}</version>
 						</path>
-						<!-- other annotation processors -->
 					</annotationProcessorPaths>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<mainClass>com.brijframework.authorization.AuthorizationApplication</mainClass>
-				</configuration>
-			</plugin>
+			
 		</plugins>
 	</build>
 
