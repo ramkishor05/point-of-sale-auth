@@ -4,7 +4,7 @@
 	"objects": [
 		{
 			"id": "Business_Portal_HeaderItem_Role_OWNER_SearchBox",
-			"type": "com.brijframwork.authorization.model.headers.EORoleHeaderItem",
+			"type": "com.brijframework.authorization.model.headers.EORoleHeaderItem",
 			"name": "Business_Portal_HeaderItem_Role",
 			"properties": {
 				"idenNo":"Business_Portal_HeaderItem_Role_OWNER_SearchBox",
@@ -14,7 +14,7 @@
 		},
 		{
 			"id": "Business_Portal_HeaderItem_Role_OWNER_BusinessOptions",
-			"type": "com.brijframwork.authorization.model.headers.EORoleHeaderItem",
+			"type": "com.brijframework.authorization.model.headers.EORoleHeaderItem",
 			"name": "Business_Portal_HeaderItem_Role",
 			"properties": {
 				"idenNo":"Business_Portal_HeaderItem_Role_OWNER_BusinessOptions",
@@ -24,7 +24,7 @@
 		},
 		{
 			"id": "Business_Portal_HeaderItem_Role_OWNER_ProfileSection",
-			"type": "com.brijframwork.authorization.model.headers.EORoleHeaderItem",
+			"type": "com.brijframework.authorization.model.headers.EORoleHeaderItem",
 			"name": "Business_Portal_HeaderItem_Role",
 			"properties": {
 				"idenNo":"Business_Portal_HeaderItem_Role_OWNER_ProfileSection",
@@ -34,7 +34,7 @@
 		},
 		{
 			"id": "Business_Portal_HeaderItem_Role_OWNER_NotificationSection",
-			"type": "com.brijframwork.authorization.model.headers.EORoleHeaderItem",
+			"type": "com.brijframework.authorization.model.headers.EORoleHeaderItem",
 			"name": "Business_Portal_HeaderItem_Role",
 			"properties": {
 				"idenNo":"Business_Portal_HeaderItem_Role_OWNER_NotificationSection",
@@ -44,7 +44,7 @@
 		},
 		{
 			"id": "Business_Portal_HeaderItem_Role_MANAGER_SearchBox",
-			"type": "com.brijframwork.authorization.model.headers.EORoleHeaderItem",
+			"type": "com.brijframework.authorization.model.headers.EORoleHeaderItem",
 			"name": "Business_Portal_HeaderItem_Role",
 			"properties": {
 				"idenNo":"Business_Portal_HeaderItem_Role_MANAGER_SearchBox",
@@ -54,7 +54,7 @@
 		},
 		{
 			"id": "Business_Portal_HeaderItem_Role_MANAGER_BusinessOptions",
-			"type": "com.brijframwork.authorization.model.headers.EORoleHeaderItem",
+			"type": "com.brijframework.authorization.model.headers.EORoleHeaderItem",
 			"name": "Business_Portal_HeaderItem_Role",
 			"properties": {
 				"idenNo":"Business_Portal_HeaderItem_Role_MANAGER_BusinessOptions",
@@ -64,7 +64,7 @@
 		},
 		{
 			"id": "Business_Portal_HeaderItem_Role_MANAGER_ProfileSection",
-			"type": "com.brijframwork.authorization.model.headers.EORoleHeaderItem",
+			"type": "com.brijframework.authorization.model.headers.EORoleHeaderItem",
 			"name": "Business_Portal_HeaderItem_Role",
 			"properties": {
 				"idenNo":"Business_Portal_HeaderItem_Role_MANAGER_ProfileSection",

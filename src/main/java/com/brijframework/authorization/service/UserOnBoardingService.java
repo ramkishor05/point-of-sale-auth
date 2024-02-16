@@ -5,6 +5,8 @@ import java.util.List;
 import com.brijframework.authorization.model.EOUserAccount;
 import com.brijframework.authorization.model.onboarding.EOUserOnBoarding;
 
+
+
 public interface UserOnBoardingService {
 
 	void initOnBoarding(EOUserAccount eoUserAccount);

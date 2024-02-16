@@ -4,7 +4,7 @@
   "objects": [
     {
       "id": "Global_Portal_MenuItem_Dashboard",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "type": "com.brijframework.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "Dashboard",
@@ -18,7 +18,7 @@
     },
     {
       "id": "Global_Portal_MenuItem_Menu_Groups",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "type": "com.brijframework.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "Menu Groups",
@@ -32,7 +32,7 @@
     },
     {
       "id": "Global_Portal_MenuItem_Menu_Items",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "type": "com.brijframework.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "Menu Items",
@@ -46,7 +46,7 @@
     },
     {
       "id": "Global_Portal_MenuItem_Role_Menu_Groups",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "type": "com.brijframework.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "Role Menu Groups",
@@ -60,7 +60,7 @@
     },
     {
       "id": "Global_Portal_MenuItem_Role_Menu_Items",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "type": "com.brijframework.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "Role Menu Items",
@@ -74,7 +74,7 @@
     },
     {
       "id": "Global_Portal_MenuItem_Vendor",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "type": "com.brijframework.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "Vendors",
@@ -88,7 +88,7 @@
     },
     {
       "id": "Global_Portal_MenuItem_Supplier",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "type": "com.brijframework.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "Suppliers",
@@ -102,7 +102,7 @@
     },
     {
       "id": "Global_Portal_MenuItem_Customer",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "type": "com.brijframework.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "Customers",
@@ -116,7 +116,7 @@
     },
     {
       "id": "Global_Portal_MenuItem_User",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "type": "com.brijframework.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "Users",
@@ -130,7 +130,7 @@
     },
     {
       "id": "Global_Portal_MenuItem_Employee",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "type": "com.brijframework.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "Employee",
@@ -143,7 +143,7 @@
     },
     {
       "id": "Global_Portal_MenuItem_User",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "type": "com.brijframework.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "Users",
@@ -156,7 +156,7 @@
     },
     {
       "id": "Global_Portal_MenuItem_Category_Group",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "type": "com.brijframework.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "Category Group",
@@ -170,7 +170,7 @@
     },
     {
       "id": "Global_Portal_MenuItem_Category_List",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "type": "com.brijframework.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "Category List",
@@ -184,7 +184,7 @@
     },
     {
       "id": "Global_Portal_MenuItem_Unit_Group",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "type": "com.brijframework.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "Unit Group",
@@ -198,7 +198,7 @@
     },
     {
       "id": "Global_Portal_MenuItem_Unit_List",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "type": "com.brijframework.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "Unit List",
@@ -212,7 +212,7 @@
     },
     {
       "id": "Global_Portal_MenuItem_Currency_Group",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "type": "com.brijframework.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "Currency Group",
@@ -226,7 +226,7 @@
     },
     {
       "id": "Global_Portal_MenuItem_Currency_List",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "type": "com.brijframework.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "Currency List",
@@ -240,7 +240,7 @@
     },
     {
       "id": "Global_Portal_MenuItem_Count_Freq",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "type": "com.brijframework.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "Count Freq",
@@ -254,7 +254,7 @@
     },
     {
       "id": "Global_Portal_MenuItem_UserProfile",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuItem",
+      "type": "com.brijframework.authorization.model.menus.EOMenuItem",
       "name": "Global_Portal_MenuItem",
       "properties": {
         "title": "User profile",

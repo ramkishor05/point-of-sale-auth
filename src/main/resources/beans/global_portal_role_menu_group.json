@@ -4,7 +4,7 @@
 	"objects": [
 		{
 			"id": "Global_Portal_MenuGroup_Role_Admin_Dashboard",
-			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
+			"type": "com.brijframework.authorization.model.menus.EORoleMenuGroup",
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuGroup_Role_Admin_Dashboard",
@@ -14,7 +14,7 @@
 		},
 		{
 			"id": "Global_Portal_MenuGroup_Role_Admin_Menus",
-			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
+			"type": "com.brijframework.authorization.model.menus.EORoleMenuGroup",
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuGroup_Role_Admin_Menus",
@@ -24,7 +24,7 @@
 		},
 		{
 			"id": "Global_Portal_MenuGroup_Role_Admin_Parties",
-			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
+			"type": "com.brijframework.authorization.model.menus.EORoleMenuGroup",
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuGroup_Role_Admin_Parties",
@@ -34,7 +34,7 @@
 		},
 		{
 			"id": "Global_Portal_MenuGroup_Role_Admin_Organizations",
-			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
+			"type": "com.brijframework.authorization.model.menus.EORoleMenuGroup",
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuGroup_Manager_Organizations",
@@ -44,7 +44,7 @@
 		},
 		{
 			"id": "Global_Portal_MenuGroup_Role_Admin_Setups",
-			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
+			"type": "com.brijframework.authorization.model.menus.EORoleMenuGroup",
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuGroup_Role_Admin_Setups",
@@ -54,7 +54,7 @@
 		},
 		{
 			"id": "Global_Portal_MenuGroup_Role_Admin_UserProfile",
-			"type": "com.brijframwork.authorization.model.menus.EORoleMenuGroup",
+			"type": "com.brijframework.authorization.model.menus.EORoleMenuGroup",
 			"name": "Global_Portal_MenuGroup_Role",
 			"properties": {
 				"idenNo": "Global_Portal_MenuGroup_Role_Admin_UserProfile",

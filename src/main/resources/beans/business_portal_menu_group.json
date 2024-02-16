@@ -4,7 +4,7 @@
   "objects": [
     {
       "id": "Business_Portal_MenuGroup_Dashboard",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuGroup",
+      "type": "com.brijframework.authorization.model.menus.EOMenuGroup",
       "name": "Business_Portal_MenuGroup",
       "properties": {
         "title": "Dashboard",
@@ -17,7 +17,7 @@
     },
     {
       "id": "Business_Portal_MenuGroup_Orders",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuGroup",
+      "type": "com.brijframework.authorization.model.menus.EOMenuGroup",
       "name": "Business_Portal_MenuGroup",
       "properties": {
         "title": "Orders",
@@ -30,7 +30,7 @@
     },
     {
       "id": "Business_Portal_MenuGroup_Accounting",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuGroup",
+      "type": "com.brijframework.authorization.model.menus.EOMenuGroup",
       "name": "Business_Portal_MenuGroup",
       "properties": {
         "title": "Accounting",
@@ -43,7 +43,7 @@
     },
     {
       "id": "Business_Portal_MenuGroup_Items",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuGroup",
+      "type": "com.brijframework.authorization.model.menus.EOMenuGroup",
       "name": "Business_Portal_MenuGroup",
       "properties": {
         "title": "Items",
@@ -56,7 +56,7 @@
     },
     {
       "id": "Business_Portal_MenuGroup_Parties",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuGroup",
+      "type": "com.brijframework.authorization.model.menus.EOMenuGroup",
       "name": "Business_Portal_MenuGroup",
       "properties": {
         "title": "Parties",
@@ -69,7 +69,7 @@
     },
     {
       "id": "Business_Portal_MenuGroup_Organizations",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuGroup",
+      "type": "com.brijframework.authorization.model.menus.EOMenuGroup",
       "name": "Business_Portal_MenuGroup",
       "properties": {
         "title": "Organizations",
@@ -82,7 +82,7 @@
     },
     {
       "id": "Business_Portal_MenuGroup_Setups",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuGroup",
+      "type": "com.brijframework.authorization.model.menus.EOMenuGroup",
       "name": "Business_Portal_MenuGroup",
       "properties": {
         "title": "Setups",
@@ -95,7 +95,7 @@
     },
     {
       "id": "Business_Portal_MenuGroup_Account",
-      "type": "com.brijframwork.authorization.model.menus.EOMenuGroup",
+      "type": "com.brijframework.authorization.model.menus.EOMenuGroup",
       "name": "Business_Portal_MenuGroup",
       "properties": {
         "title": "Account",
