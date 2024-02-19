@@ -67,6 +67,9 @@ public class TokenProvider implements Serializable {
     		return null;
     	}
         final Claims claims = getAllClaimsFromToken(token);
+        if(claims==null) {
+        	return null;
+        }
         return claimsResolver.apply(claims);
     }
 
@@ -124,7 +127,7 @@ public class TokenProvider implements Serializable {
     	return !isTokenExpired(token);
     }
 
-    public UsernamePasswordAuthenticationToken getAuthentication(final String token, final Authentication existingAuth, final UserDetails userDetails) {
+    public UsernamePasswordAuthenticationToken getAuthentication(final String token, final UserDetails userDetails) {
     	logger.fine("Inside TokenProvider : getAuthentication");
         final JwtParser jwtParser = Jwts.parser().setSigningKey(SIGNING_KEY);
         final Jws<Claims> claimsJws = jwtParser.parseClaimsJws(token);
