@@ -2,14 +2,14 @@ package com.brijframework.authorization.model.menus;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
-
 import com.brijframework.authorization.model.EOEntityObject;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "MENU_GROUP", uniqueConstraints = {@UniqueConstraint(columnNames = { "IDEN_NO" }) })

@@ -1,7 +1,7 @@
 package com.brijframework.authorization.adptor;
 
 import static com.brijframework.authorization.constant.Constants.ACCESS_TOKEN_VALIDITY_SECONDS;
-import static com.brijframework.authorization.constant.Constants.AUTHORITIES_KEY;
+import static com.brijframework.authorization.constant.Constants.SCOPE;
 import static com.brijframework.authorization.constant.Constants.SIGNING_KEY;
 
 import java.io.Serializable;
@@ -103,7 +103,7 @@ public class TokenProvider implements Serializable {
         final String authorities = authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.joining(","));
         return Jwts.builder()
                 .setSubject(authentication.getName())
-                .claim(AUTHORITIES_KEY, authorities)
+                .claim(SCOPE, authorities)
                 .signWith(io.jsonwebtoken.SignatureAlgorithm.HS256, SIGNING_KEY)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + ACCESS_TOKEN_VALIDITY_SECONDS * 1000))
@@ -132,7 +132,7 @@ public class TokenProvider implements Serializable {
         final JwtParser jwtParser = Jwts.parser().setSigningKey(SIGNING_KEY);
         final Jws<Claims> claimsJws = jwtParser.parseClaimsJws(token);
         final Claims claims = claimsJws.getBody();
-        final Collection<? extends GrantedAuthority> authorities = Arrays.stream(claims.get(AUTHORITIES_KEY).toString().split(",")).map(SimpleGrantedAuthority::new).collect(Collectors.toList());
+        final Collection<? extends GrantedAuthority> authorities = Arrays.stream(claims.get(SCOPE).toString().split(",")).map(SimpleGrantedAuthority::new).collect(Collectors.toList());
         return new UsernamePasswordAuthenticationToken(userDetails, "", authorities);
     }
 

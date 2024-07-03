@@ -1,16 +1,16 @@
 package com.brijframework.authorization.model.onboarding;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.PrePersist;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
-
 import com.brijframework.authorization.model.EOEntityObject;
 import com.brijframework.authorization.model.EOUserAccount;
 import com.brijframework.authorization.model.menus.EORoleMenuItem;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "USER_ONBOARDING", uniqueConstraints= {@UniqueConstraint(columnNames = { "USER_ACCOUNT_ID", "ROLE_MENU_ITEM_ID" })})

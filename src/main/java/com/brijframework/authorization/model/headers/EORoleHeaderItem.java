@@ -1,14 +1,14 @@
 package com.brijframework.authorization.model.headers;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
-
 import com.brijframework.authorization.model.EOEntityObject;
 import com.brijframework.authorization.model.EOUserRole;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "ROLE_HEADER_ITEM", uniqueConstraints= {@UniqueConstraint(columnNames = { "USER_ROLE_ID","HEADER_ITEM_ID" })})

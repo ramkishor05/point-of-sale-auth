@@ -1,10 +1,10 @@
 package com.brijframework.authorization.model.headers;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
 import com.brijframework.authorization.model.EOEntityObject;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "HEADER_ITEM")

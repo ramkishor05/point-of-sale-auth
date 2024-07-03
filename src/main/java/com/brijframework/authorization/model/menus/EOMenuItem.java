@@ -1,13 +1,13 @@
 package com.brijframework.authorization.model.menus;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
-
 import com.brijframework.authorization.model.EOEntityObject;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "MENU_ITEM", uniqueConstraints = {@UniqueConstraint(columnNames = { "IDEN_NO" }) })
